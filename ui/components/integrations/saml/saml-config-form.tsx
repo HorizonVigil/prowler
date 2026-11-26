@@ -456,12 +456,12 @@ export const SamlConfigForm = ({
                 type="button"
                 variant="bare"
                 size="link-sm"
-                aria-label="Additional email domains are available in Prowler Cloud"
+                aria-label="Additional email domains are available in HorizonVigil"
                 onClick={() =>
                   openCloudUpgrade(CLOUD_UPGRADE_FEATURE.SAML_DOMAINS)
                 }
               >
-                <Badge variant="cloud">Available in Prowler Cloud</Badge>
+                <Badge variant="cloud">Available in HorizonVigil</Badge>
               </Button>
             )}
           </div>

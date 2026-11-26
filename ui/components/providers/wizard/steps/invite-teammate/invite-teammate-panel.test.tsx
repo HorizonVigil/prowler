@@ -195,7 +195,7 @@ describe("InviteTeammatePanel", () => {
       ),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Prowler does not send emails/),
+      screen.getByText(/HorizonVigil does not send emails/),
     ).toBeInTheDocument();
     expect(
       screen.getByText(
@@ -225,7 +225,7 @@ describe("InviteTeammatePanel", () => {
       await screen.findByText(/We have emailed them the invitation/),
     ).toBeInTheDocument();
     expect(
-      screen.queryByText(/Prowler does not send emails/),
+      screen.queryByText(/HorizonVigil does not send emails/),
     ).not.toBeInTheDocument();
   });
 

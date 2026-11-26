@@ -345,7 +345,7 @@ export function GcpOrgSetupForm({
 
             <p className="text-muted-foreground text-sm">
               Enter the Google Cloud organization ID for the projects you want
-              to add to Prowler.
+              to add to HorizonVigil.
             </p>
           </div>
         )}

@@ -64,7 +64,7 @@ interface ProviderStatusCellProps {
 }
 
 const IMPORTED_PROVIDER_TOOLTIP =
-  "This provider has findings imported with the Prowler CLI";
+  "This provider has findings imported with the CLI";
 
 const ImportedIndicator = () => {
   const indicator = (

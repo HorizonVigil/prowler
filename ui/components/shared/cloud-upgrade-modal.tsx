@@ -154,7 +154,7 @@ const LocalServerUpgradeModal = ({
       {...modalProps}
       title={content.title}
       description={content.description}
-      badge="Available in Prowler Cloud"
+      badge="Available in HorizonVigil"
       benefits={content.benefits}
       primaryCta={{
         label: content.primaryCta,

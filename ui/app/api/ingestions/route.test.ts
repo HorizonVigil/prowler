@@ -205,7 +205,7 @@ describe("POST /api/ingestions", () => {
   });
 
   it.each([
-    [400, "invalid", "The report is not a valid Prowler OCSF finding report."],
+    [400, "invalid", "The report is not a valid OCSF finding report."],
     [
       402,
       "subscription_required",
@@ -248,7 +248,7 @@ describe("POST /api/ingestions", () => {
   );
 
   const STATUS_TIER_REJECTIONS = [
-    [400, "The report is not a valid Prowler OCSF finding report."],
+    [400, "The report is not a valid OCSF finding report."],
     [402, "A Prowler Cloud subscription is required to import findings."],
     [403, "You do not have permission to import findings."],
     [413, "The selected file exceeds the allowed upload size."],

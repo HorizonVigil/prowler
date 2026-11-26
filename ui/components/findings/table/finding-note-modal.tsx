@@ -487,7 +487,7 @@ export function FindingNoteModal({
                   size="lg"
                   aria-label={
                     isCloudOnly
-                      ? "Save - available in Prowler Cloud"
+                      ? "Save - available in HorizonVigil"
                       : undefined
                   }
                   disabled={!canSubmit && !isCloudOnly}

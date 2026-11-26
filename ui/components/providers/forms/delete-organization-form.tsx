@@ -105,7 +105,7 @@ export function DeleteOrganizationForm({
 
     toast({
       title: "Deletion started",
-      description: `Prowler is deleting the ${entityLabel} "${name}" and its providers. If any part of it fails, the rows reappear on a later refresh.`,
+      description: `HorizonVigil is deleting the ${entityLabel} "${name}" and its providers. If any part of it fails, the rows reappear on a later refresh.`,
     });
     setIsOpen(false);
     router.refresh();

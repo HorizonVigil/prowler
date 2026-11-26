@@ -26,7 +26,7 @@ export const ManagedLighthouseCallout = () => {
             aria-hidden="true"
             className="text-text-neutral-primary size-5"
           />
-          <CardTitle>Skip the setup with Prowler Cloud</CardTitle>
+          <CardTitle>Skip the setup with HorizonVigil</CardTitle>
           <Badge variant="cloud" size="sm">
             Cloud
           </Badge>

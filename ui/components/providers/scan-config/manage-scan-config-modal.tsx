@@ -186,7 +186,7 @@ function ManageScanConfigForm({
         <p className="text-text-neutral-tertiary text-xs">
           <strong>Default</strong>
           {
-            " uses Prowler's scan configuration baseline. Read more about it in the "
+            " uses HorizonVigil's scan configuration baseline. Read more about it in the "
           }
           <CustomLink size="xs" href={DOCS_URLS.SCAN_CONFIGURATION}>
             documentation

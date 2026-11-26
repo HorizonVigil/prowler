@@ -151,7 +151,7 @@ export function ProviderConnectStep({
         >
           <p className="text-text-neutral-secondary text-sm">
             {locked
-              ? "Choose how Prowler should connect from now on."
+              ? "Choose how HorizonVigil should connect from now on."
               : "Choose how to connect it."}
           </p>
           <div className="grid gap-3 lg:grid-cols-2">

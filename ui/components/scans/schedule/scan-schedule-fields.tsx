@@ -63,7 +63,7 @@ interface ScanScheduleFieldsProps {
    * (interval/weekly/monthly) are disabled. Used for non-Cloud (OSS) accounts.
    */
   canUseAdvancedSchedule?: boolean;
-  /** Render the "Available in Prowler Cloud" upsell badge in the header. */
+  /** Render the "Available in HorizonVigil" upsell badge in the header. */
   showCloudUpgradeBadge?: boolean;
 }
 

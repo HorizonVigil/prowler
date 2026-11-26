@@ -29,7 +29,7 @@ export const PROVIDER_WIZARD_STEPS: readonly StepConfig[] = [
   {
     label: "Connect Provider",
     description:
-      "Choose how Prowler accesses it, add the details and test the connection.",
+      "Choose how HorizonVigil accesses it, add the details and test the connection.",
     icon: Link2,
   },
   LAUNCH_STEP,
@@ -40,7 +40,7 @@ export const UPDATE_PROVIDER_WIZARD_STEPS: readonly StepConfig[] = [
   {
     label: "Update Credentials",
     description:
-      "Replace the credentials Prowler uses and test the connection.",
+      "Replace the credentials HorizonVigil uses and test the connection.",
     icon: KeyRound,
   },
 ];
@@ -49,12 +49,12 @@ export const ORGANIZATION_WIZARD_STEPS: readonly StepConfig[] = [
   {
     label: "Organization Access",
     description:
-      "Name the organization and deploy the access Prowler uses in every account.",
+      "Name the organization and deploy the access HorizonVigil uses in every account.",
     icon: KeyRound,
   },
   {
     label: "Select Accounts",
-    description: "Prowler discovers the organization; pick what to connect.",
+    description: "HorizonVigil discovers the organization; pick what to connect.",
     icon: Network,
   },
   LAUNCH_STEP,

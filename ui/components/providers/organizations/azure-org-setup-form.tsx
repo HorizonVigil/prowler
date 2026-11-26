@@ -249,7 +249,7 @@ export function AzureOrgSetupForm({
 
             <p className="text-muted-foreground text-sm">
               Enter the Microsoft Entra tenant ID for the subscriptions you want
-              to add to Prowler.
+              to add to HorizonVigil.
             </p>
           </div>
         )}

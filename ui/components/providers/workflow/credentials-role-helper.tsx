@@ -39,8 +39,8 @@ const describeRole = (integrationType?: IntegrationType) => {
     return "A read-only IAM role must be manually created. Open the AWS console to create it from the stack; the External ID comes filled in.";
   }
   return isCloud()
-    ? "Open the AWS console to create a read-only IAM role that Prowler Cloud can assume. The stack comes with your External ID filled in."
-    : "Open the AWS console to create a read-only IAM role that Prowler can assume. Fill in the AWS account Prowler runs from; the External ID comes filled in.";
+    ? "Open the AWS console to create a read-only IAM role that HorizonVigil can assume. The stack comes with your External ID filled in."
+    : "Open the AWS console to create a read-only IAM role that HorizonVigil can assume. Fill in the AWS account HorizonVigil runs from; the External ID comes filled in.";
 };
 
 /** One button creates the IAM role; the raw templates stay tucked away. */

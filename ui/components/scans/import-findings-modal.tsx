@@ -85,7 +85,7 @@ type ImportState =
 
 const validateFile = (file: File): string | null => {
   if (!file.name.toLowerCase().endsWith(".ocsf.json")) {
-    return "Choose a Prowler .ocsf.json finding report.";
+    return "Choose an OCSF (.ocsf.json) finding report.";
   }
   if (file.size === 0) return "The selected file is empty.";
   return null;
@@ -237,7 +237,7 @@ export function ImportFindingsModal() {
         open={open}
         onOpenChange={handleOpenChange}
         title="Import findings"
-        description="Upload a Prowler OCSF finding report to add it to Scans."
+        description="Upload an OCSF finding report to add it to Scans."
         size="md"
       >
         <div className="flex flex-col gap-4">

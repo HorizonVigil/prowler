@@ -10,7 +10,7 @@ export const runtime = "nodejs";
 const INVALID_INGESTION_RESPONSE =
   "Unable to start the import. Please try again.";
 const INGESTION_REJECTION_BY_CODE = {
-  invalid: "The report is not a valid Prowler OCSF finding report.",
+  invalid: "The report is not a valid OCSF finding report.",
   subscription_required:
     "A Prowler Cloud subscription is required to import findings.",
   permission_denied: "You do not have permission to import findings.",

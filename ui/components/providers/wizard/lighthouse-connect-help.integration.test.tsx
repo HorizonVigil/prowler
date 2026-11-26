@@ -16,7 +16,7 @@ vi.mock("@/app/(prowler)/lighthouse/_actions", () => ({
 }));
 
 const DESCRIPTION =
-  "Lighthouse AI walks you through it with Prowler's docs, right beside this form.";
+  "Lighthouse AI walks you through it with HorizonVigil's docs, right beside this form.";
 
 const LEFT_COLUMN_WIDTH = 328;
 

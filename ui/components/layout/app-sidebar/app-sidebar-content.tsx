@@ -44,7 +44,7 @@ export function AppSidebarContent({ onSelect }: AppSidebarContentProps) {
       <div className="shrink-0 px-5 pt-8 pb-7">
         <Link
           href="/"
-          aria-label="Prowler home"
+          aria-label="HorizonVigil home"
           className="focus-visible:ring-button-primary/50 flex h-8 items-center rounded-md focus-visible:ring-2 focus-visible:outline-none"
           onClick={onSelect}
         >

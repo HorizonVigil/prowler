@@ -40,7 +40,7 @@ import {
 } from "./finding-note-modal";
 import { FindingTriageStatusControl } from "./finding-triage-status-control";
 
-export const CLOUD_ONLY_TOOLTIP_COPY = "Available in Prowler Cloud";
+export const CLOUD_ONLY_TOOLTIP_COPY = "Available in HorizonVigil";
 export const EDITING_UNAVAILABLE_COPY = "Editing is currently unavailable.";
 export const SAMPLE_TRIAGE_COPY =
   "Sample data. Connect your cloud account to triage your own findings.";
@@ -316,7 +316,7 @@ export function FindingTriageStatusCell({
               type="button"
               variant="bare"
               size="link-xs"
-              aria-label="Change triage status - available in Prowler Cloud"
+              aria-label="Change triage status - available in HorizonVigil"
               className="absolute inset-0 h-auto w-auto rounded-lg"
               onPointerDown={(event) => event.stopPropagation()}
               onClick={(event) => {
