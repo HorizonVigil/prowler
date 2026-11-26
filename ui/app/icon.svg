@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HorizonVigil">
+  <rect width="64" height="64" rx="14" fill="#071A2B"/>
+  <g fill="#20C8BA">
+    <path d="M9 15 21 8v10l11 12 11-12V8l12 7v14l-9 7H18l-9-7V15Z"/>
+    <path d="m9 39 9 7h7v10H9V39Zm46 0-9 7h-7v10h16V39ZM18 39h28l-7 7H25l-7-7Z"/>
+    <path d="m25 45 7 9 7-9H25Z"/>
+  </g>
+</svg>

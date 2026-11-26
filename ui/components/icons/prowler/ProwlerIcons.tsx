@@ -8,14 +8,14 @@ import { IconSvgProps } from "../../../types/index";
 
 const PROWLER_BRAND = {
   CLOUD: {
-    name: "Prowler Cloud",
-    lightLogo: "/logos/prowler-cloud-light.svg",
-    darkLogo: "/logos/prowler-cloud-dark.svg",
+    name: "HorizonVigil",
+    lightLogo: "/logos/horizonvigil-on-light.svg",
+    darkLogo: "/logos/horizonvigil-on-dark.svg",
   },
   LOCAL_SERVER: {
-    name: "Prowler Local Server",
-    lightLogo: "/logos/prowler-local-server-light.svg",
-    darkLogo: "/logos/prowler-local-server-dark.svg",
+    name: "HorizonVigil",
+    lightLogo: "/logos/horizonvigil-on-light.svg",
+    darkLogo: "/logos/horizonvigil-on-dark.svg",
   },
 } as const;
 
@@ -37,7 +37,7 @@ export const ProwlerBrand = ({ className }: ProwlerBrandProps) => {
         alt=""
         aria-hidden="true"
         width={200}
-        height={63.14}
+        height={61.11}
         unoptimized
         className="col-start-1 row-start-1 h-auto w-full dark:hidden"
       />
@@ -46,7 +46,7 @@ export const ProwlerBrand = ({ className }: ProwlerBrandProps) => {
         alt=""
         aria-hidden="true"
         width={200}
-        height={63.14}
+        height={61.11}
         unoptimized
         className="col-start-1 row-start-1 hidden h-auto w-full dark:block"
       />
