@@ -159,7 +159,7 @@ export function ScanScheduleFields({
       type="button"
       variant="bare"
       size="link-xs"
-      aria-label="Explore advanced scheduling in Prowler Cloud"
+      aria-label="Explore advanced scheduling in HorizonVigil"
       onClick={() =>
         openCloudUpgrade(CLOUD_UPGRADE_FEATURE.ADVANCED_SCHEDULING)
       }
