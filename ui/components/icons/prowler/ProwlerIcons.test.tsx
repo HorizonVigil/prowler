@@ -9,7 +9,7 @@ describe("ProwlerBrand", () => {
     vi.unstubAllEnvs();
   });
 
-  it("should render the Local Server lockups outside Cloud", () => {
+  it("should render the HorizonVigil lockups outside Cloud", () => {
     // Given
     vi.stubEnv("UI_CLOUD_ENABLED", "false");
 
@@ -17,18 +17,18 @@ describe("ProwlerBrand", () => {
     render(<ProwlerBrand />);
 
     // Then
-    const logo = screen.getByRole("img", { name: "Prowler Local Server" });
+    const logo = screen.getByRole("img", { name: "HorizonVigil" });
     const sources = Array.from(logo.querySelectorAll("img"), (image) =>
       image.getAttribute("src"),
     );
 
     expect(sources).toEqual([
-      "/logos/prowler-local-server-light.svg",
-      "/logos/prowler-local-server-dark.svg",
+      "/logos/horizonvigil-on-light.svg",
+      "/logos/horizonvigil-on-dark.svg",
     ]);
   });
 
-  it("should render the Prowler Cloud lockups in Cloud", () => {
+  it("should render the HorizonVigil lockups in Cloud", () => {
     // Given
     vi.stubEnv("UI_CLOUD_ENABLED", "true");
 
@@ -36,14 +36,14 @@ describe("ProwlerBrand", () => {
     render(<ProwlerBrand />);
 
     // Then
-    const logo = screen.getByRole("img", { name: "Prowler Cloud" });
+    const logo = screen.getByRole("img", { name: "HorizonVigil" });
     const sources = Array.from(logo.querySelectorAll("img"), (image) =>
       image.getAttribute("src"),
     );
 
     expect(sources).toEqual([
-      "/logos/prowler-cloud-light.svg",
-      "/logos/prowler-cloud-dark.svg",
+      "/logos/horizonvigil-on-light.svg",
+      "/logos/horizonvigil-on-dark.svg",
     ]);
   });
 });
