@@ -56,6 +56,9 @@ class Handler(BaseHTTPRequestHandler):
         try:
             length = min(int(self.headers.get("Content-Length", "0")), 4096)
             body = json.loads(self.rfile.read(length) or b"{}")
+            if not all(isinstance(body.get(key), str) and body[key].strip() for key in ("tenant_id", "connection_id", "credential_ref")):
+                self._send(400, {"error": "tenant_id, connection_id, and credential_ref are required"})
+                return
             result = run_scan(str(body.get("provider", "")).lower())
             self._send(200 if result["exitCode"] == 0 else 502, result)
         except subprocess.TimeoutExpired:
