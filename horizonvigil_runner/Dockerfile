@@ -1,6 +1,7 @@
 FROM python:3.12-slim
 WORKDIR /opt/prowler
 COPY pyproject.toml uv.lock ./
+COPY README.md LICENSE ./
 COPY prowler ./prowler
 COPY prowler-cli.py ./prowler-cli.py
 COPY horizonvigil_runner ./horizonvigil_runner
