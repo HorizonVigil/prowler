@@ -9,12 +9,12 @@ steps:
   - -f
   - horizonvigil_runner/Dockerfile
   - -t
-  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/horizonvigil-images/${_IMAGE}:$COMMIT_SHA-$BUILD_ID
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/horizonvigil-images/${_IMAGE}:$BUILD_ID
   - .
 - name: gcr.io/cloud-builders/docker
   args:
   - push
-  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/horizonvigil-images/${_IMAGE}:$COMMIT_SHA-$BUILD_ID
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/horizonvigil-images/${_IMAGE}:$BUILD_ID
 - name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
   entrypoint: gcloud
   args:
@@ -23,13 +23,13 @@ steps:
   - ${_SERVICE}
   - --project=$PROJECT_ID
   - --region=${_REGION}
-  - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/horizonvigil-images/${_IMAGE}:$COMMIT_SHA-$BUILD_ID
+  - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/horizonvigil-images/${_IMAGE}:$BUILD_ID
   - --platform=managed
   - --no-allow-unauthenticated
   - --set-secrets=INTERNAL_SCAN_SECRET=HV_INTERNAL_SECRET:latest
   - --set-env-vars=PROWLER_SCAN_TIMEOUT_SECONDS=900
 images:
-- ${_REGION}-docker.pkg.dev/$PROJECT_ID/horizonvigil-images/${_IMAGE}:$COMMIT_SHA-$BUILD_ID
+- ${_REGION}-docker.pkg.dev/$PROJECT_ID/horizonvigil-images/${_IMAGE}:$BUILD_ID
 options:
   logging: CLOUD_LOGGING_ONLY
 timeout: 1800s
