@@ -48,7 +48,7 @@ describe("wizard stepper", () => {
     await expect
       .element(
         screen.getByText(
-          "Prowler discovers the organization; pick what to connect.",
+          "HorizonVigil discovers the organization; pick what to connect.",
         ),
       )
       .not.toBeVisible();
@@ -65,7 +65,7 @@ describe("wizard stepper", () => {
     await expect
       .element(
         screen.getByText(
-          "Name the organization and deploy the access Prowler uses in every account.",
+          "Name the organization and deploy the access HorizonVigil uses in every account.",
         ),
       )
       .toBeVisible();

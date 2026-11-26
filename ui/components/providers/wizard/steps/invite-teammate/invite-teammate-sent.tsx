@@ -52,7 +52,7 @@ export function InviteTeammateSent({
           <p className="text-text-neutral-secondary text-sm">
             {isCloud()
               ? "We have emailed them the invitation. You can also share this link with them:"
-              : "Prowler does not send emails. Share this link with them:"}
+              : "HorizonVigil does not send emails. Share this link with them:"}
           </p>
         </div>
       </div>

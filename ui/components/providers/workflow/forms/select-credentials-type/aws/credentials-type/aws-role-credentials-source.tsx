@@ -19,7 +19,7 @@ interface AwsRoleCredentialsSourceProps {
   isCloudEnv: boolean;
 }
 
-/** Which credentials Prowler uses to assume the role, plus the keys when they are static. */
+/** Which credentials HorizonVigil uses to assume the role, plus the keys when they are static. */
 export const AwsRoleCredentialsSource = ({
   control,
   setValue,
@@ -48,7 +48,7 @@ export const AwsRoleCredentialsSource = ({
             <div className="flex w-full items-center justify-between">
               <span>
                 {isCloudEnv
-                  ? "Prowler Cloud will assume your IAM role"
+                  ? "HorizonVigil will assume your IAM role"
                   : "AWS SDK Default"}
               </span>
               {isCloudEnv && (

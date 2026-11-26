@@ -18,7 +18,7 @@ import { COMPLIANCE_TAB, type ComplianceTab } from "@/types/compliance";
 interface CompliancePageTabsProps {
   activeTab: ComplianceTab;
   /** False in OSS: the Cross-Provider tab renders disabled with the
-   *  "Available in Prowler Cloud" upsell badge. */
+   *  "Available in HorizonVigil" upsell badge. */
   crossProviderEnabled: boolean;
   perScanContent: ReactNode;
   crossProviderContent: ReactNode;

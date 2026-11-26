@@ -116,7 +116,7 @@ export function AppSidebarModeToggle({
           <Tooltip key={item.value} delayDuration={100}>
             <TooltipTrigger asChild>{button}</TooltipTrigger>
             <TooltipContent side="right">
-              Available in Prowler Cloud
+              Available in HorizonVigil
             </TooltipContent>
           </Tooltip>
         );

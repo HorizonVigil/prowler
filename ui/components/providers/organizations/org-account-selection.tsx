@@ -130,7 +130,7 @@ export function OrgAccountSelection({
           <p className="text-muted-foreground text-sm">
             {isTestingView
               ? `Testing ${noun.singular} connections...`
-              : `Confirm all ${noun.plural} under this Organization you want to add to Prowler.`}{" "}
+              : `Confirm all ${noun.plural} under this Organization you want to add to HorizonVigil.`}{" "}
             {!isTestingView &&
               `${selectedCount} of ${totalCandidates} ${noun.plural} selected.`}
           </p>

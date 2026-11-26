@@ -63,7 +63,7 @@ interface ScanScheduleFieldsProps {
    * (interval/weekly/monthly) are disabled. Used for non-Cloud (OSS) accounts.
    */
   canUseAdvancedSchedule?: boolean;
-  /** Render the "Available in Prowler Cloud" upsell badge in the header. */
+  /** Render the "Available in HorizonVigil" upsell badge in the header. */
   showCloudUpgradeBadge?: boolean;
 }
 
@@ -159,7 +159,7 @@ export function ScanScheduleFields({
       type="button"
       variant="bare"
       size="link-xs"
-      aria-label="Explore advanced scheduling in Prowler Cloud"
+      aria-label="Explore advanced scheduling in HorizonVigil"
       onClick={() =>
         openCloudUpgrade(CLOUD_UPGRADE_FEATURE.ADVANCED_SCHEDULING)
       }

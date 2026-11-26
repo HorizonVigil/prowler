@@ -477,7 +477,7 @@ describe("FindingNoteModal", () => {
     ).toHaveAttribute("data-disabled", "");
     expect(screen.getByLabelText("Note text")).toBeDisabled();
     const saveUpgrade = screen.getByRole("button", {
-      name: "Save - available in Prowler Cloud",
+      name: "Save - available in HorizonVigil",
     });
     expect(saveUpgrade).not.toBeDisabled();
 

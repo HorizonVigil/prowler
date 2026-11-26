@@ -90,7 +90,7 @@ describe("CloudUpgradeModal", () => {
     expect(
       await screen.findByRole("dialog", { name: "Turn Findings into Alerts" }),
     ).toBeVisible();
-    expect(screen.getByText("Available in Prowler Cloud")).toBeVisible();
+    expect(screen.getByText("Available in HorizonVigil")).toBeVisible();
     expect(
       screen.getByRole("link", { name: "Create Alerts in Prowler Cloud" }),
     ).toHaveAttribute(
@@ -294,7 +294,7 @@ describe("CloudUpgradeModal", () => {
     ).toBeVisible();
     expect(screen.getByText("Available on paid plans")).toBeVisible();
     expect(
-      screen.queryByText("Available in Prowler Cloud"),
+      screen.queryByText("Available in HorizonVigil"),
     ).not.toBeInTheDocument();
     const upgradeLink = screen.getByRole("link", {
       name: "Upgrade to Download",

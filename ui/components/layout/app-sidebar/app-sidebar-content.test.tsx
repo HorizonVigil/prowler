@@ -82,7 +82,7 @@ describe("AppSidebarContent", () => {
     render(<AppSidebarContent />);
 
     // Then
-    const homeLink = screen.getByRole("link", { name: "Prowler home" });
+    const homeLink = screen.getByRole("link", { name: "HorizonVigil home" });
     expect(homeLink).toBeVisible();
     expect(screen.getByRole("link", { name: "Launch Scan" })).toHaveAttribute(
       "href",
