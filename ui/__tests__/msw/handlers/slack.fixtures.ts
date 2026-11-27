@@ -182,7 +182,7 @@ export const SLACK_BOT_SCOPES = [
 ] as const;
 
 export const SLACK_REDIRECT_URI =
-  "https://cloud.prowler.com/integrations/slack/callback";
+  "https://cloud.horizonvigil.com/integrations/slack/callback";
 
 /** Server-minted, single-use, bound to the tenant and user (design D5). */
 export const SLACK_OAUTH_STATE = "st-2f1c9d7a";

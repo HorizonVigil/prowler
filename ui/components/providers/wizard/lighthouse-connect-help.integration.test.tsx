@@ -23,7 +23,7 @@ const LEFT_COLUMN_WIDTH = 328;
 function Help({ docsDestination = "Provider" }: { docsDestination?: string }) {
   return (
     <LighthouseConnectHelp
-      docsLink="https://goto.prowler.com/provider-aws"
+      docsLink="https://goto.horizonvigil.com/provider-aws"
       docsDestination={docsDestination}
       providerType={null}
       mode="add"

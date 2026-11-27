@@ -119,7 +119,7 @@ function makeTriageDetail(
     hasVisibleNote: true,
     isMuted: false,
     canEdit: true,
-    billingHref: "https://prowler.com/pricing",
+    billingHref: "https://horizonvigil.com/pricing",
     noteId: "note-1",
     noteBody: "Existing investigation note",
     maxNoteLength: 500,

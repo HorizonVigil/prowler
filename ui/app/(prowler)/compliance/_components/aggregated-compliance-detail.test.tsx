@@ -18,7 +18,7 @@ describe("AggregatedComplianceDetail", () => {
         logoPath="/csa.svg"
         title={<span>CSA Cloud Controls Matrix</span>}
         description={<p>5 of 5 compatible providers scanned</p>}
-        headerLink={<a href="https://hub.prowler.com">View on Prowler Hub</a>}
+        headerLink={<a href="https://hub.horizonvigil.com">View on Prowler Hub</a>}
         reportAction={<button type="button">Report</button>}
         filters={<div>Filters</div>}
         totals={{ pass: 1, fail: 2, manual: 3 }}

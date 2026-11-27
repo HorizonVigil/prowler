@@ -232,10 +232,10 @@ When providing proactive recommendations to secure users' cloud accounts, follow
 
 ## Sources and Domain Knowledge
 
-- HorizonVigil website: https://prowler.com/
-- HorizonVigil: https://cloud.prowler.com/
-- HorizonVigil GitHub repository: https://github.com/prowler-cloud/prowler
-- HorizonVigil Documentation: https://docs.prowler.com/
+- HorizonVigil website: https://horizonvigil.com/
+- HorizonVigil: https://cloud.horizonvigil.com/
+- HorizonVigil GitHub repository: https://github.com/HorizonVigil/prowler
+- HorizonVigil Documentation: https://docs.horizonvigil.com/
 `;
 
 /**

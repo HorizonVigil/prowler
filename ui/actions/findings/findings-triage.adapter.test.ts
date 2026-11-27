@@ -122,7 +122,7 @@ describe("provisional findings triage contract fixtures", () => {
     expect(summary.disabledReason).toBe(
       FINDING_TRIAGE_DISABLED_REASON.CLOUD_ONLY,
     );
-    expect(summary.billingHref).toBe("https://prowler.com/pricing");
+    expect(summary.billingHref).toBe("https://horizonvigil.com/pricing");
   });
 });
 
@@ -391,7 +391,7 @@ describe("adaptFindingTriageSummariesResponse", () => {
         label: "Under Review",
         hasVisibleNote: true,
         canEdit: true,
-        billingHref: "https://prowler.com/pricing",
+        billingHref: "https://horizonvigil.com/pricing",
       }),
     ]);
   });

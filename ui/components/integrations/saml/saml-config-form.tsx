@@ -418,7 +418,7 @@ export const SamlConfigForm = ({
           Need help configuring SAML SSO?{" "}
           <CustomLink
             href={
-              "https://docs.prowler.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-sso/"
+              "https://docs.horizonvigil.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-sso/"
             }
           >
             Read the docs
@@ -579,7 +579,7 @@ export const SamlConfigForm = ({
                   Audience:
                 </span>
                 <CodeSnippet
-                  value="urn:prowler.com:sp"
+                  value="urn:horizonvigil.com:sp"
                   ariaLabel="Copy Audience"
                   className="h-10 w-full"
                 />

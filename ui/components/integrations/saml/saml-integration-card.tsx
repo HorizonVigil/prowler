@@ -122,7 +122,7 @@ export const SamlIntegrationCard = ({
               ) : (
                 <>
                   Configure SAML Single Sign-On for secure authentication.{" "}
-                  <CustomLink href="https://docs.prowler.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-sso">
+                  <CustomLink href="https://docs.horizonvigil.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-sso">
                     Read the docs
                   </CustomLink>
                 </>

@@ -71,7 +71,7 @@ describe("findings triage actions", () => {
       hasVisibleNote: false,
       isMuted: false,
       canEdit: true,
-      billingHref: "https://prowler.com/pricing",
+      billingHref: "https://horizonvigil.com/pricing",
     });
 
     // Then
@@ -108,7 +108,7 @@ describe("findings triage actions", () => {
         hasVisibleNote: false,
         isMuted: false,
         canEdit: true,
-        billingHref: "https://prowler.com/pricing",
+        billingHref: "https://horizonvigil.com/pricing",
       }),
     ).rejects.toThrow("Finding triage access denied.");
   });
@@ -137,7 +137,7 @@ describe("findings triage actions", () => {
       hasVisibleNote: true,
       isMuted: false,
       canEdit: true,
-      billingHref: "https://prowler.com/pricing",
+      billingHref: "https://horizonvigil.com/pricing",
     });
 
     // Then
@@ -174,7 +174,7 @@ describe("findings triage actions", () => {
       hasVisibleNote: true,
       isMuted: false,
       canEdit: true,
-      billingHref: "https://prowler.com/pricing",
+      billingHref: "https://horizonvigil.com/pricing",
     });
 
     // Then
@@ -212,7 +212,7 @@ describe("findings triage actions", () => {
       hasVisibleNote: true,
       isMuted: false,
       canEdit: true,
-      billingHref: "https://prowler.com/pricing",
+      billingHref: "https://horizonvigil.com/pricing",
     });
 
     // Then

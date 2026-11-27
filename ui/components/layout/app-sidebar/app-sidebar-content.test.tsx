@@ -175,7 +175,7 @@ describe("AppSidebarContent", () => {
     expect(screen.getByTestId("lighthouse-chat-sidebar")).toBeVisible();
     expect(
       screen.getByRole("link", { name: "Service status" }),
-    ).toHaveAttribute("href", "https://status.prowler.com");
+    ).toHaveAttribute("href", "https://status.horizonvigil.com");
     expect(
       screen.queryByText("All systems operational"),
     ).not.toBeInTheDocument();

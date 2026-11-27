@@ -5,7 +5,7 @@ import { Checkbox } from "@/components/shadcn/checkbox/checkbox";
 import { CustomLink } from "@/components/shadcn/custom/custom-link";
 
 const PROVIDER_GROUPS_DOCS_URL =
-  "https://docs.prowler.com/user-guide/tutorials/prowler-app-rbac#provider-groups";
+  "https://docs.horizonvigil.com/user-guide/tutorials/prowler-app-rbac#provider-groups";
 
 export const UnlimitedVisibilitySection = ({
   children,

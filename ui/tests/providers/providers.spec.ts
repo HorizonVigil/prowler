@@ -280,7 +280,7 @@ test.describe("Add Provider", () => {
         tag: ["@high", "@e2e", "@providers", "@aws", "@PROVIDER-E2E-020"],
       },
       async () => {
-        const uniqueEmail = `e2e+aws-${makeSuffix(10)}@prowler.com`;
+        const uniqueEmail = `e2e+aws-${makeSuffix(10)}@horizonvigil.com`;
 
         // Navigate to providers page
         await providersPage.goto();

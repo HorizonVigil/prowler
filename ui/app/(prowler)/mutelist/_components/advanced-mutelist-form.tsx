@@ -224,7 +224,7 @@ export function AdvancedMutelistForm() {
                   Learn more about configuring the Mutelist{" "}
                   <CustomLink
                     size="sm"
-                    href="https://docs.prowler.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-mute-findings"
+                    href="https://docs.horizonvigil.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-mute-findings"
                   >
                     here
                   </CustomLink>

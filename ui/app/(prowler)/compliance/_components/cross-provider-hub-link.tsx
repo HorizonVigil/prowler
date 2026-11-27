@@ -12,7 +12,7 @@ export const CrossProviderHubLink = ({
 }: CrossProviderHubLinkProps) => (
   <Button variant="link" size="link-xs" asChild>
     <Link
-      href={`https://hub.prowler.com/compliance/${encodeURIComponent(complianceId)}`}
+      href={`https://hub.horizonvigil.com/compliance/${encodeURIComponent(complianceId)}`}
       target="_blank"
       rel="noopener noreferrer"
       prefetch={false}

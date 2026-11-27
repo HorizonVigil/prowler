@@ -65,7 +65,7 @@ function makeTriageSummary(
     hasVisibleNote: false,
     isMuted: false,
     canEdit: true,
-    billingHref: "https://prowler.com/pricing",
+    billingHref: "https://horizonvigil.com/pricing",
     ...overrides,
   };
 }

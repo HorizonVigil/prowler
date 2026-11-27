@@ -517,7 +517,7 @@ describe("LaunchStep", () => {
   });
 
   describe("when the usage limit blocks the scan", () => {
-    const PRICING = "https://prowler.com/pricing";
+    const PRICING = "https://horizonvigil.com/pricing";
     const overLimit = {
       error: ACTION_ERROR_API_MESSAGES[ACTION_ERROR_STATUS.PAYMENT_REQUIRED],
       status: ACTION_ERROR_STATUS.PAYMENT_REQUIRED,

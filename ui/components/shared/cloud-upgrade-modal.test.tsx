@@ -95,13 +95,13 @@ describe("CloudUpgradeModal", () => {
       screen.getByRole("link", { name: "Create Alerts in Prowler Cloud" }),
     ).toHaveAttribute(
       "href",
-      "https://cloud.prowler.com/sign-up?utm_source=prowler-local-server&utm_content=alerts",
+      "https://cloud.horizonvigil.com/sign-up?utm_source=prowler-local-server&utm_content=alerts",
     );
     expect(
       screen.getByRole("link", { name: "View Plans & Pricing" }),
     ).toHaveAttribute(
       "href",
-      "https://prowler.com/pricing?utm_source=prowler-local-server&utm_content=alerts",
+      "https://horizonvigil.com/pricing?utm_source=prowler-local-server&utm_content=alerts",
     );
   });
 
@@ -143,7 +143,7 @@ describe("CloudUpgradeModal", () => {
     expect(primaryCta.querySelector(".truncate")).not.toBeInTheDocument();
     expect(primaryCta).toHaveAttribute(
       "href",
-      "https://cloud.prowler.com/sign-up?utm_source=prowler-local-server&utm_content=organization",
+      "https://cloud.horizonvigil.com/sign-up?utm_source=prowler-local-server&utm_content=organization",
     );
   });
 
@@ -169,13 +169,13 @@ describe("CloudUpgradeModal", () => {
       }),
     ).toHaveAttribute(
       "href",
-      "https://cloud.prowler.com/sign-up?utm_source=prowler-local-server&utm_content=jira-dispatch",
+      "https://cloud.horizonvigil.com/sign-up?utm_source=prowler-local-server&utm_content=jira-dispatch",
     );
     expect(
       screen.getByRole("link", { name: "View Plans & Pricing" }),
     ).toHaveAttribute(
       "href",
-      "https://prowler.com/pricing?utm_source=prowler-local-server&utm_content=jira-dispatch",
+      "https://horizonvigil.com/pricing?utm_source=prowler-local-server&utm_content=jira-dispatch",
     );
   });
 
@@ -309,7 +309,7 @@ describe("CloudUpgradeModal", () => {
     });
     expect(pricingLink).toHaveAttribute(
       "href",
-      "https://prowler.com/pricing?utm_source=prowler-cloud&utm_content=report-download",
+      "https://horizonvigil.com/pricing?utm_source=prowler-cloud&utm_content=report-download",
     );
     expect(pricingLink).toHaveAttribute("target", "_blank");
     expect(

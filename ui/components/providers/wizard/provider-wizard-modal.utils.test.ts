@@ -48,7 +48,7 @@ describe("getProviderWizardModalTitle", () => {
 describe("getProviderWizardDocsDestination", () => {
   it("returns a compact provider label for short provider docs links", () => {
     const destination = getProviderWizardDocsDestination(
-      "https://goto.prowler.com/provider-aws",
+      "https://goto.horizonvigil.com/provider-aws",
     );
 
     expect(destination).toBe("AWS");
@@ -56,7 +56,7 @@ describe("getProviderWizardDocsDestination", () => {
 
   it("returns a compact provider label for deep-linked getting-started URLs", () => {
     const destination = getProviderWizardDocsDestination(
-      "https://docs.prowler.com/user-guide/providers/aws/getting-started-aws",
+      "https://docs.horizonvigil.com/user-guide/providers/aws/getting-started-aws",
     );
 
     expect(destination).toBe("AWS");
@@ -64,7 +64,7 @@ describe("getProviderWizardDocsDestination", () => {
 
   it("returns a specific label for AWS assume role docs links", () => {
     const destination = getProviderWizardDocsDestination(
-      "https://docs.prowler.com/user-guide/providers/aws/getting-started-aws#assume-role-recommended",
+      "https://docs.horizonvigil.com/user-guide/providers/aws/getting-started-aws#assume-role-recommended",
     );
 
     expect(destination).toBe("AWS Assume Role");
@@ -77,35 +77,35 @@ describe("getProviderWizardDocsDestination", () => {
     // name.
     const cases: Array<[string, string]> = [
       [
-        "https://docs.prowler.com/user-guide/providers/aws/getting-started-aws#assume-role-recommended",
+        "https://docs.horizonvigil.com/user-guide/providers/aws/getting-started-aws#assume-role-recommended",
         "AWS Assume Role",
       ],
       [
-        "https://docs.prowler.com/user-guide/providers/aws/getting-started-aws#credentials-static-access-keys",
+        "https://docs.horizonvigil.com/user-guide/providers/aws/getting-started-aws#credentials-static-access-keys",
         "AWS Credentials",
       ],
       [
-        "https://docs.prowler.com/user-guide/providers/microsoft365/getting-started-m365#application-certificate-authentication-recommended",
+        "https://docs.horizonvigil.com/user-guide/providers/microsoft365/getting-started-m365#application-certificate-authentication-recommended",
         "M365 Certificate",
       ],
       [
-        "https://docs.prowler.com/user-guide/providers/microsoft365/getting-started-m365#application-client-secret-authentication",
+        "https://docs.horizonvigil.com/user-guide/providers/microsoft365/getting-started-m365#application-client-secret-authentication",
         "M365 Client Secret",
       ],
       [
-        "https://docs.prowler.com/user-guide/providers/alibabacloud/getting-started-alibabacloud#ram-role-assumption-recommended",
+        "https://docs.horizonvigil.com/user-guide/providers/alibabacloud/getting-started-alibabacloud#ram-role-assumption-recommended",
         "Alibaba Cloud RAM Role",
       ],
       [
-        "https://docs.prowler.com/user-guide/providers/alibabacloud/getting-started-alibabacloud#credentials-static-access-keys",
+        "https://docs.horizonvigil.com/user-guide/providers/alibabacloud/getting-started-alibabacloud#credentials-static-access-keys",
         "Alibaba Cloud Credentials",
       ],
       [
-        "https://docs.prowler.com/user-guide/providers/cloudflare/getting-started-cloudflare#user-api-token-authentication-recommended",
+        "https://docs.horizonvigil.com/user-guide/providers/cloudflare/getting-started-cloudflare#user-api-token-authentication-recommended",
         "Cloudflare API Token",
       ],
       [
-        "https://docs.prowler.com/user-guide/providers/cloudflare/getting-started-cloudflare#api-key-and-email-authentication-legacy",
+        "https://docs.horizonvigil.com/user-guide/providers/cloudflare/getting-started-cloudflare#api-key-and-email-authentication-legacy",
         "Cloudflare API Key",
       ],
     ];
@@ -120,7 +120,7 @@ describe("getProviderWizardDocsDestination", () => {
     // without a dedicated auth page (Kubernetes). The label shown in the
     // modal header must stay the provider name, not shift with the anchor.
     const destination = getProviderWizardDocsDestination(
-      "https://goto.prowler.com/provider-k8s#authentication",
+      "https://goto.horizonvigil.com/provider-k8s#authentication",
     );
 
     expect(destination).toBe("Kubernetes");
@@ -132,7 +132,7 @@ describe("getProviderWizardDocsDestination", () => {
     // The label must come from the `<slug>` segment, not from the trailing
     // "authentication" page name.
     const destination = getProviderWizardDocsDestination(
-      "https://docs.prowler.com/user-guide/providers/aws/authentication",
+      "https://docs.horizonvigil.com/user-guide/providers/aws/authentication",
     );
 
     expect(destination).toBe("AWS");
@@ -143,7 +143,7 @@ describe("getProviderWizardDocsDestination", () => {
     // uses the `oci` slug, so the parser must know both refer to the same
     // provider.
     const destination = getProviderWizardDocsDestination(
-      "https://docs.prowler.com/user-guide/providers/oci/authentication",
+      "https://docs.horizonvigil.com/user-guide/providers/oci/authentication",
     );
 
     expect(destination).toBe("Oracle Cloud");
@@ -153,7 +153,7 @@ describe("getProviderWizardDocsDestination", () => {
     // Same shape: the wizard's `m365` maps to the `microsoft365` folder in
     // docs, so the parser must recognise the folder slug as the provider.
     const destination = getProviderWizardDocsDestination(
-      "https://docs.prowler.com/user-guide/providers/microsoft365/authentication",
+      "https://docs.horizonvigil.com/user-guide/providers/microsoft365/authentication",
     );
 
     expect(destination).toBe("Microsoft 365");
@@ -172,7 +172,7 @@ describe("getProviderWizardDocsDestination", () => {
 
   it("returns a compact destination label for long docs links", () => {
     const destination = getProviderWizardDocsDestination(
-      "https://docs.prowler.com/user-guide/tutorials/prowler-cloud-aws-organizations",
+      "https://docs.horizonvigil.com/user-guide/tutorials/prowler-cloud-aws-organizations",
     );
 
     expect(destination).toBe("AWS Organizations");

@@ -79,11 +79,11 @@ describe("CustomInput", () => {
       const input = screen.getByLabelText(/email/i);
 
       // When
-      await user.type(input, "dev@prowler.com");
+      await user.type(input, "dev@horizonvigil.com");
 
       // Then
       expect(input).toHaveAttribute("type", "text");
-      expect(input).toHaveValue("dev@prowler.com");
+      expect(input).toHaveValue("dev@horizonvigil.com");
       expect(
         screen.queryByRole("button", { name: /password/i }),
       ).not.toBeInTheDocument();

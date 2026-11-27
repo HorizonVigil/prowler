@@ -175,7 +175,7 @@ export const convertToYaml = (config: string | object): string => {
 
 export const defaultMutedFindingsConfig = `# If no Mutelist is provided, a default one is used for AWS accounts to exclude certain predefined resources.
 
-# The default AWS Mutelist is defined here: https://github.com/prowler-cloud/prowler/blob/master/prowler/config/aws_mutelist.yaml
+# The default AWS Mutelist is defined here: https://github.com/HorizonVigil/prowler/blob/master/prowler/config/aws_mutelist.yaml
 
 Mutelist:
   Accounts:

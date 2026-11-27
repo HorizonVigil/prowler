@@ -69,7 +69,7 @@ describe("Registry presentation from the runtime environment", () => {
     // Given
     vi.stubEnv("PROWLER_REGISTRY_INDEX_URL", "");
     vi.stubEnv("UI_REGISTRY_MEDIA_URL", "");
-    vi.stubEnv("UI_REGISTRY_URL", "https://registry.prowler.com");
+    vi.stubEnv("UI_REGISTRY_URL", "https://registry.horizonvigil.com");
 
     // When / Then
     expect(readRegistryPresentation()).toEqual({

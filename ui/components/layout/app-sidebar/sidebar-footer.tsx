@@ -47,7 +47,7 @@ export function SidebarFooter({
       <div className="border-border-neutral-secondary text-text-neutral-tertiary flex min-h-9 items-center border-t pt-3 text-[11px]">
         {isCloudEnvironment && (
           <Link
-            href="https://status.prowler.com"
+            href="https://status.horizonvigil.com"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-text-neutral-primary min-w-0 flex-1 transition-colors"

@@ -66,7 +66,7 @@ beforeAll(() => server.listen({ onUnhandledRequest: "error" }));
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-const CALLBACK_URL = "https://cloud.prowler.com/integrations/slack/callback";
+const CALLBACK_URL = "https://cloud.horizonvigil.com/integrations/slack/callback";
 
 const wire = (fixture: SlackFixture) =>
   server.use(...handlersForSlack(fixture));

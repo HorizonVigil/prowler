@@ -308,7 +308,7 @@ describe("getNavigationConfig", () => {
       expect.objectContaining({ href: "https://local.example/api/v1/docs" }),
     );
     expect(cloudApiReference).toEqual(
-      expect.objectContaining({ href: "https://api.prowler.com/api/v1/docs" }),
+      expect.objectContaining({ href: "https://api.horizonvigil.com/api/v1/docs" }),
     );
   });
 

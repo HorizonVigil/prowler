@@ -16,7 +16,7 @@ describe("buildProviderWizardHelpContext", () => {
       stepName: "connect",
       stepLabel: "Link a Provider",
       connectionMethod: "role",
-      docsUrl: "https://goto.prowler.com/provider-aws",
+      docsUrl: "https://goto.horizonvigil.com/provider-aws",
     });
 
     // Then
@@ -35,7 +35,7 @@ describe("buildProviderWizardHelpContext", () => {
           wizardStep: "connect",
           wizardMode: "add",
           connectionMethod: "role",
-          docsUrl: "https://goto.prowler.com/provider-aws",
+          docsUrl: "https://goto.horizonvigil.com/provider-aws",
         },
       ],
     });
@@ -50,7 +50,7 @@ describe("buildProviderWizardHelpContext", () => {
       stepName: "connect",
       stepLabel: "Link a Provider",
       connectionMethod: null,
-      docsUrl: "https://goto.prowler.com/providers",
+      docsUrl: "https://goto.horizonvigil.com/providers",
     });
 
     // Then: unknown fields are left out instead of sent empty
@@ -63,7 +63,7 @@ describe("buildProviderWizardHelpContext", () => {
         label: "New provider · Link a Provider",
         wizardStep: "connect",
         wizardMode: "add",
-        docsUrl: "https://goto.prowler.com/providers",
+        docsUrl: "https://goto.horizonvigil.com/providers",
       },
     ]);
   });

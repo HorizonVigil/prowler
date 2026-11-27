@@ -24,7 +24,7 @@ test.describe("New user invitation", () => {
     },
     async () => {
       const suffix = makeSuffix(10);
-      const uniqueEmail = `e2e+${suffix}@prowler.com`;
+      const uniqueEmail = `e2e+${suffix}@horizonvigil.com`;
 
       await invitationsPage.goto();
       await invitationsPage.verifyPageLoaded();
@@ -58,7 +58,7 @@ test.describe("New user invitation", () => {
       }
 
       const suffix = makeSuffix(10);
-      const uniqueEmail = `e2e+${suffix}@prowler.com`;
+      const uniqueEmail = `e2e+${suffix}@horizonvigil.com`;
 
       await invitationsPage.goto();
       await invitationsPage.verifyPageLoaded();

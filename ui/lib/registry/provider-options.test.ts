@@ -94,14 +94,14 @@ describe("installed Registry provider options", () => {
         {
           type: "acme",
           label: "Acme Cloud",
-          logoUrl: "https://media.registry.dev.prowler.com/acme.svg",
+          logoUrl: "https://media.registry.dev.horizonvigil.com/acme.svg",
         },
       ]),
     ).toEqual([
       {
         type: "acme",
         label: "Acme Cloud",
-        logoUrl: "https://media.registry.dev.prowler.com/acme.svg",
+        logoUrl: "https://media.registry.dev.horizonvigil.com/acme.svg",
       },
     ]);
     expect(buildRegistryProviderOptions(catalog, [], [])).toEqual([]);

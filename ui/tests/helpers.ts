@@ -21,7 +21,7 @@ export const URLS = {
 
 export const TEST_CREDENTIALS = {
   VALID: {
-    email: process.env.E2E_ADMIN_USER || "e2e@prowler.com",
+    email: process.env.E2E_ADMIN_USER || "e2e@horizonvigil.com",
     password: process.env.E2E_ADMIN_PASSWORD || "Thisisapassword123@",
   },
   INVALID: {

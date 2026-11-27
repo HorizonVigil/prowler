@@ -53,7 +53,7 @@ vi.mock("@/lib/shared/env", () => ({ isCloud: () => true }));
 import proxy from "./proxy";
 
 const CALLBACK_URL =
-  "https://cloud.prowler.com/integrations/slack/callback" +
+  "https://cloud.horizonvigil.com/integrations/slack/callback" +
   "?code=slack-code-1f4a&state=st-2f1c9d7a";
 
 const invokeProxy = async (
@@ -100,7 +100,7 @@ describe("Slack OAuth callback authentication", () => {
 
   it("keeps any other page's own query, so sign-in still returns where the user was", async () => {
     // Given - an ordinary protected page carrying state worth resuming on.
-    const findings = "https://cloud.prowler.com/findings?severity=critical";
+    const findings = "https://cloud.horizonvigil.com/findings?severity=critical";
 
     // When
     const response = await invokeProxy(null, findings);

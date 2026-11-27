@@ -151,7 +151,7 @@ function makeTriageSummary(
     hasVisibleNote: false,
     isMuted: false,
     canEdit: true,
-    billingHref: "https://prowler.com/pricing",
+    billingHref: "https://horizonvigil.com/pricing",
     ...overrides,
   };
 }
@@ -513,6 +513,6 @@ describe("DataTableRowActions", () => {
     expect(screen.getByRole("button", { name: "Save changes" })).toBeDisabled();
     expect(
       screen.getByRole("link", { name: "Available in HorizonVigil" }),
-    ).toHaveAttribute("href", "https://prowler.com/pricing");
+    ).toHaveAttribute("href", "https://horizonvigil.com/pricing");
   });
 });

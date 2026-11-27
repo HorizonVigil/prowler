@@ -12,7 +12,7 @@ describe("CrossProviderHubLink", () => {
     const link = screen.getByRole("link", { name: /view on prowler hub/i });
     expect(link).toHaveAttribute(
       "href",
-      "https://hub.prowler.com/compliance/cis_controls_8.1",
+      "https://hub.horizonvigil.com/compliance/cis_controls_8.1",
     );
     expect(link).toHaveAttribute("target", "_blank");
     expect(link).toHaveAttribute("rel", "noopener noreferrer");

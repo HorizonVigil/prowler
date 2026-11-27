@@ -295,7 +295,7 @@ describe("ScansPageShell", () => {
     );
     expect(screen.getByRole("link", { name: /learn more/i })).toHaveAttribute(
       "href",
-      "https://docs.prowler.com/user-guide/tutorials/prowler-app-import-findings",
+      "https://docs.horizonvigil.com/user-guide/tutorials/prowler-app-import-findings",
     );
   });
 

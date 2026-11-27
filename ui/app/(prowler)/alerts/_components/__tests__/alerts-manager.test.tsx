@@ -202,7 +202,7 @@ describe("AlertsManager", () => {
     expect(findingsLink.closest("[data-variant='link']")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "here." })).toHaveAttribute(
       "href",
-      "https://docs.prowler.com/user-guide/tutorials/prowler-app-alerts",
+      "https://docs.horizonvigil.com/user-guide/tutorials/prowler-app-alerts",
     );
     expect(screen.getByText(/get notified when findings match/i)).toBeVisible();
   });

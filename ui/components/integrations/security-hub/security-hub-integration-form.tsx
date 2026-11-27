@@ -558,7 +558,7 @@ export const SecurityHubIntegrationForm = ({
               Need help configuring your AWS Security Hub integration?
             </p>
             <CustomLink
-              href="https://docs.prowler.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-security-hub-integration/"
+              href="https://docs.horizonvigil.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-security-hub-integration/"
               target="_blank"
               size="sm"
             >

@@ -269,7 +269,7 @@ describe("useFindingGroupResourceState", () => {
         hasVisibleNote: false,
         isMuted: true,
         canEdit: true,
-        billingHref: "https://prowler.com/pricing",
+        billingHref: "https://horizonvigil.com/pricing",
       },
     };
 
@@ -335,7 +335,7 @@ describe("useFindingGroupResourceState", () => {
         hasVisibleNote: false,
         isMuted: false,
         canEdit: true,
-        billingHref: "https://prowler.com/pricing",
+        billingHref: "https://horizonvigil.com/pricing",
       },
     };
     const { result } = renderHook(() =>

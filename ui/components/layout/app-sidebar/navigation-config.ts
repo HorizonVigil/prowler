@@ -116,7 +116,7 @@ export function getNavigationConfig({
 }: NavigationConfigOptions): NavigationSection[] {
   const isCloudEnvironment = isCloud();
   const apiReferenceUrl = isCloudEnvironment
-    ? "https://api.prowler.com/api/v1/docs"
+    ? "https://api.horizonvigil.com/api/v1/docs"
     : apiDocsUrl;
 
   const sections: NavigationSection[] = [
@@ -330,7 +330,7 @@ export function getNavigationConfig({
       items: [
         {
           kind: NAVIGATION_ITEM_KIND.LINK,
-          href: "https://docs.prowler.com/",
+          href: "https://docs.horizonvigil.com/",
           label: "Documentation",
           icon: FileText,
           target: "_blank",
@@ -349,15 +349,15 @@ export function getNavigationConfig({
         {
           kind: NAVIGATION_ITEM_KIND.LINK,
           href: isCloudEnvironment
-            ? "https://customer.support.prowler.com/servicedesk/customer/portal/9/create/102"
-            : "https://github.com/prowler-cloud/prowler/issues",
+            ? "https://customer.support.horizonvigil.com/servicedesk/customer/portal/9/create/102"
+            : "https://github.com/HorizonVigil/prowler/issues",
           label: isCloudEnvironment ? "Support Desk" : "Community Support",
           icon: MessageCircleQuestion,
           target: "_blank",
         },
         {
           kind: NAVIGATION_ITEM_KIND.LINK,
-          href: "https://hub.prowler.com/",
+          href: "https://hub.horizonvigil.com/",
           label: "HorizonVigil Hub",
           icon: LayoutGrid,
           target: "_blank",

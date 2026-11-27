@@ -625,7 +625,7 @@ function makeTriageSummary(
     hasVisibleNote: false,
     isMuted: false,
     canEdit: true,
-    billingHref: "https://prowler.com/pricing",
+    billingHref: "https://horizonvigil.com/pricing",
     ...overrides,
   };
 }
@@ -1142,7 +1142,7 @@ describe("ResourceDetailDrawerContent — CVE recommendation button", () => {
         ...mockCheckMeta.remediation,
         recommendation: {
           text: "Open the check in Hub",
-          url: "https://hub.prowler.com/check/image_vulnerability",
+          url: "https://hub.horizonvigil.com/check/image_vulnerability",
         },
       },
     };
@@ -1153,7 +1153,7 @@ describe("ResourceDetailDrawerContent — CVE recommendation button", () => {
         ...mockFinding.remediation,
         recommendation: {
           text: "Open the check in Hub",
-          url: "https://hub.prowler.com/check/image_vulnerability",
+          url: "https://hub.horizonvigil.com/check/image_vulnerability",
         },
       },
     };
@@ -1177,7 +1177,7 @@ describe("ResourceDetailDrawerContent — CVE recommendation button", () => {
     const hubLink = screen.getByRole("link", { name: "View in Prowler Hub" });
     expect(hubLink).toHaveAttribute(
       "href",
-      "https://hub.prowler.com/check/image_vulnerability",
+      "https://hub.horizonvigil.com/check/image_vulnerability",
     );
     expect(hubLink).toHaveAttribute("target", "_blank");
     expect(hubLink).toHaveAttribute("rel", "noopener noreferrer");

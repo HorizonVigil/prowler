@@ -62,7 +62,7 @@ const sections: NavigationSection[] = [
     items: [
       {
         kind: NAVIGATION_ITEM_KIND.LINK,
-        href: "https://docs.prowler.com/",
+        href: "https://docs.horizonvigil.com/",
         label: "Documentation",
         icon: FileText,
         target: "_blank",

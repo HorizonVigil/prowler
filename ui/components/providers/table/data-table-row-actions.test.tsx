@@ -447,7 +447,7 @@ describe("DataTableRowActions", () => {
     const row = createRow(true);
     (
       row.original as unknown as { attributes: { uid: string } }
-    ).attributes.uid = "https://github.com/prowler-cloud/prowler";
+    ).attributes.uid = "https://github.com/HorizonVigil/prowler";
 
     render(
       <DataTableRowActions

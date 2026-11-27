@@ -31,7 +31,7 @@ vi.mock("@/app/(prowler)/lighthouse/_lib/panel-chat-store", () => ({
   requestPanelSkillLaunch: requestPanelSkillLaunchMock,
 }));
 
-const AWS_DOCS = "https://goto.prowler.com/provider-aws";
+const AWS_DOCS = "https://goto.horizonvigil.com/provider-aws";
 
 function renderHelp(
   providerType: string | null = "aws",

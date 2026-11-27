@@ -34,7 +34,7 @@ test.describe.serial("Registry", () => {
     await controlledRegistryFixture.reset();
     // Exercise the real media CSP without contacting the Registry service.
     await page.route(
-      "https://media.registry.dev.prowler.com/fixture-owner.svg",
+      "https://media.registry.dev.horizonvigil.com/fixture-owner.svg",
       (route) =>
         route.fulfill({
           contentType: "image/svg+xml",

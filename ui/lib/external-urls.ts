@@ -7,33 +7,33 @@ import {
 // Documentation URLs
 export const DOCS_URLS = {
   FINDINGS_ANALYSIS:
-    "https://docs.prowler.com/user-guide/tutorials/prowler-app#step-8:-analyze-the-findings",
+    "https://docs.horizonvigil.com/user-guide/tutorials/prowler-app#step-8:-analyze-the-findings",
   FINDINGS_INGESTION:
-    "https://docs.prowler.com/user-guide/tutorials/prowler-app-import-findings",
+    "https://docs.horizonvigil.com/user-guide/tutorials/prowler-app-import-findings",
   FINDINGS_TRIAGE:
-    "https://docs.prowler.com/user-guide/tutorials/prowler-app-findings-triage",
+    "https://docs.horizonvigil.com/user-guide/tutorials/prowler-app-findings-triage",
   AWS_ORGANIZATIONS:
-    "https://docs.prowler.com/user-guide/tutorials/prowler-cloud-aws-organizations",
+    "https://docs.horizonvigil.com/user-guide/tutorials/prowler-cloud-aws-organizations",
   AZURE_ORGANIZATIONS:
-    "https://docs.prowler.com/user-guide/tutorials/prowler-cloud-azure-management-groups",
+    "https://docs.horizonvigil.com/user-guide/tutorials/prowler-cloud-azure-management-groups",
   GCP_ORGANIZATIONS:
-    "https://docs.prowler.com/user-guide/tutorials/prowler-cloud-gcp-organizations",
-  ALERTS: "https://docs.prowler.com/user-guide/tutorials/prowler-app-alerts",
+    "https://docs.horizonvigil.com/user-guide/tutorials/prowler-cloud-gcp-organizations",
+  ALERTS: "https://docs.horizonvigil.com/user-guide/tutorials/prowler-app-alerts",
   SLACK_INTEGRATION:
-    "https://docs.prowler.com/user-guide/tutorials/prowler-app-slack-integration",
+    "https://docs.horizonvigil.com/user-guide/tutorials/prowler-app-slack-integration",
   SLACK_INTEGRATION_PRIVATE_CHANNELS:
-    "https://docs.prowler.com/user-guide/tutorials/prowler-app-slack-integration#why-a-private-channel-is-missing-from-the-channel-list",
+    "https://docs.horizonvigil.com/user-guide/tutorials/prowler-app-slack-integration#why-a-private-channel-is-missing-from-the-channel-list",
   SCAN_CONFIGURATION:
-    "https://docs.prowler.com/user-guide/tutorials/prowler-app-scan-configuration",
+    "https://docs.horizonvigil.com/user-guide/tutorials/prowler-app-scan-configuration",
   ATTACK_PATHS_CUSTOM_QUERIES:
-    "https://docs.prowler.com/user-guide/tutorials/prowler-app-attack-paths#writing-custom-opencypher-queries",
-  AI_AGENTS: "https://docs.prowler.com/user-guide/ai-agents/",
+    "https://docs.horizonvigil.com/user-guide/tutorials/prowler-app-attack-paths#writing-custom-opencypher-queries",
+  AI_AGENTS: "https://docs.horizonvigil.com/user-guide/ai-agents/",
 } as const;
 
 // HorizonVigil Hub — the public catalog of HorizonVigil artifacts (checks, compliance,
 // attack paths). Every built-in Attack Paths query has a page keyed by its
-// query id, e.g. https://hub.prowler.com/attack-paths/aws-sts-privesc-assume-role
-export const PROWLER_HUB_URL = "https://hub.prowler.com";
+// query id, e.g. https://hub.horizonvigil.com/attack-paths/aws-sts-privesc-assume-role
+export const PROWLER_HUB_URL = "https://hub.horizonvigil.com";
 
 export const getAttackPathHubUrl = (queryId: string): string =>
   `${PROWLER_HUB_URL}/attack-paths/${encodeURIComponent(queryId)}`;
@@ -45,8 +45,8 @@ export const PROWLER_CF_TEMPLATE_URL =
   "https://prowler-cloud-public.s3.eu-west-1.amazonaws.com/permissions/templates/aws/cloudformation/prowler-scan-role.yml";
 
 // HorizonVigil billing/subscription management page.
-export const BILLING_URL = "https://cloud.prowler.com/billing";
-export const PRICING_URL = "https://prowler.com/pricing";
+export const BILLING_URL = "https://cloud.horizonvigil.com/billing";
+export const PRICING_URL = "https://horizonvigil.com/pricing";
 
 // Base URL for the CloudFormation "quick create stack" console flow.
 // Hardcoded to us-east-1 because the public template is hosted for that flow.
@@ -154,22 +154,22 @@ const buildCloudFormationQuickCreateLink = (
 // ownership stays with the docs/marketing team: they can retarget
 // destinations from the shortener panel without a UI PR.
 const PROVIDER_DOCS_SHORTLINK: Record<string, string> = {
-  aws: "https://goto.prowler.com/provider-aws",
-  azure: "https://goto.prowler.com/provider-azure",
-  m365: "https://goto.prowler.com/provider-m365",
-  gcp: "https://goto.prowler.com/provider-gcp",
-  kubernetes: "https://goto.prowler.com/provider-k8s",
-  github: "https://goto.prowler.com/provider-github",
-  iac: "https://goto.prowler.com/provider-iac",
-  image: "https://goto.prowler.com/provider-image",
-  oraclecloud: "https://goto.prowler.com/provider-oraclecloud",
-  mongodbatlas: "https://goto.prowler.com/provider-mongodbatlas",
-  alibabacloud: "https://goto.prowler.com/provider-alibabacloud",
-  cloudflare: "https://goto.prowler.com/provider-cloudflare",
-  openstack: "https://goto.prowler.com/provider-openstack",
-  googleworkspace: "https://goto.prowler.com/provider-googleworkspace",
-  vercel: "https://goto.prowler.com/provider-vercel",
-  okta: "https://goto.prowler.com/provider-okta",
+  aws: "https://goto.horizonvigil.com/provider-aws",
+  azure: "https://goto.horizonvigil.com/provider-azure",
+  m365: "https://goto.horizonvigil.com/provider-m365",
+  gcp: "https://goto.horizonvigil.com/provider-gcp",
+  kubernetes: "https://goto.horizonvigil.com/provider-k8s",
+  github: "https://goto.horizonvigil.com/provider-github",
+  iac: "https://goto.horizonvigil.com/provider-iac",
+  image: "https://goto.horizonvigil.com/provider-image",
+  oraclecloud: "https://goto.horizonvigil.com/provider-oraclecloud",
+  mongodbatlas: "https://goto.horizonvigil.com/provider-mongodbatlas",
+  alibabacloud: "https://goto.horizonvigil.com/provider-alibabacloud",
+  cloudflare: "https://goto.horizonvigil.com/provider-cloudflare",
+  openstack: "https://goto.horizonvigil.com/provider-openstack",
+  googleworkspace: "https://goto.horizonvigil.com/provider-googleworkspace",
+  vercel: "https://goto.horizonvigil.com/provider-vercel",
+  okta: "https://goto.horizonvigil.com/provider-okta",
 };
 
 // Default target for the connect step: the section of the provider's
@@ -180,33 +180,33 @@ const PROVIDER_DOCS_SHORTLINK: Record<string, string> = {
 // `authentication.mdx` from the wizard, otherwise the user is jumped into
 // low-level docs before they have the context to make sense of them.
 const PROVIDER_CREDENTIALS_STEP_DOCS_URL: Record<string, string> = {
-  aws: "https://docs.prowler.com/user-guide/providers/aws/getting-started-aws#step-3-set-up-aws-authentication",
+  aws: "https://docs.horizonvigil.com/user-guide/providers/aws/getting-started-aws#step-3-set-up-aws-authentication",
   azure:
-    "https://docs.prowler.com/user-guide/providers/azure/getting-started-azure#step-3-add-credentials-to-prowler-cloud",
-  m365: "https://docs.prowler.com/user-guide/providers/microsoft365/getting-started-m365#step-3-choose-and-provide-authentication",
-  gcp: "https://docs.prowler.com/user-guide/providers/gcp/getting-started-gcp#step-3-set-up-gcp-authentication",
+    "https://docs.horizonvigil.com/user-guide/providers/azure/getting-started-azure#step-3-add-credentials-to-prowler-cloud",
+  m365: "https://docs.horizonvigil.com/user-guide/providers/microsoft365/getting-started-m365#step-3-choose-and-provide-authentication",
+  gcp: "https://docs.horizonvigil.com/user-guide/providers/gcp/getting-started-gcp#step-3-set-up-gcp-authentication",
   kubernetes:
-    "https://docs.prowler.com/user-guide/providers/kubernetes/getting-started-k8s#step-2-configure-kubernetes-authentication",
+    "https://docs.horizonvigil.com/user-guide/providers/kubernetes/getting-started-k8s#step-2-configure-kubernetes-authentication",
   github:
-    "https://docs.prowler.com/user-guide/providers/github/getting-started-github#step-3-choose-authentication-method",
-  iac: "https://docs.prowler.com/user-guide/providers/iac/getting-started-iac#step-2-enter-authentication-details",
+    "https://docs.horizonvigil.com/user-guide/providers/github/getting-started-github#step-3-choose-authentication-method",
+  iac: "https://docs.horizonvigil.com/user-guide/providers/iac/getting-started-iac#step-2-enter-authentication-details",
   image:
-    "https://docs.prowler.com/user-guide/providers/image/getting-started-image#step-2-enter-authentication-and-scan-filters",
+    "https://docs.horizonvigil.com/user-guide/providers/image/getting-started-image#step-2-enter-authentication-and-scan-filters",
   oraclecloud:
-    "https://docs.prowler.com/user-guide/providers/oci/getting-started-oci#step-3-add-oci-api-key-credentials",
+    "https://docs.horizonvigil.com/user-guide/providers/oci/getting-started-oci#step-3-add-oci-api-key-credentials",
   mongodbatlas:
-    "https://docs.prowler.com/user-guide/providers/mongodbatlas/getting-started-mongodbatlas#step-2-provide-api-credentials",
+    "https://docs.horizonvigil.com/user-guide/providers/mongodbatlas/getting-started-mongodbatlas#step-2-provide-api-credentials",
   alibabacloud:
-    "https://docs.prowler.com/user-guide/providers/alibabacloud/getting-started-alibabacloud#step-3-choose-and-provide-authentication",
+    "https://docs.horizonvigil.com/user-guide/providers/alibabacloud/getting-started-alibabacloud#step-3-choose-and-provide-authentication",
   cloudflare:
-    "https://docs.prowler.com/user-guide/providers/cloudflare/getting-started-cloudflare#step-3-choose-and-provide-authentication",
+    "https://docs.horizonvigil.com/user-guide/providers/cloudflare/getting-started-cloudflare#step-3-choose-and-provide-authentication",
   openstack:
-    "https://docs.prowler.com/user-guide/providers/openstack/getting-started-openstack#step-2-provide-credentials",
+    "https://docs.horizonvigil.com/user-guide/providers/openstack/getting-started-openstack#step-2-provide-credentials",
   googleworkspace:
-    "https://docs.prowler.com/user-guide/providers/googleworkspace/getting-started-googleworkspace#step-3-provide-credentials",
+    "https://docs.horizonvigil.com/user-guide/providers/googleworkspace/getting-started-googleworkspace#step-3-provide-credentials",
   vercel:
-    "https://docs.prowler.com/user-guide/providers/vercel/getting-started-vercel#step-2-provide-credentials",
-  okta: "https://docs.prowler.com/user-guide/providers/okta/getting-started-okta#step-2-provide-credentials",
+    "https://docs.horizonvigil.com/user-guide/providers/vercel/getting-started-vercel#step-2-provide-credentials",
+  okta: "https://docs.horizonvigil.com/user-guide/providers/okta/getting-started-okta#step-2-provide-credentials",
 };
 
 // When the user has picked a specific auth method in the connect
@@ -220,30 +220,30 @@ const PROVIDER_CREDENTIALS_METHOD_DOCS_URL: Record<
   Record<string, string>
 > = {
   aws: {
-    role: "https://docs.prowler.com/user-guide/providers/aws/getting-started-aws#assume-role-recommended",
+    role: "https://docs.horizonvigil.com/user-guide/providers/aws/getting-started-aws#assume-role-recommended",
     credentials:
-      "https://docs.prowler.com/user-guide/providers/aws/getting-started-aws#credentials-static-access-keys",
+      "https://docs.horizonvigil.com/user-guide/providers/aws/getting-started-aws#credentials-static-access-keys",
   },
   m365: {
     app_certificate:
-      "https://docs.prowler.com/user-guide/providers/microsoft365/getting-started-m365#application-certificate-authentication-recommended",
+      "https://docs.horizonvigil.com/user-guide/providers/microsoft365/getting-started-m365#application-certificate-authentication-recommended",
     app_client_secret:
-      "https://docs.prowler.com/user-guide/providers/microsoft365/getting-started-m365#application-client-secret-authentication",
+      "https://docs.horizonvigil.com/user-guide/providers/microsoft365/getting-started-m365#application-client-secret-authentication",
   },
   alibabacloud: {
-    role: "https://docs.prowler.com/user-guide/providers/alibabacloud/getting-started-alibabacloud#ram-role-assumption-recommended",
+    role: "https://docs.horizonvigil.com/user-guide/providers/alibabacloud/getting-started-alibabacloud#ram-role-assumption-recommended",
     credentials:
-      "https://docs.prowler.com/user-guide/providers/alibabacloud/getting-started-alibabacloud#credentials-static-access-keys",
+      "https://docs.horizonvigil.com/user-guide/providers/alibabacloud/getting-started-alibabacloud#credentials-static-access-keys",
   },
   cloudflare: {
     api_token:
-      "https://docs.prowler.com/user-guide/providers/cloudflare/getting-started-cloudflare#user-api-token-authentication-recommended",
+      "https://docs.horizonvigil.com/user-guide/providers/cloudflare/getting-started-cloudflare#user-api-token-authentication-recommended",
     api_key:
-      "https://docs.prowler.com/user-guide/providers/cloudflare/getting-started-cloudflare#api-key-and-email-authentication-legacy",
+      "https://docs.horizonvigil.com/user-guide/providers/cloudflare/getting-started-cloudflare#api-key-and-email-authentication-legacy",
   },
 };
 
-const PROVIDER_HELP_FALLBACK_URL = "https://goto.prowler.com/provider-help";
+const PROVIDER_HELP_FALLBACK_URL = "https://goto.horizonvigil.com/provider-help";
 
 const getOwnRecordValue = <T>(
   record: Readonly<Record<string, T>>,
@@ -338,18 +338,18 @@ export const getAWSCredentialsTemplateLinks = (
   if (integrationType === undefined || integrationType === "aws_security_hub") {
     links = {
       cloudformation:
-        "https://github.com/prowler-cloud/prowler/blob/master/permissions/templates/cloudformation/prowler-scan-role.yml",
+        "https://github.com/HorizonVigil/prowler/blob/master/permissions/templates/cloudformation/prowler-scan-role.yml",
       terraform:
-        "https://github.com/prowler-cloud/prowler/tree/master/permissions/templates/terraform",
+        "https://github.com/HorizonVigil/prowler/tree/master/permissions/templates/terraform",
     };
   }
 
   if (integrationType === "amazon_s3") {
     links = {
       cloudformation:
-        "https://docs.prowler.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-s3-integration/",
+        "https://docs.horizonvigil.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-s3-integration/",
       terraform:
-        "https://docs.prowler.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-s3-integration/#terraform",
+        "https://docs.horizonvigil.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-s3-integration/#terraform",
     };
   }
 

@@ -22,7 +22,7 @@ test.describe("Sign Up Flow", () => {
 
       // Generate unique test data
       const suffix = makeSuffix(10);
-      const uniqueEmail = `e2e+${suffix}@prowler.com`;
+      const uniqueEmail = `e2e+${suffix}@horizonvigil.com`;
 
       // Fill and submit the sign-up form
       await signUpPage.signup({

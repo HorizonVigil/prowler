@@ -51,7 +51,7 @@ describe("QueryDescription", () => {
     // Then
     expect(link).toHaveAttribute(
       "href",
-      "https://hub.prowler.com/attack-paths/aws-sts-privesc-assume-role",
+      "https://hub.horizonvigil.com/attack-paths/aws-sts-privesc-assume-role",
     );
   });
 

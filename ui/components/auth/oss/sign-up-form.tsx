@@ -249,7 +249,7 @@ export const SignUpForm = ({
                     >
                       I agree with the&nbsp;
                       <CustomLink
-                        href="https://prowler.com/terms-of-service/"
+                        href="https://horizonvigil.com/terms-of-service/"
                         size="sm"
                       >
                         Terms of Service

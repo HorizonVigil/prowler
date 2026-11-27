@@ -21,7 +21,7 @@ export const CLOUD_UPGRADE_SECONDARY_CTA = "View Plans & Pricing";
 export const CLOUD_UPGRADE_FOOTER_NOTE =
   "HorizonVigil opens in a new tab. Your HorizonVigil remains unchanged.";
 
-const CLOUD_SIGN_UP_URL = "https://cloud.prowler.com/sign-up";
+const CLOUD_SIGN_UP_URL = "https://cloud.horizonvigil.com/sign-up";
 const LOCAL_SERVER_UTM_SOURCE = "prowler-local-server";
 
 const CLOUD_UPGRADE_UTM_CONTENT = {

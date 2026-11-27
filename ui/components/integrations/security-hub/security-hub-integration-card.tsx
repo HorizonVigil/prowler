@@ -23,7 +23,7 @@ export const SecurityHubIntegrationCard = () => {
                   Send security findings to AWS Security Hub.
                 </p>
                 <CustomLink
-                  href="https://docs.prowler.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-security-hub-integration/"
+                  href="https://docs.horizonvigil.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-security-hub-integration/"
                   aria-label="Learn more about Security Hub integration"
                   size="xs"
                 >
