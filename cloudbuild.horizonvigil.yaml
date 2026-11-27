@@ -26,8 +26,8 @@ steps:
   - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/horizonvigil-images/${_IMAGE}:$BUILD_ID
   - --platform=managed
   - --no-allow-unauthenticated
-  - --set-secrets=INTERNAL_SCAN_SECRET=HV_INTERNAL_SECRET:latest
-  - --set-env-vars=PROWLER_SCAN_TIMEOUT_SECONDS=900
+  - --update-secrets=INTERNAL_SCAN_SECRET=PROWLER_RUNNER_SECRET:latest
+  - --update-env-vars=PROWLER_SCAN_TIMEOUT_SECONDS=900
 images:
 - ${_REGION}-docker.pkg.dev/$PROJECT_ID/horizonvigil-images/${_IMAGE}:$BUILD_ID
 options:

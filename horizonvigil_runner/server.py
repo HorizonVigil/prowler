@@ -54,13 +54,20 @@ class Handler(BaseHTTPRequestHandler):
             self._send(403, {"error": "forbidden"})
             return
         try:
-            length = min(int(self.headers.get("Content-Length", "0")), 4096)
+            length = int(self.headers.get("Content-Length", "0"))
+            if not 0 < length <= 4096:
+                self._send(400, {"error": "invalid_request_size"})
+                return
             body = json.loads(self.rfile.read(length) or b"{}")
+            if not isinstance(body, dict) or not isinstance(body.get("provider"), str) or body["provider"] not in ALLOWED_PROVIDERS:
+                self._send(400, {"error": "unsupported_provider"})
+                return
             if not all(isinstance(body.get(key), str) and body[key].strip() for key in ("tenant_id", "connection_id", "credential_ref")):
                 self._send(400, {"error": "tenant_id, connection_id, and credential_ref are required"})
                 return
-            result = run_scan(str(body.get("provider", "")).lower())
-            self._send(200 if result["exitCode"] == 0 else 502, result)
+            # Presence of an opaque reference does not establish a provider
+            # identity. Never fall back to Cloud Run metadata credentials.
+            self._send(503, {"error": "credential_broker_unavailable"})
         except subprocess.TimeoutExpired:
             self._send(504, {"error": "scan_timeout"})
         except (ValueError, json.JSONDecodeError) as exc:
