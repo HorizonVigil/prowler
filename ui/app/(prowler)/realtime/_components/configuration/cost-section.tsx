@@ -130,7 +130,7 @@ function CostForm({
           <>
             <Alert variant="warning">
               <AlertDescription>
-                AWS bills each Cost Explorer request. Prowler reads it about
+                AWS bills each Cost Explorer request. HorizonVigil reads it about
                 every 6 hours.
               </AlertDescription>
             </Alert>
@@ -139,7 +139,7 @@ function CostForm({
               terraform={COST_TERRAFORM}
               steps={[
                 "Deploy the template once in this AWS account. It lets the ProwlerScan role read Cost Explorer (ce:GetCostAndUsage) and nothing else. If your scan role has another name, set ProwlerScanRoleName (prowler_scan_role_name in Terraform) to it.",
-                "Save below. Costs show up after Prowler's next Cost Explorer read.",
+                "Save below. Costs show up after HorizonVigil's next Cost Explorer read.",
               ]}
             />
           </>

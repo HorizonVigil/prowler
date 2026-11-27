@@ -44,7 +44,7 @@ Then write the remediation:
 - Give the runtime fix using the real identifiers from step 4 — ARN or resource UID,
   account, region, resource name. No placeholders unless a value genuinely cannot be
   determined, in which case say so explicitly.
-- Prefer the Prowler Cloud or cloud console path where one exists; give CLI commands
+- Prefer the HorizonVigil or cloud console path where one exists; give CLI commands
   when they are the practical route.
 - State what else the change touches and what I should verify after applying it.
 - Close with a short example of what may be producing this in the deployment code
@@ -100,7 +100,7 @@ Then write the remediation:
 - Then give the per-resource fixes, grouped by check, with the real identifiers from
   step 5: ARN or resource UID, account, region, resource name. No placeholders unless a
   value genuinely cannot be determined, in which case say so explicitly.
-- Prefer the Prowler Cloud or cloud console path where one exists; give CLI commands
+- Prefer the HorizonVigil or cloud console path where one exists; give CLI commands
   when they are the practical route.
 - State what else the changes touch, what I should verify after applying them, and
   which findings should pass on the next scan.
@@ -148,7 +148,7 @@ Then give me a report, in this shape:
 
 Then ask me how I want to proceed, and wait (try to guide me as much as possible in this
 cession if you are sure it's a risk then cannot be marked as accepted or as not risk).
-Do not write anything to Prowler until I answer. Once I do:
+Do not write anything to HorizonVigil until I answer. Once I do:
 
 - Real risk → do not fix it here. Tell me to run the fix skill in a separate session,
   and summarize in one line what that fix will involve.
@@ -212,7 +212,7 @@ const PROVIDER_CONNECTION_GUIDE_PROMPT = `The provider I am connecting is the on
 wizard step I am on and the connection method I picked. If no provider type is there,
 ask me which cloud or platform I want to scan before doing anything else.
 
-I am in the Prowler Cloud "Add provider" wizard right now, and it stays open next to
+I am in the HorizonVigil "Add provider" wizard right now, and it stays open next to
 this chat while I work. Help me finish the step I am on.
 
 Start by calling load_tools with these names, in one call:
@@ -221,7 +221,7 @@ You do not need search_tools — I am naming the tools directly.
 
 Then work in this order:
 
-1. prowler_docs_search — find the Prowler Cloud guide for this provider and connection
+1. prowler_docs_search — find the HorizonVigil guide for this provider and connection
    method: authentication, credentials, role, app registration or service account. If
    the context carries a docs URL, use it to pick the right document.
 2. prowler_docs_get_document — read that guide. Base every step on it; do not rely on
@@ -230,7 +230,7 @@ Then work in this order:
 Then write the guide:
 
 - Open with one sentence on what I need to end up with (for example: an IAM role
-  Prowler can assume, an app registration with a client secret, a service account key).
+  HorizonVigil can assume, an app registration with a client secret, a service account key).
 - Give numbered steps in my cloud console or CLI, with the exact permissions or roles
   to grant.
 - Tell me which wizard field each value goes into, using the field names from the docs.

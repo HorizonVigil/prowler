@@ -61,7 +61,7 @@ export const GRAPH_NODE_BORDER_COLORS = {
 // Edge colors per theme
 export const GRAPH_EDGE_COLOR_DARK = "#ffffff"; // White for dark theme
 export const GRAPH_EDGE_COLOR_LIGHT = "#1e293b"; // Slate 800 for light theme
-export const GRAPH_EDGE_HIGHLIGHT_COLOR = "#34d399"; // Prowler green (hover/selection)
+export const GRAPH_EDGE_HIGHLIGHT_COLOR = "#34d399"; // HorizonVigil green (hover/selection)
 export const GRAPH_EDGE_GLOW_COLOR = "#6ee7b7";
 export const GRAPH_SELECTION_COLOR = "#ffffff";
 export const GRAPH_BORDER_COLOR = "#374151";

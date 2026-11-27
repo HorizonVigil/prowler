@@ -80,7 +80,7 @@ export function RegistryAccessDialog({
 
   return (
     <Modal
-      description="Use an API key from the Prowler Registry account that has access to the artifacts you need."
+      description="Use an API key from the HorizonVigil Registry account that has access to the artifacts you need."
       onOpenAutoFocus={(event) => {
         event.preventDefault();
         keyInputRef.current?.focus();

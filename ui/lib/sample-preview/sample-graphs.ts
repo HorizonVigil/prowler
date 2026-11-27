@@ -88,7 +88,7 @@ export const SAMPLE_RISK_PLOT_POINTS: RiskPlotPoint[] = adaptToRiskPlotData([
   },
 ]).points;
 
-// Prowler check-metadata categories for the sample checks.
+// HorizonVigil check-metadata categories for the sample checks.
 const CATEGORIES_BY_CHECK: Record<string, string[]> = {
   s3_bucket_public_access: ["internet-exposed"],
   iam_root_mfa_enabled: ["identity-access"],

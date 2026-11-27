@@ -16,17 +16,17 @@ const REGISTRY_NOT_INSTALLABLE_COPY: Record<
   string
 > = {
   [REGISTRY_NOT_INSTALLABLE_REASON.ACCESS_REQUIRED]:
-    "Needs approved access in the Prowler Registry. Once approved, it installs with that account's Registry API key.",
+    "Needs approved access in the HorizonVigil Registry. Once approved, it installs with that account's Registry API key.",
   [REGISTRY_NOT_INSTALLABLE_REASON.ARTIFACT_TARGETS_NO_PROVIDER]:
     "It ships checks but names no provider to extend.",
   [REGISTRY_NOT_INSTALLABLE_REASON.ARTIFACT_DEFINES_NOTHING_USABLE]:
     "It brings neither a provider nor checks.",
   [REGISTRY_NOT_INSTALLABLE_REASON.ARTIFACT_SHIPS_WITH_PROWLER]:
-    "Its code is already inside Prowler. Nothing to install.",
+    "Its code is already inside HorizonVigil. Nothing to install.",
   [REGISTRY_NOT_INSTALLABLE_REASON.PROWLER_UPGRADE_REQUIRED]:
-    "It needs a newer Prowler version than this deployment runs. It will install once the deployment is upgraded.",
+    "It needs a newer HorizonVigil version than this deployment runs. It will install once the deployment is upgraded.",
   [REGISTRY_NOT_INSTALLABLE_REASON.DEPENDENCY_ACCESS_REQUIRED]:
-    "It depends on another Prowler Registry artifact that your Registry API key cannot install.",
+    "It depends on another HorizonVigil Registry artifact that your Registry API key cannot install.",
 };
 
 const REGISTRY_NOT_INSTALLABLE_FALLBACK =

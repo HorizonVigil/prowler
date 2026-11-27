@@ -34,7 +34,7 @@ export const ManagedLighthouseCallout = () => {
       </CardHeader>
       <CardContent className="flex flex-col items-start gap-4">
         <p className="text-text-neutral-secondary text-sm">
-          Prowler Cloud includes managed OpenAI access with no API keys to
+          HorizonVigil includes managed OpenAI access with no API keys to
           provision, plus a hosted remote MCP server to automate security
           workflows.
         </p>

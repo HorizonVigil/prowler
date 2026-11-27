@@ -55,7 +55,7 @@ export async function CostTab({
     return (
       <RealtimeEmptyState
         title="Cost anomalies are off"
-        description="Turn them on to spot sudden spend increases per service and region. Prowler reads AWS Cost Explorer about every 6 hours, and AWS bills each request."
+        description="Turn them on to spot sudden spend increases per service and region. HorizonVigil reads AWS Cost Explorer about every 6 hours, and AWS bills each request."
         action={
           <Button variant="outline" size="sm" asChild>
             <Link href={configurationHref(providerId, "cost")}>

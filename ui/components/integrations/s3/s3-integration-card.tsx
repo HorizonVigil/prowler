@@ -10,7 +10,7 @@ import { CustomLink } from "@/components/shadcn/custom/custom-link";
 import { isCloud } from "@/lib/shared/env";
 
 export const S3IntegrationCard = () => {
-  // Adding S3 integrations needs Prowler Cloud; existing ones stay manageable.
+  // Adding S3 integrations needs HorizonVigil; existing ones stay manageable.
   const isCloudOnly = !isCloud();
 
   return (

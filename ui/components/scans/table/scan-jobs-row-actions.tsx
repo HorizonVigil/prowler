@@ -52,10 +52,10 @@ interface ScanJobsRowActionsProps {
   /** The scan jobs tab this row is rendered in. */
   tab: ScanJobsTab;
   /**
-   * Schedule capability override. Only for Prowler Cloud.
+   * Schedule capability override. Only for HorizonVigil.
    */
   capability?: ScanScheduleCapability;
-  /** Prowler Cloud tenants without a paid plan cannot download reports. */
+  /** HorizonVigil tenants without a paid plan cannot download reports. */
   subscriptionOnly?: boolean;
 }
 
@@ -85,7 +85,7 @@ export function ScanJobsRowActions({
   const isFailed = scanState === "failed";
   // Findings are stored check by check, so a running scan can already show some.
   const isExecuting = scanState === "executing";
-  // Prowler Cloud partial scans re-check a few resources: they compute no
+  // HorizonVigil partial scans re-check a few resources: they compute no
   // compliance and write no report files, so neither entry applies.
   const isPartial = scan.attributes.is_partial === true;
   const taskId = scan.relationships.task.data?.id;

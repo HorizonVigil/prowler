@@ -24,7 +24,7 @@ const OVERVIEW_BANNER_CONTENT = {
   },
   agents: {
     icon: <Bot className="size-5" />,
-    title: "Connect all your agents to Prowler Cloud",
+    title: "Connect all your agents to HorizonVigil",
     description: "Turn your favorite agent into a Cloud Security Expert.",
   },
 } as const satisfies Record<

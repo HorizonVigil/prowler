@@ -489,7 +489,7 @@ export const permissionFormFields: PermissionInfo[] = [
     field: "manage_prowler_realtime",
     label: "Manage Realtime",
     description:
-      "Allows setting up Prowler Realtime Detection and Remediation, including its policies, alerts and fixes",
+      "Allows setting up HorizonVigil Realtime Detection and Remediation, including its policies, alerts and fixes",
   },
   {
     field: "manage_billing",

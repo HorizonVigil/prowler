@@ -67,7 +67,7 @@ export const S3IntegrationsManager = ({
   const openCloudUpgrade = useCloudUpgradeStore(
     (state) => state.openCloudUpgrade,
   );
-  // Adding S3 integrations needs a paid Prowler Cloud plan; everyone else gets the upsell.
+  // Adding S3 integrations needs a paid HorizonVigil plan; everyone else gets the upsell.
   const canAddIntegrations = isCloud();
 
   const handleAddIntegration = () => {

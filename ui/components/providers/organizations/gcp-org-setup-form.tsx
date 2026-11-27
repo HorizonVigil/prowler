@@ -430,7 +430,7 @@ export function GcpOrgSetupForm({
         {setupPhase === ORG_SETUP_PHASE.ACCESS && !isBusy && (
           <div className="flex flex-col gap-6">
             <p className="text-text-neutral-primary text-sm leading-7 font-normal">
-              Choose how Prowler authenticates to your Google Cloud
+              Choose how HorizonVigil authenticates to your Google Cloud
               organization.
             </p>
 

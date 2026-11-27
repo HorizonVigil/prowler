@@ -9,7 +9,7 @@ import { isCloud } from "@/lib/shared/env";
 import { ScanConfigurationsManager } from "./_components/scan-configurations-manager";
 
 export default async function ScanConfigPage() {
-  // Scan Configuration is a Prowler Cloud-only feature; the OSS API has no
+  // Scan Configuration is a HorizonVigil-only feature; the OSS API has no
   // /scan-configurations endpoints, so guard the route before hitting them.
   if (!isCloud()) {
     redirect("/");

@@ -147,7 +147,7 @@ const GraphDefs = () => (
           floodOpacity="0.6"
         />
       </filter>
-      {/* Prowler green glow for selected nodes */}
+      {/* HorizonVigil green glow for selected nodes */}
       <filter id="selectedGlow">
         <feDropShadow
           dx="0"

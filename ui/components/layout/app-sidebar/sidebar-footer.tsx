@@ -39,7 +39,7 @@ export function SidebarFooter({
             }}
           >
             <Cloud aria-hidden="true" className="size-4" />
-            Explore Prowler Cloud
+            Explore HorizonVigil
           </Button>
         </div>
       )}

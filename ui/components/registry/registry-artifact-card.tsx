@@ -105,7 +105,7 @@ function RegistryArtifactByline({
     <>
       {owner &&
         (owner.name.trim().toLowerCase() === "prowler" ? (
-          <ProwlerShort aria-label="Prowler" role="img" size={20} />
+          <ProwlerShort aria-label="HorizonVigil" role="img" size={20} />
         ) : (
           <span className="flex min-w-0 items-center gap-1.5">
             <Avatar aria-hidden className="size-5">
@@ -437,7 +437,7 @@ export function RegistryArtifactCard({
           ) : accessRequestUrl ? (
             <Button asChild size="sm" variant="outline">
               <a
-                aria-label={`Request access to ${displayName} in the Prowler Registry (opens in a new tab)`}
+                aria-label={`Request access to ${displayName} in the HorizonVigil Registry (opens in a new tab)`}
                 href={accessRequestUrl}
                 rel="noopener noreferrer"
                 target="_blank"
@@ -458,7 +458,7 @@ export function RegistryArtifactCard({
             </Button>
           ) : artifact.isBuiltin ? (
             <span className="text-text-neutral-secondary text-xs">
-              Included in Prowler
+              Included in HorizonVigil
             </span>
           ) : null}
         </div>

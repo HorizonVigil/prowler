@@ -343,7 +343,7 @@ export function OrgSetupForm({
 
             <p className="text-muted-foreground text-sm">
               Enter the Organization ID for the accounts you want to add to
-              Prowler.
+              HorizonVigil.
             </p>
           </div>
         )}
@@ -469,7 +469,7 @@ export function OrgSetupForm({
             <div className="flex flex-col gap-4">
               <p className="text-text-neutral-primary text-sm leading-7 font-normal">
                 1) Choose the AWS <strong>Organizational Unit</strong> (or root)
-                to deploy to. Prowler creates the IAM Role in your deployment
+                to deploy to. HorizonVigil creates the IAM Role in your deployment
                 account and rolls it out to every member account under this
                 target.
               </p>

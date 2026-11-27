@@ -20,7 +20,7 @@ export const ACTION_ERROR_MESSAGES = {
 
 export const ACTION_ERROR_API_MESSAGES = {
   [ACTION_ERROR_STATUS.PAYMENT_REQUIRED]:
-    "An active subscription is required to use this API endpoint in Prowler Cloud.",
+    "An active subscription is required to use this API endpoint in HorizonVigil.",
 } as const satisfies Partial<Record<ActionErrorStatus, string>>;
 
 export interface ActionErrorResult {

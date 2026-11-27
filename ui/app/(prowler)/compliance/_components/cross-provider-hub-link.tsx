@@ -17,7 +17,7 @@ export const CrossProviderHubLink = ({
       rel="noopener noreferrer"
       prefetch={false}
     >
-      View on Prowler Hub
+      View on HorizonVigil Hub
       <SquareArrowOutUpRight />
     </Link>
   </Button>

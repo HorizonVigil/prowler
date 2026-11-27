@@ -33,7 +33,7 @@ const describeSlackError = (reason: string | null): string => {
   if (reason === "access_denied") {
     return "The install was not approved in Slack, so no workspace was connected.";
   }
-  // The reason came off the URL and is interpolated into Prowler's own copy,
+  // The reason came off the URL and is interpolated into HorizonVigil's own copy,
   // so gate on the shape of a code (the contract already did — belt and
   // braces): Slack publishes no closed set.
   return reason && SLACK_REASON_TOKEN.test(reason)
@@ -53,7 +53,7 @@ const noticeFor = (outcome: SlackConnectOutcome): NoticeContent => {
       return {
         variant: "success",
         title: "Slack workspace connected",
-        description: "You can now authorize the channels Prowler posts to.",
+        description: "You can now authorize the channels HorizonVigil posts to.",
       };
     case SLACK_CONNECT_STATUS.SLACK_ERROR:
       return {
@@ -93,13 +93,13 @@ const noticeFor = (outcome: SlackConnectOutcome): NoticeContent => {
         variant: "error",
         title: UNCONFIRMED_TITLE,
         description:
-          "Prowler could not confirm whether the workspace was connected. If none is listed below, start the install again.",
+          "HorizonVigil could not confirm whether the workspace was connected. If none is listed below, start the install again.",
       };
     case SLACK_CONNECT_STATUS.ERROR:
       return {
         variant: "error",
         title: FAILURE_TITLE,
-        // Known codes keep Prowler's wording; the URL carries no free text, so
+        // Known codes keep HorizonVigil's wording; the URL carries no free text, so
         // everything else reads as the generic refusal.
         description: slackErrorMessage(
           { code: outcome.code },

@@ -36,7 +36,7 @@ interface IssueComplianceProps {
 }
 
 /**
- * The frameworks the issue puts at risk, from Prowler's own per-finding
+ * The frameworks the issue puts at risk, from HorizonVigil's own per-finding
  * mapping. Frameworks belong to the check, so one finding per check answers
  * for all of them.
  */

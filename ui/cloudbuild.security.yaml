@@ -1,0 +1,46 @@
+# Build + deploy the HorizonVigil (rebranded) Cloud Security UI to Cloud Run (TEST).
+# The image serves under UI_BASE_PATH (/security) behind the test.horizonvigil.com
+# external HTTPS load balancer. Build context is this ui/ directory.
+#   gcloud builds submit --project hv-test-web-8486 --region us-central1 \
+#     --config cloudbuild.security.yaml .
+substitutions:
+  _IMAGE: us-central1-docker.pkg.dev/hv-test-web-8486/horizonvigil-images/prowler-app-ui
+  _SERVICE: prowler-app-ui-test
+  _REGION: us-central1
+  _BASE_PATH: /security
+steps:
+  - name: gcr.io/cloud-builders/docker
+    id: build
+    args:
+      - build
+      - --target
+      - prod
+      - --build-arg
+      - UI_BASE_PATH=${_BASE_PATH}
+      - -t
+      - ${_IMAGE}:security
+      - -t
+      - ${_IMAGE}:${BUILD_ID}
+      - -f
+      - Dockerfile
+      - .
+  - name: gcr.io/cloud-builders/docker
+    id: push
+    args: [push, --all-tags, "${_IMAGE}"]
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    id: deploy
+    entrypoint: gcloud
+    args:
+      - run
+      - services
+      - update
+      - ${_SERVICE}
+      - --region
+      - ${_REGION}
+      - --image
+      - ${_IMAGE}:${BUILD_ID}
+images:
+  - ${_IMAGE}:security
+timeout: 1800s
+options:
+  machineType: E2_HIGHCPU_8

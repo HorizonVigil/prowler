@@ -3,7 +3,7 @@ export const FINDINGS_PREVIEW_ROW_LIMIT = 10;
 
 /**
  * Whether the current tenant only previews the most critical finding groups.
- * Self-hosted deployments never lock the list; the Prowler Cloud overlay
+ * Self-hosted deployments never lock the list; the HorizonVigil overlay
  * replaces this body with its billing and feature-flag lookup.
  */
 export const isFindingsPreviewLocked = (): Promise<boolean> =>

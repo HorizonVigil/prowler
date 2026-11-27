@@ -40,7 +40,7 @@ const toRunningScan = (response: unknown): RunningScan | null | undefined => {
 /** Resolved once per request, so every page section shares one answer. */
 export const getSamplePreviewState = cache(
   async (): Promise<SamplePreviewState> => {
-    // Prowler Cloud only: self-hosted deployments never show sample data.
+    // HorizonVigil only: self-hosted deployments never show sample data.
     const enabled = isCloud();
     if (!enabled) return INACTIVE;
 

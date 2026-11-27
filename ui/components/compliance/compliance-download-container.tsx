@@ -38,7 +38,7 @@ interface ComplianceDownloadContainerProps {
   /** Custom dropdown trigger (e.g. an outline "Report" button); only used
    *  when presentation is "dropdown". Defaults to the dots icon. */
   dropdownTrigger?: React.ReactNode;
-  /** Prowler Cloud tenants without a paid plan cannot download reports. */
+  /** HorizonVigil tenants without a paid plan cannot download reports. */
   subscriptionOnly?: boolean;
 }
 

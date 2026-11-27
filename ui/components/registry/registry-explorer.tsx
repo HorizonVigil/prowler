@@ -729,7 +729,7 @@ export function RegistryExplorer({
     );
   }
   const hasActiveKey = isActiveRegistryCredential(state.credential);
-  // Registry artifacts first, then the ones that ship with Prowler.
+  // Registry artifacts first, then the ones that ship with HorizonVigil.
   const exploreCount = model.artifacts.length + model.builtinArtifacts.length;
   const renderCatalogCard = (artifact: RegistryMarketplaceArtifact) => (
     <li key={artifact.normalizedName}>
@@ -884,7 +884,7 @@ export function RegistryExplorer({
                     id="registry-builtin-heading"
                     className="text-text-neutral-secondary text-sm font-medium"
                   >
-                    Included in Prowler
+                    Included in HorizonVigil
                   </h2>
                   <RegistryArtifactGrid>
                     {model.builtinArtifacts.map(renderCatalogCard)}

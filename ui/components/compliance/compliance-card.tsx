@@ -50,7 +50,7 @@ interface ComplianceCardProps {
    * viewer cannot curate the organization's watchlist.
    */
   watchlistAction?: ReactNode;
-  /** Prowler Cloud tenants without a paid plan cannot download reports. */
+  /** HorizonVigil tenants without a paid plan cannot download reports. */
   subscriptionOnly?: boolean;
   /** Hides report downloads and watchlist changes, e.g. for sample scans. */
   hideActions?: boolean;

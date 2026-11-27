@@ -16,7 +16,7 @@ export default async function SlackIntegrationPage() {
     <ContentLayout title="Slack">
       <div className="flex flex-col gap-6">
         <p className="text-sm text-gray-600 dark:text-gray-300">
-          Connect a Slack workspace so Prowler can post to the channels you
+          Connect a Slack workspace so HorizonVigil can post to the channels you
           authorize.
         </p>
 

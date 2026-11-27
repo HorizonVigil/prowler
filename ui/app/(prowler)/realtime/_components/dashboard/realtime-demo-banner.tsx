@@ -31,7 +31,7 @@ export function RealtimeDemoBanner({ providerId }: RealtimeDemoBannerProps) {
               </Badge>
             </div>
             <p className="text-text-neutral-secondary text-sm">
-              It comes from a made-up AWS account. Set up Prowler Realtime to
+              It comes from a made-up AWS account. Set up HorizonVigil Realtime to
               watch this account as changes happen. It starts in dry run, so
               nothing changes until you decide.
             </p>

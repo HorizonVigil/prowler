@@ -6,7 +6,7 @@ Read this before changing Lighthouse chat, its stream, or anything under this fo
 
 `page.tsx` picks the version: `isCloud()` renders v2, self-hosted renders v1.
 
-|                 | v1 (self-hosted)                                         | v2 (Prowler Cloud)                                                                   |
+|                 | v1 (self-hosted)                                         | v2 (HorizonVigil)                                                                   |
 | --------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | UI              | `components/lighthouse-v1/`                              | `_components/` (chat, side panel, AI Elements)                                       |
 | Logic           | `lib/lighthouse-v1/` (LangGraph workflow, MCP client)    | Django sessions; client state in `_lib/chat-store.ts` and `_lib/panel-chat-store.ts` |

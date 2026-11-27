@@ -78,12 +78,12 @@ export function RegistryCredentialBanner({
           {registryUrl && (
             <Button asChild size="sm" variant="ghost">
               <a
-                aria-label="Explore Prowler Registry (opens in a new tab)"
+                aria-label="Explore HorizonVigil Registry (opens in a new tab)"
                 href={registryUrl}
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Explore Prowler Registry
+                Explore HorizonVigil Registry
                 <ExternalLink aria-hidden />
               </a>
             </Button>
@@ -148,12 +148,12 @@ export function RegistryCredentialBanner({
         {registryUrl && (
           <Button asChild variant="outline">
             <a
-              aria-label="Explore Prowler Registry (opens in a new tab)"
+              aria-label="Explore HorizonVigil Registry (opens in a new tab)"
               href={registryUrl}
               rel="noopener noreferrer"
               target="_blank"
             >
-              Explore Prowler Registry
+              Explore HorizonVigil Registry
               <ExternalLink aria-hidden />
             </a>
           </Button>

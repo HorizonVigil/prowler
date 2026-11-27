@@ -62,7 +62,7 @@ interface LaunchStepProps {
   onClose: () => void;
   onFooterChange: (config: WizardFooterConfig) => void;
   /**
-   * Schedule capability override. Absent in Prowler OSS (defaults to a
+   * Schedule capability override. Absent in HorizonVigil OSS (defaults to a
    * Cloud-vs-non-Cloud decision). The prowler-cloud overlay computes a
    * billing-aware capability and injects it here so trial/onboarding accounts
    * are limited to manual scans.
@@ -310,7 +310,7 @@ export function LaunchStep({
       </div>
 
       <p className="text-text-neutral-secondary text-sm">
-        Your provider is connected to Prowler and ready to Scan!
+        Your provider is connected to HorizonVigil and ready to Scan!
       </p>
 
       {!providerId && (

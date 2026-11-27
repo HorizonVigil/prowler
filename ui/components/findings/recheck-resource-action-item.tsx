@@ -14,7 +14,7 @@ interface RecheckResourceActionItemProps {
   disabledReason?: string;
 }
 
-/** Prowler Cloud only: opens the partial-scan confirmation for one resource. */
+/** HorizonVigil only: opens the partial-scan confirmation for one resource. */
 export const RecheckResourceActionItem = ({
   target,
   disabledReason,

@@ -61,8 +61,8 @@ function generateToolListing(): string {
   // Only include whitelisted tools
   const safeTools = mcpTools.filter((tool) => isAllowedTool(tool.name));
 
-  let listing = "\n## Available Prowler Tools\n\n";
-  listing += `${safeTools.length} tools loaded from Prowler MCP\n\n`;
+  let listing = "\n## Available HorizonVigil Tools\n\n";
+  listing += `${safeTools.length} tools loaded from HorizonVigil MCP\n\n`;
 
   for (const tool of safeTools) {
     const desc = truncateDescription(tool.description, 150);

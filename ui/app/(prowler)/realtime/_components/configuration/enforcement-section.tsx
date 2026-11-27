@@ -99,7 +99,7 @@ export function EnforcementSection(props: EnforcementSectionProps) {
       id="enforcement"
       number={props.number}
       title="What to enforce"
-      description="How Prowler responds when a change breaks a check."
+      description="How HorizonVigil responds when a change breaks a check."
       summary={enforcementSummary(props.policy, props.frameworks)}
       state={props.state}
       required={props.required}
@@ -254,7 +254,7 @@ function EnforcementForm({
               {!dryRun && (
                 <Alert variant="warning">
                   <AlertDescription>
-                    Prowler will change this AWS account as soon as a supported
+                    HorizonVigil will change this AWS account as soon as a supported
                     check fails. Every fix records how to undo it.
                   </AlertDescription>
                 </Alert>

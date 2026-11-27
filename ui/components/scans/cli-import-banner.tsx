@@ -34,7 +34,7 @@ export const CliImportBanner = ({ className }: { className?: string }) => {
     >
       <Upload />
       <AlertTitle>
-        Import findings from Prowler CLI —{" "}
+        Import findings from HorizonVigil CLI —{" "}
         <Link
           href={DOCS_URLS.FINDINGS_INGESTION}
           target="_blank"

@@ -25,7 +25,7 @@ import type { SlackChannelOption } from "@/types/integrations";
 const INVITE_HINT = (
   <>
     A private channel only appears here after someone invites{" "}
-    <SlackInlineCode>@Prowler Cloud</SlackInlineCode> to it in Slack. Invite it,
+    <SlackInlineCode>@HorizonVigil</SlackInlineCode> to it in Slack. Invite it,
     then refresh.{" "}
     <CustomLink
       href={DOCS_URLS.SLACK_INTEGRATION_PRIVATE_CHANNELS}
@@ -118,11 +118,11 @@ export const SlackChannelMultiSelect = ({
         <Alert variant="info">
           <AlertTitle>No channels available yet</AlertTitle>
           <AlertDescription>
-            Prowler cannot see a single channel in this workspace. Create a
+            HorizonVigil cannot see a single channel in this workspace. Create a
             public channel, or invite{" "}
-            <SlackInlineCode>@Prowler Cloud</SlackInlineCode> to a private one
+            <SlackInlineCode>@HorizonVigil</SlackInlineCode> to a private one
             in Slack with{" "}
-            <SlackInlineCode>/invite @Prowler Cloud</SlackInlineCode>, then
+            <SlackInlineCode>/invite @HorizonVigil</SlackInlineCode>, then
             refresh.
           </AlertDescription>
         </Alert>

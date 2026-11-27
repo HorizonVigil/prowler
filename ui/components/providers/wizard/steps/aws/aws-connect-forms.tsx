@@ -62,7 +62,7 @@ export function AwsRoleConnectForm({
       [ProviderCredentialFields.PROVIDER_ID]: "",
       [ProviderCredentialFields.PROVIDER_TYPE]: "aws",
       [ProviderCredentialFields.PROVIDER_ALIAS]: "",
-      // The role is assumed with Prowler's own credentials (Cloud's identity or the
+      // The role is assumed with HorizonVigil's own credentials (Cloud's identity or the
       // host's AWS SDK chain); static keys are a method of their own, never mixed in.
       [ProviderCredentialFields.CREDENTIALS_TYPE]:
         ProviderCredentialFields.CREDENTIALS_TYPE_AWS,
@@ -144,7 +144,7 @@ export function AwsRoleConnectForm({
             />
             {detectedAccountId && !locked && (
               <p className="text-text-success-primary text-xs">
-                Account {detectedAccountId} will be added to Prowler.
+                Account {detectedAccountId} will be added to HorizonVigil.
               </p>
             )}
           </div>

@@ -27,7 +27,7 @@ interface DecryptedTextProps extends HTMLMotionProps<"span"> {
   clickMode?: DecryptedTextClickMode;
 }
 
-// Ported from reactbits DecryptedText, adapted to Prowler conventions:
+// Ported from reactbits DecryptedText, adapted to HorizonVigil conventions:
 // framer-motion import, no useMemo/useCallback (React Compiler), pure helpers
 // hoisted to module scope, and IntersectionObserver guarded for SSR/test safety.
 export function DecryptedText({

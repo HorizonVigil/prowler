@@ -22,7 +22,7 @@ const isSafeUrl = (url: string): boolean => {
 
 export const QueryDescription = ({ query }: QueryDescriptionProps) => {
   const documentationLink = query.attributes.documentation_link;
-  // Every built-in query has a Prowler Hub page keyed by its id. The synthetic
+  // Every built-in query has a HorizonVigil Hub page keyed by its id. The synthetic
   // custom query has no catalog entry, so it gets no hub link.
   const hubUrl =
     query.id === ATTACK_PATH_QUERY_IDS.CUSTOM
@@ -43,7 +43,7 @@ export const QueryDescription = ({ query }: QueryDescriptionProps) => {
               rel="noopener noreferrer"
               className="font-medium underline"
             >
-              View on Prowler Hub
+              View on HorizonVigil Hub
             </a>
           </p>
         )}

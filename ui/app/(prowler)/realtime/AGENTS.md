@@ -1,10 +1,10 @@
-# Prowler Realtime
+# HorizonVigil Realtime
 
 Read this before changing anything under `app/(prowler)/realtime/`. General UI rules live in `ui/AGENTS.md`.
 
 ## What It Is
 
-Realtime reads AWS CloudTrail events, raises detections, and can fix (and revert) AWS resources. It is a Prowler Cloud feature: both pages call `notFound()` unless `isCloud()`, and only AWS providers are offered (`_lib/load.ts`).
+Realtime reads AWS CloudTrail events, raises detections, and can fix (and revert) AWS resources. It is a HorizonVigil feature: both pages call `notFound()` unless `isCloud()`, and only AWS providers are offered (`_lib/load.ts`).
 
 ## Owner Map
 

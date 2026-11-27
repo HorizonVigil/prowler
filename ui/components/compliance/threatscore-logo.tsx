@@ -26,7 +26,7 @@ export const ThreatScoreLogo = () => {
       className="h-14 w-auto"
       preserveAspectRatio="xMinYMid meet"
     >
-      {/* Prowler logo from the new SVG - scaled and positioned to match THREATSCORE size */}
+      {/* HorizonVigil logo from the new SVG - scaled and positioned to match THREATSCORE size */}
       <g transform="scale(0.50) translate(-60, 20)">
         <path
           fill={prowlerColor}

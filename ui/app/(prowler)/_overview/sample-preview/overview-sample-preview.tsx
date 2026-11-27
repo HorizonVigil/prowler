@@ -35,7 +35,7 @@ import { SampleGraphsTabs } from "./sample-graphs-tabs";
 const NO_SCOPE: Record<string, string> = {};
 
 interface OverviewSamplePreviewProps {
-  // Exploitability and Top issues only exist in Prowler Cloud, behind their flag.
+  // Exploitability and Top issues only exist in HorizonVigil, behind their flag.
   showIssues: boolean;
   /** Compliance totals derived from the sample requirements, when available. */
   complianceWatchlist?: ComplianceWatchlistResponse["data"];

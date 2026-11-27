@@ -179,7 +179,7 @@ export function StreamView({ providerId, events, showAll }: StreamViewProps) {
           title="No events in the last 24 hours"
           description={
             showAll
-              ? "Prowler has not received any CloudTrail event from this account yet. Check the feed above."
+              ? "HorizonVigil has not received any CloudTrail event from this account yet. Check the feed above."
               : "No changes were recorded. Turn off “Changes only” to see read-only calls too."
           }
         />

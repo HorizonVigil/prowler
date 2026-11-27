@@ -97,7 +97,7 @@ export function DetectionDetail({
             Verdict
           </h4>
           <p className="text-text-neutral-secondary text-sm">
-            {detection.note || "Prowler has not checked the resource yet."}
+            {detection.note || "HorizonVigil has not checked the resource yet."}
           </p>
           {detection.check_ids.length > 0 && (
             <p className="text-text-neutral-tertiary font-mono text-xs break-all">

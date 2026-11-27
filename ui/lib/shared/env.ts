@@ -5,7 +5,7 @@ import { readRuntimeConfigIsland } from "@/lib/runtime-config.shared";
 import { readBoolEnv, readOptOutEnv } from "@/lib/runtime-env";
 
 /**
- * Whether the UI is running inside a Prowler Cloud deployment.
+ * Whether the UI is running inside a HorizonVigil deployment.
  *
  * Runtime read, resolved from two sources:
  * - Browser: the runtime public-config island (`cloudEnabled`), rendered in
@@ -39,7 +39,7 @@ export function isRegistryEnabled(): boolean {
 /**
  * Whether visitors can create an account without an invitation.
  *
- * Prowler Cloud only: always on elsewhere. In Cloud it follows
+ * HorizonVigil only: always on elsewhere. In Cloud it follows
  * `UI_SELF_REGISTRATION_ENABLED` (island, then env), on unless "false".
  */
 export function isSelfRegistrationEnabled(): boolean {

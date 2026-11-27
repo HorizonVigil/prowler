@@ -106,7 +106,7 @@ export default async function ComplianceDetail({
   const subscriptionOnlyPromise = isReportDownloadLocked();
 
   // Cross-provider mode replaces the per-scan pipeline with the universal
-  // roll-up view. Prowler Cloud-only: the OSS API has no such endpoint, so
+  // roll-up view. HorizonVigil-only: the OSS API has no such endpoint, so
   // the route is blocked in OSS the same way the compliance tab is.
   if (mode === LIGHTHOUSE_COMPLIANCE_CONTEXT_MODE.CROSS_PROVIDER) {
     if (!isCloud()) {

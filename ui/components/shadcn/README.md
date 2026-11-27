@@ -1,6 +1,6 @@
 # shadcn Components
 
-This directory contains all shadcn/ui based components for the Prowler application.
+This directory contains all shadcn/ui based components for the HorizonVigil application.
 
 ## Directory Structure
 

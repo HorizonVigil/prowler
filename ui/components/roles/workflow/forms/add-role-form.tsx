@@ -50,7 +50,7 @@ export const AddRoleForm = ({ groups }: { groups: RoleGroupOption[] }) => {
       String(values.unlimited_visibility),
     );
 
-    // Conditionally append Prowler Cloud permissions.
+    // Conditionally append HorizonVigil permissions.
     if (isCloudEnvironment) {
       formData.append("manage_billing", String(values.manage_billing));
       formData.append("manage_alerts", String(values.manage_alerts));

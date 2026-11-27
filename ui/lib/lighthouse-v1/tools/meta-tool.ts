@@ -89,7 +89,7 @@ export const describeTool = tool(
   },
   {
     name: "describe_tool",
-    description: `Get the full schema and parameter details for a specific Prowler tool.
+    description: `Get the full schema and parameter details for a specific HorizonVigil tool.
 
 Use this to understand what parameters a tool requires before executing it.
 Tool names are listed in your system prompt - use the exact name.
@@ -128,7 +128,7 @@ export const executeTool = tool(
       return {
         error: `Tool '${toolName}' is not available for execution.`,
         suggestion:
-          "This operation must be performed through the Prowler UI directly.",
+          "This operation must be performed through the HorizonVigil UI directly.",
       };
     }
 
@@ -198,7 +198,7 @@ export const executeTool = tool(
   },
   {
     name: "execute_tool",
-    description: `Execute a Prowler MCP tool with the specified parameters.
+    description: `Execute a HorizonVigil MCP tool with the specified parameters.
 
 Provide the exact tool name and its input parameters as specified in the tool's schema.
 

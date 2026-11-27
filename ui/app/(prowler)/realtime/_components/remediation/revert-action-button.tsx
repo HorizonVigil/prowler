@@ -82,7 +82,7 @@ export function RevertActionButton({
         open={open}
         onOpenChange={(next) => !pending && setOpen(next)}
         title="Revert this fix?"
-        description={`Prowler will change ${action.resource_uid} back to how it was before the fix, using the undo it recorded. The issue the fix closed will be open again.`}
+        description={`HorizonVigil will change ${action.resource_uid} back to how it was before the fix, using the undo it recorded. The issue the fix closed will be open again.`}
         confirmLabel={pending ? "Reverting…" : "Revert"}
         cancelLabel="Keep the fix"
         destructive

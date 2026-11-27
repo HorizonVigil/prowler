@@ -77,7 +77,7 @@ class MCPClientManager {
   }
 
   /**
-   * Injects auth headers for the core Prowler tools
+   * Injects auth headers for the core HorizonVigil tools
    */
   private handleBeforeToolCall = ({
     name,
@@ -87,8 +87,8 @@ class MCPClientManager {
     name: string;
     args?: unknown;
   }) => {
-    // Only inject auth for the core Prowler tools (user-specific data), served
-    // under the bare `prowler_` prefix. Prowler Hub (`prowler_hub_`) and Prowler
+    // Only inject auth for the core HorizonVigil tools (user-specific data), served
+    // under the bare `prowler_` prefix. HorizonVigil Hub (`prowler_hub_`) and HorizonVigil
     // Docs (`prowler_docs_`) tools are public and need no authentication. The
     // legacy `prowler_app_` prefix also starts with `prowler_`, so it is covered.
     const needsAuth =

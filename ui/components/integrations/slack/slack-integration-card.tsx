@@ -19,7 +19,7 @@ export const SlackIntegrationCard = () => {
               </h4>
               <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center">
                 <p className="text-xs text-nowrap text-gray-500 dark:text-gray-300">
-                  Send Prowler messages to your Slack workspace.
+                  Send HorizonVigil messages to your Slack workspace.
                 </p>
                 <CustomLink
                   href={DOCS_URLS.SLACK_INTEGRATION}
@@ -43,7 +43,7 @@ export const SlackIntegrationCard = () => {
       </CardHeader>
       <CardContent>
         <p className="text-sm text-gray-600 dark:text-gray-300">
-          Connect a Slack workspace and authorize the channels Prowler posts to,
+          Connect a Slack workspace and authorize the channels HorizonVigil posts to,
           so your team gets security updates where it already works.
         </p>
       </CardContent>

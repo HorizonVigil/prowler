@@ -236,7 +236,7 @@ function RemediationForm({
         open={confirmRemove}
         onOpenChange={setConfirmRemove}
         title="Remove the credentials?"
-        description="Prowler stops fixing this account and opening pull requests. Alerts and proposals keep working."
+        description="HorizonVigil stops fixing this account and opening pull requests. Alerts and proposals keep working."
         confirmLabel="Remove"
         destructive
         pending={removing}
@@ -255,7 +255,7 @@ function RemediationList({
   return (
     <div className="flex flex-col gap-2">
       <h3 className="text-text-neutral-primary text-sm font-semibold">
-        What this role lets Prowler do, and nothing else
+        What this role lets HorizonVigil do, and nothing else
       </h3>
       <ul className="border-border-neutral-secondary divide-border-neutral-secondary divide-y rounded-lg border">
         {remediations.map((remediation) => (

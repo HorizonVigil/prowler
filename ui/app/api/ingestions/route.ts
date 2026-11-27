@@ -12,7 +12,7 @@ const INVALID_INGESTION_RESPONSE =
 const INGESTION_REJECTION_BY_CODE = {
   invalid: "The report is not a valid OCSF finding report.",
   subscription_required:
-    "A Prowler Cloud subscription is required to import findings.",
+    "A HorizonVigil subscription is required to import findings.",
   permission_denied: "You do not have permission to import findings.",
   file_too_large: "The selected file exceeds the allowed upload size.",
   rate_limited: "Too many import requests. Please try again shortly.",

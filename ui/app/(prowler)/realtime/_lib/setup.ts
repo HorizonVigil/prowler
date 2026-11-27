@@ -233,7 +233,7 @@ export const enforcementSummary = (
   policy: RealtimePolicy | null,
   catalog: RealtimeFramework[],
 ): string => {
-  if (!policy) return "Not set up. Choose how Prowler responds to a change.";
+  if (!policy) return "Not set up. Choose how HorizonVigil responds to a change.";
   const parts = [modeLabel(policy.mode)];
   if (policy.mode === REALTIME_MODE.AUTO && policy.dry_run) {
     parts.push("dry run");
@@ -251,7 +251,7 @@ export const remediationSummary = (
   credential: RealtimeCredential | null,
 ): string => {
   if (!credential?.role_arn && !credential?.has_github_token) {
-    return "No role yet. Prowler can alert and propose code changes, but cannot fix the account.";
+    return "No role yet. HorizonVigil can alert and propose code changes, but cannot fix the account.";
   }
   return [
     credential.role_arn ? "Remediation role set" : "No remediation role",

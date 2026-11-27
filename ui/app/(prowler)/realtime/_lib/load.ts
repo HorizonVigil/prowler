@@ -20,7 +20,7 @@ export const loadAwsProviders = async (): Promise<AwsProvidersResult> => {
     return {
       ok: false,
       status: 0,
-      error: "Prowler could not load your AWS accounts. Try again.",
+      error: "HorizonVigil could not load your AWS accounts. Try again.",
     };
   }
   return {

@@ -9,7 +9,7 @@ export const customAttackPathQuerySkill: SkillDefinition = {
   },
   instructions: `# Attack Paths Custom Query Skill
 
-This skill provides openCypher syntax guidance and Cartography schema knowledge for writing graph queries against Prowler's cloud infrastructure data.
+This skill provides openCypher syntax guidance and Cartography schema knowledge for writing graph queries against HorizonVigil's cloud infrastructure data.
 
 ## Workflow
 
@@ -24,7 +24,7 @@ Follow these steps when the user asks you to write a custom openCypher query:
 4. **Write the query**: Compose the openCypher query following all rules in this skill:
    - Scope every MATCH to the root account node (see Provider Isolation)
    - Use \`$provider_uid\` and \`$provider_id\` parameters (see Query Parameters)
-   - Include \`ProwlerFinding\` OPTIONAL MATCH (see Include Prowler Findings)
+   - Include \`ProwlerFinding\` OPTIONAL MATCH (see Include HorizonVigil Findings)
    - Use openCypher v9 compatible syntax only (see openCypher Version 9 Compatibility)
 
 5. **Present the query**: Show the complete query in a \`cypher\` code block with:
@@ -65,9 +65,9 @@ Every \`MATCH\` clause must connect to the \`aws\` variable (or another variable
 
 **Exception**: The \`Internet\` sentinel node uses \`OPTIONAL MATCH\` with \`_provider_id\` for scoping instead of chaining from \`aws\`.
 
-### Include Prowler Findings
+### Include HorizonVigil Findings
 
-Always include Prowler findings to enrich results with security context:
+Always include HorizonVigil findings to enrich results with security context:
 
 \`\`\`cypher
 UNWIND nodes(path) as n
@@ -127,11 +127,11 @@ Queries must use openCypher Version 9 (compatible with both Neo4j and Amazon Nep
 | \`LaunchTemplate\` | EC2 launch template |
 | \`AWSTag\` | Resource tag with key/value properties |
 
-### Prowler-Specific Labels
+### HorizonVigil-Specific Labels
 
 | Label | Description |
 |-------|-------------|
-| \`ProwlerFinding\` | Prowler finding node with \`status\`, \`provider_uid\`, \`severity\` properties |
+| \`ProwlerFinding\` | HorizonVigil finding node with \`status\`, \`provider_uid\`, \`severity\` properties |
 | \`Internet\` | Internet sentinel node, scoped by \`_provider_id\` (used in network exposure queries) |
 
 ### Common Relationships
@@ -303,7 +303,7 @@ RETURN path_principal, path_target,
 
 1. **Always scope by provider**: Use \`{id: $provider_uid}\` on \`AWSAccount\` nodes. Use \`{_provider_id: $provider_id}\` on non-account nodes that need provider scoping (e.g., \`Internet\`).
 2. **Chain all MATCHes from the root account node**: Every \`MATCH\` must connect to the \`aws\` variable. The \`Internet\` node is the only exception (uses \`OPTIONAL MATCH\` with \`_provider_id\`).
-3. **Include Prowler findings**: Always add the \`OPTIONAL MATCH\` for \`ProwlerFinding\` nodes.
+3. **Include HorizonVigil findings**: Always add the \`OPTIONAL MATCH\` for \`ProwlerFinding\` nodes.
 4. **Return distinct findings**: Use \`collect(DISTINCT pf)\` to avoid duplicates.
 5. **Comment the query purpose**: Add inline comments explaining each \`MATCH\` clause.
 6. **Use alternatives for unsupported features**: Replace \`=~\` with \`toLower()\` + exact match or \`CONTAINS\`/\`STARTS WITH\`. Replace \`reduce()\` with \`UNWIND\` + \`collect()\`.

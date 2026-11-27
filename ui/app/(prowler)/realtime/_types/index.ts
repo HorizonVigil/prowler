@@ -1,4 +1,4 @@
-// Realtime (real-time compliance for AWS). Prowler Cloud only. Attribute names
+// Realtime (real-time compliance for AWS). HorizonVigil only. Attribute names
 // mirror the API (`api/src/backend/realtime/v1/serializers.py`), so the shapes
 // below keep the API's snake_case.
 

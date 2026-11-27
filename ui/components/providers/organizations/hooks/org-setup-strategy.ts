@@ -268,7 +268,7 @@ const awsOrgSetupStrategy: OrgSetupStrategy<AwsOrgSetupData> = {
     detail ? `${AWS_AUTH_FAILURE} ${detail}` : AWS_AUTH_FAILURE,
   sharedErrorCopy: {
     hierarchy_depth_exceeded:
-      "This organization's organizational unit hierarchy is deeper than Prowler can read. Contact support so we can help you onboard it.",
+      "This organization's organizational unit hierarchy is deeper than HorizonVigil can read. Contact support so we can help you onboard it.",
   },
 };
 
@@ -313,7 +313,7 @@ const azureOrgSetupStrategy: OrgSetupStrategy<AzureOrgSetupData> = {
     detail ? `${AZURE_AUTH_FAILURE} ${detail}` : AZURE_AUTH_FAILURE,
   sharedErrorCopy: {
     hierarchy_depth_exceeded:
-      "This tenant's Management Group hierarchy is deeper than Prowler can read. Contact support so we can help you onboard it.",
+      "This tenant's Management Group hierarchy is deeper than HorizonVigil can read. Contact support so we can help you onboard it.",
   },
 };
 
@@ -368,7 +368,7 @@ const gcpOrgSetupStrategy: OrgSetupStrategy<GcpOrgSetupData> = {
     detail ? `${GCP_AUTH_FAILURE} ${detail}` : GCP_AUTH_FAILURE,
   sharedErrorCopy: {
     hierarchy_depth_exceeded:
-      "This organization's folder hierarchy is deeper than Prowler can read. Contact support so we can help you onboard it.",
+      "This organization's folder hierarchy is deeper than HorizonVigil can read. Contact support so we can help you onboard it.",
   },
 };
 

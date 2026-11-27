@@ -54,7 +54,7 @@ export interface RegistryMarketplaceCompleteModel {
   isComplete: true;
   /** Registry artifacts (not built in), filtered and sorted. */
   artifacts: RegistryMarketplaceArtifact[];
-  /** Artifacts that ship with Prowler, filtered and sorted the same way. */
+  /** Artifacts that ship with HorizonVigil, filtered and sorted the same way. */
   builtinArtifacts: RegistryMarketplaceArtifact[];
   providers: string[];
   myArtifacts: RegistryMarketplaceMyArtifact[];

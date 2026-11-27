@@ -56,7 +56,7 @@ const arn = (service: string, region: string, path: string) =>
 interface ResourceKind {
   service: string;
   type: string;
-  /** Global resources live in one region, as Prowler reports them. */
+  /** Global resources live in one region, as HorizonVigil reports them. */
   global?: boolean;
   name: (index: number, region: string) => string;
   uid: (name: string, region: string) => string;

@@ -65,9 +65,9 @@ import {
 
 const REALTIME_URL = `${apiBaseUrl}/realtime`;
 const UNREACHABLE =
-  "Prowler could not reach the Prowler Realtime service. Try again.";
+  "HorizonVigil could not reach the HorizonVigil Realtime service. Try again.";
 const SERVER_ERROR =
-  "Prowler Realtime could not answer right now. Try again in a moment.";
+  "HorizonVigil Realtime could not answer right now. Try again in a moment.";
 const INVALID_PROVIDER = "Select an AWS provider first.";
 const MAX_EVENTS = 500;
 const DEFAULT_PAGE_SIZE = 25;
@@ -112,7 +112,7 @@ const detailOf = async (response: Response, fallback: string) => {
 };
 
 /**
- * One call to the Prowler Realtime API.
+ * One call to the HorizonVigil Realtime API.
  *
  * 409 (AWS refused a revert) and 503 (data store not configured) are normal
  * answers here: they come back as a failure the panel can explain, and they
@@ -131,7 +131,7 @@ const call = async (
   const query = new URLSearchParams();
   for (const [key, value] of Array.from(init.query ?? [])) {
     if (!SAFE_QUERY_KEY.test(key) || !SAFE_QUERY_VALUE.test(value)) {
-      return fail(400, "The request has a value Prowler cannot send.");
+      return fail(400, "The request has a value HorizonVigil cannot send.");
     }
     query.append(key, value);
   }
@@ -147,7 +147,7 @@ const call = async (
       cache: "no-store",
     });
   } catch (error) {
-    console.error("Prowler Realtime request failed:", error);
+    console.error("HorizonVigil Realtime request failed:", error);
     return fail(0, UNREACHABLE);
   }
 
@@ -158,7 +158,7 @@ const call = async (
         await detailOf(
           response,
           response.status === 503
-            ? "Prowler Realtime's data store is not available."
+            ? "HorizonVigil Realtime's data store is not available."
             : "AWS did not accept the change.",
         ),
       );
@@ -175,7 +175,7 @@ const call = async (
     return { ok: true, document: body, status: response.status };
   } catch (error) {
     // handleApiResponse reports and throws on 5xx: the API answered, it failed.
-    console.error("Prowler Realtime request failed:", error);
+    console.error("HorizonVigil Realtime request failed:", error);
     return fail(response.status >= 500 ? response.status : 0, SERVER_ERROR);
   }
 };

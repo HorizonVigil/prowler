@@ -229,7 +229,7 @@ export const CloudUpgradeModal = () => {
     returnFocusElement,
   };
 
-  // Cloud only upsells paid plans; Local Server only upsells Prowler Cloud.
+  // Cloud only upsells paid plans; Local Server only upsells HorizonVigil.
   if (isCloud()) {
     return isPaidPlanUpgradeFeature(feature) ? (
       <PaidPlanUpgradeModal feature={feature} {...modalProps} />

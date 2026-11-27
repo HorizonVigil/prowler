@@ -19,7 +19,7 @@ interface CloudUpgradeContent {
 
 export const CLOUD_UPGRADE_SECONDARY_CTA = "View Plans & Pricing";
 export const CLOUD_UPGRADE_FOOTER_NOTE =
-  "Prowler Cloud opens in a new tab. Your Prowler Local Server remains unchanged.";
+  "HorizonVigil opens in a new tab. Your HorizonVigil remains unchanged.";
 
 const CLOUD_SIGN_UP_URL = "https://cloud.prowler.com/sign-up";
 const LOCAL_SERVER_UTM_SOURCE = "prowler-local-server";
@@ -54,7 +54,7 @@ export const CLOUD_UPGRADE_CONTENT = {
       "Set scan times in your preferred timezone",
       "Manage schedules alongside scan history",
     ],
-    primaryCta: "Schedule Scans in Prowler Cloud",
+    primaryCta: "Schedule Scans in HorizonVigil",
   },
   [CLOUD_UPGRADE_FEATURE.ALERTS]: {
     title: "Turn Findings into Alerts",
@@ -65,7 +65,7 @@ export const CLOUD_UPGRADE_CONTENT = {
       "Notify the right people after every scan",
       "Manage alert rules from one place",
     ],
-    primaryCta: "Create Alerts in Prowler Cloud",
+    primaryCta: "Create Alerts in HorizonVigil",
   },
   [CLOUD_UPGRADE_FEATURE.AMAZON_S3]: {
     title: "Export Findings to Amazon S3",
@@ -76,18 +76,18 @@ export const CLOUD_UPGRADE_CONTENT = {
       "Choose the providers and output folder per bucket",
       "Authenticate with an IAM role or static credentials",
     ],
-    primaryCta: "Export to S3 in Prowler Cloud",
+    primaryCta: "Export to S3 in HorizonVigil",
   },
   [CLOUD_UPGRADE_FEATURE.API_KEYS]: {
-    title: "Automate Prowler with API Keys",
+    title: "Automate HorizonVigil with API Keys",
     description:
-      "Give scripts, pipelines, and integrations programmatic access to Prowler Cloud.",
+      "Give scripts, pipelines, and integrations programmatic access to HorizonVigil.",
     benefits: [
       "Create named keys with their own expiration",
       "Revoke a key without touching your user account",
       "See when each key was last used",
     ],
-    primaryCta: "Create API Keys in Prowler Cloud",
+    primaryCta: "Create API Keys in HorizonVigil",
   },
   [CLOUD_UPGRADE_FEATURE.AWS_ORGANIZATIONS]: {
     title: "Add Your Entire AWS Organization",
@@ -98,7 +98,7 @@ export const CLOUD_UPGRADE_CONTENT = {
       "Choose exactly which accounts to onboard",
       "Apply schedules across the selected accounts",
     ],
-    primaryCta: "Set Up AWS Organizations in Prowler Cloud",
+    primaryCta: "Set Up AWS Organizations in HorizonVigil",
   },
   [CLOUD_UPGRADE_FEATURE.AZURE_ORGANIZATIONS]: {
     title: "Add Your Entire Azure Management Group",
@@ -109,7 +109,7 @@ export const CLOUD_UPGRADE_CONTENT = {
       "Choose exactly which subscriptions to onboard",
       "Apply schedules across the selected subscriptions",
     ],
-    primaryCta: "Set Up Azure Management Groups in Prowler Cloud",
+    primaryCta: "Set Up Azure Management Groups in HorizonVigil",
   },
   [CLOUD_UPGRADE_FEATURE.GCP_ORGANIZATIONS]: {
     title: "Add Your Entire GCP Organization",
@@ -120,18 +120,18 @@ export const CLOUD_UPGRADE_CONTENT = {
       "Choose exactly which projects to onboard",
       "Apply schedules across the selected projects",
     ],
-    primaryCta: "Set Up GCP Organizations in Prowler Cloud",
+    primaryCta: "Set Up GCP Organizations in HorizonVigil",
   },
   [CLOUD_UPGRADE_FEATURE.CLI_IMPORT]: {
     title: "Bring CLI Findings into One Cloud View",
     description:
-      "Send Prowler CLI scan results to Prowler Cloud for centralized analysis and collaboration.",
+      "Send HorizonVigil CLI scan results to HorizonVigil for centralized analysis and collaboration.",
     benefits: [
       "Push results directly with --push-to-cloud",
       "Track CLI and managed scans in one place",
       "Automate findings ingestion from CI/CD pipelines",
     ],
-    primaryCta: "Import CLI Findings in Prowler Cloud",
+    primaryCta: "Import CLI Findings in HorizonVigil",
   },
   [CLOUD_UPGRADE_FEATURE.CROSS_PROVIDER_COMPLIANCE]: {
     title: "See Compliance Across Every Provider",
@@ -143,7 +143,7 @@ export const CLOUD_UPGRADE_CONTENT = {
       "Find coverage gaps without switching scans",
       "Generate a consolidated compliance report",
     ],
-    primaryCta: "Consolidate Compliance in Prowler Cloud",
+    primaryCta: "Consolidate Compliance in HorizonVigil",
   },
   [CLOUD_UPGRADE_FEATURE.FINDING_TRIAGE]: {
     title: "Coordinate Finding Remediation",
@@ -154,7 +154,7 @@ export const CLOUD_UPGRADE_CONTENT = {
       "Track review and remediation status",
       "Keep triage history with future scans",
     ],
-    primaryCta: "Triage Findings in Prowler Cloud",
+    primaryCta: "Triage Findings in HorizonVigil",
   },
   [CLOUD_UPGRADE_FEATURE.JIRA_DISPATCH]: {
     title: "Send Findings to Jira at Scale",
@@ -165,7 +165,7 @@ export const CLOUD_UPGRADE_CONTENT = {
       "Choose between grouped and individual Jira issues",
       "Track dispatch progress and retry failed findings",
     ],
-    primaryCta: "Send Findings to Jira in Prowler Cloud",
+    primaryCta: "Send Findings to Jira in HorizonVigil",
   },
   [CLOUD_UPGRADE_FEATURE.LIGHTHOUSE_AI]: {
     title: "Use The Agent Cloud Defender",
@@ -174,32 +174,32 @@ export const CLOUD_UPGRADE_CONTENT = {
     benefits: [
       "Start without provisioning or managing OpenAI API keys",
       "Automate security workflows through the hosted remote MCP server",
-      "Keep Lighthouse actions grounded in your Prowler Cloud data",
+      "Keep Lighthouse actions grounded in your HorizonVigil data",
     ],
-    primaryCta: "Open Lighthouse AI in Prowler Cloud",
+    primaryCta: "Open Lighthouse AI in HorizonVigil",
   },
   [CLOUD_UPGRADE_FEATURE.GENERAL]: {
-    title: "Scale Prowler Without Operating It",
+    title: "Scale HorizonVigil Without Operating It",
     description:
-      "Add managed automation and collaboration while Prowler operates the platform.",
+      "Add managed automation and collaboration while HorizonVigil operates the platform.",
     benefits: [
       "Onboard AWS Organizations and automate scans and alerts",
       "Triage findings and consolidate compliance across providers",
       "Investigate and remediate with Lighthouse AI and Agentic View",
       "Use managed infrastructure, support, and backups",
     ],
-    primaryCta: "Start a Prowler Cloud Trial",
+    primaryCta: "Start a HorizonVigil Trial",
   },
   [CLOUD_UPGRADE_FEATURE.REALTIME]: {
     title: "Catch Risky AWS Changes as They Happen",
     description:
-      "Prowler Realtime watches CloudTrail and responds minutes after a change, not at the next scan.",
+      "HorizonVigil Realtime watches CloudTrail and responds minutes after a change, not at the next scan.",
     benefits: [
       "Check each risky event against the resource it touched",
       "Alert, propose a Terraform pull request, or fix it automatically",
       "Review and revert every automatic fix",
     ],
-    primaryCta: "Set Up Realtime in Prowler Cloud",
+    primaryCta: "Set Up Realtime in HorizonVigil",
   },
   [CLOUD_UPGRADE_FEATURE.SCAN_CONFIGURATION]: {
     title: "Configure Every Scan Once",
@@ -210,7 +210,7 @@ export const CLOUD_UPGRADE_CONTENT = {
       "Apply consistent configurations to providers",
       "Manage scan behavior from one place",
     ],
-    primaryCta: "Configure Scans in Prowler Cloud",
+    primaryCta: "Configure Scans in HorizonVigil",
   },
   [CLOUD_UPGRADE_FEATURE.SAML_DOMAINS]: {
     title: "Use One SAML Configuration Across Domains",
@@ -221,7 +221,7 @@ export const CLOUD_UPGRADE_CONTENT = {
       `Authorize up to ${MAX_SAML_ADDITIONAL_EMAIL_DOMAINS} additional email domains`,
       "Manage every domain from the same SAML configuration",
     ],
-    primaryCta: "Manage SAML Domains in Prowler Cloud",
+    primaryCta: "Manage SAML Domains in HorizonVigil",
   },
 } as const satisfies Record<CloudUpgradeFeature, CloudUpgradeContent>;
 
@@ -271,8 +271,8 @@ export const PAID_PLAN_UPGRADE_CONTENT = {
     primaryCta: "Upgrade to See All Findings",
   },
   [PAID_PLAN_UPGRADE_FEATURE.REGISTRY]: {
-    title: "Unlock Prowler Registry",
-    description: "Prowler Registry is included in paid plans.",
+    title: "Unlock HorizonVigil Registry",
+    description: "HorizonVigil Registry is included in paid plans.",
     benefits: [
       "Connect custom cloud providers",
       "Extend your assessments with custom security checks",
@@ -282,7 +282,7 @@ export const PAID_PLAN_UPGRADE_CONTENT = {
   },
   [PAID_PLAN_UPGRADE_FEATURE.REPORT_DOWNLOAD]: {
     title: "Download Your Scan Reports",
-    description: "Report downloads are included in Prowler Cloud paid plans.",
+    description: "Report downloads are included in HorizonVigil paid plans.",
     benefits: [
       "Download the full scan output in CSV, JSON-OCSF, and HTML",
       "Export compliance reports as CSV, OCSF, and PDF",
@@ -292,7 +292,7 @@ export const PAID_PLAN_UPGRADE_CONTENT = {
   },
   [PAID_PLAN_UPGRADE_FEATURE.S3_INTEGRATION]: {
     title: "Export Findings to Amazon S3",
-    description: "Amazon S3 exports are included in Prowler Cloud paid plans.",
+    description: "Amazon S3 exports are included in HorizonVigil paid plans.",
     benefits: [
       "Export findings after each scan",
       "Choose the providers and output folder per bucket",

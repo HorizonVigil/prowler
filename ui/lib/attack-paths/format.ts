@@ -4,7 +4,7 @@
 
 /**
  * Format camelCase labels to space-separated text
- * e.g., "ProwlerFinding" -> "Prowler Finding", "AWSAccount" -> "Aws Account"
+ * e.g., "ProwlerFinding" -> "HorizonVigil Finding", "AWSAccount" -> "Aws Account"
  */
 export function formatNodeLabel(label: string): string {
   return label
@@ -18,7 +18,7 @@ export function formatNodeLabel(label: string): string {
 
 /**
  * Format multiple node labels into a readable string
- * e.g., ["ProwlerFinding"] -> "Prowler Finding"
+ * e.g., ["ProwlerFinding"] -> "HorizonVigil Finding"
  */
 export function formatNodeLabels(labels: string[]): string {
   return labels.map(formatNodeLabel).join(", ");

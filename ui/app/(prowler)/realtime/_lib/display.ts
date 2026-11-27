@@ -135,7 +135,7 @@ const ROUTE_BADGES: Record<RealtimeRoute, BadgeDescriptor> = {
 
 /** What each route means, for the legend under the ranked findings. */
 export const ROUTE_LEGEND: Record<RealtimeRoute, string> = {
-  [REALTIME_ROUTE.AUTO]: "Fixed in the AWS account by Prowler Realtime.",
+  [REALTIME_ROUTE.AUTO]: "Fixed in the AWS account by HorizonVigil Realtime.",
   [REALTIME_ROUTE.PR]: "A pull request proposes the change in your code.",
   [REALTIME_ROUTE.MANUAL]: "Nothing can be done safely without a person.",
   [REALTIME_ROUTE.NOT_ENFORCED]:
@@ -176,17 +176,17 @@ export const MODE_DESCRIPTIONS: Record<RealtimeMode, ModeDescription> = {
   [REALTIME_MODE.MONITOR]: {
     label: "Monitor only",
     consequence:
-      "Prowler Realtime watches and records risky changes and checks them against your compliance requirements. It never changes your account or your code.",
+      "HorizonVigil Realtime watches and records risky changes and checks them against your compliance requirements. It never changes your account or your code.",
   },
   [REALTIME_MODE.PR]: {
     label: "Propose a change",
     consequence:
-      "Prowler Realtime prepares a fix in your infrastructure code for review. Nothing in the AWS account is changed until you merge and deploy it.",
+      "HorizonVigil Realtime prepares a fix in your infrastructure code for review. Nothing in the AWS account is changed until you merge and deploy it.",
   },
   [REALTIME_MODE.AUTO]: {
     label: "Fix automatically",
     consequence:
-      "Prowler Realtime fixes supported issues in the AWS account itself, using the remediation role, and records how to undo each change. Findings it cannot fix safely fall back to a pull request.",
+      "HorizonVigil Realtime fixes supported issues in the AWS account itself, using the remediation role, and records how to undo each change. Findings it cannot fix safely fall back to a pull request.",
   },
 };
 
@@ -290,19 +290,19 @@ export const failureCopy = (
       return {
         title: "You do not have access to this",
         description:
-          "Your role cannot read this Prowler Realtime data. Ask an administrator for access.",
+          "Your role cannot read this HorizonVigil Realtime data. Ask an administrator for access.",
       };
     case 404:
       return {
-        title: "Prowler Realtime is not available",
+        title: "HorizonVigil Realtime is not available",
         description:
-          "Prowler Realtime is not enabled for this deployment, or the AWS provider no longer exists.",
+          "HorizonVigil Realtime is not enabled for this deployment, or the AWS provider no longer exists.",
       };
     case 503:
       return {
         title: "Real-time data store not configured",
         description:
-          "This view needs Prowler Realtime's event data store (ClickHouse), which is not configured or not reachable. Compliance checks, policies and remediation keep working without it.",
+          "This view needs HorizonVigil Realtime's event data store (ClickHouse), which is not configured or not reachable. Compliance checks, policies and remediation keep working without it.",
       };
     default:
       return {

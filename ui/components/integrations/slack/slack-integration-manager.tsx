@@ -71,7 +71,7 @@ const CHECK_HINT_ID = "slack-connection-check-hint";
 
 /** The exact text the check posts (contract, Connection); the hint quotes it. */
 const CONFIRMATION_MESSAGE =
-  "✅ Prowler connection verified. Notifications will be delivered to this channel.";
+  "✅ HorizonVigil connection verified. Notifications will be delivered to this channel.";
 
 /**
  * A disconnect that removed the row without Slack confirming the revocation.
@@ -195,7 +195,7 @@ interface SlackIntegrationManagerProps {
   /** At most one exists per tenant (one workspace). */
   integration: IntegrationProps | null;
   authorizeUrl: string | null;
-  /** This deployment has no Prowler Slack app, so no install can be started. */
+  /** This deployment has no HorizonVigil Slack app, so no install can be started. */
   unavailable: boolean;
   rateLimitMessage: string | null;
   loadError: string | null;
@@ -462,7 +462,7 @@ export const SlackIntegrationManager = ({
         title: "Destination channels saved",
         description:
           savedChannels.length > 0
-            ? `Prowler will post to ${channelList(
+            ? `HorizonVigil will post to ${channelList(
                 savedChannels.map((channel) => channel.name),
               )}.`
             : "No destination channels are authorized any more.",
@@ -498,7 +498,7 @@ export const SlackIntegrationManager = ({
         provedCredentialAlive();
         setCheckOutcome({
           reachable: true,
-          // Prowler's own count, not the API's prose: the line has to keep
+          // HorizonVigil's own count, not the API's prose: the line has to keep
           // meaning the same thing every time it is read.
           summary: reachableSummary(channels),
           channelIds: checkedChannelIds,
@@ -510,7 +510,7 @@ export const SlackIntegrationManager = ({
           title: "Connection test successful!",
           description:
             result.message ||
-            "Prowler can reach your Slack workspace and every authorized channel.",
+            "HorizonVigil can reach your Slack workspace and every authorized channel.",
         });
       } else {
         // A dead credential named here is not a failure checking again can
@@ -555,7 +555,7 @@ export const SlackIntegrationManager = ({
     } catch (_error) {
       setCheckOutcome({
         reachable: false,
-        summary: "Prowler could not reach Slack to run the check.",
+        summary: "HorizonVigil could not reach Slack to run the check.",
         channelIds: checkedChannelIds,
         // Never an answer from Slack, so the standing verdict is untouched.
         credentialFailure,
@@ -607,8 +607,8 @@ export const SlackIntegrationManager = ({
           title: "Slack workspace disconnected",
           description:
             revoked === true
-              ? `Prowler's access to ${workspace} has been revoked.`
-              : `${workspace} is no longer connected to Prowler.`,
+              ? `HorizonVigil's access to ${workspace} has been revoked.`
+              : `${workspace} is no longer connected to HorizonVigil.`,
         });
       }
     } catch (_error) {
@@ -647,7 +647,7 @@ export const SlackIntegrationManager = ({
         open={isDisconnectOpen}
         onOpenChange={setIsDisconnectOpen}
         title="Disconnect Slack workspace"
-        description={`Prowler will remove the integration, stop posting to ${workspaceName ?? "this workspace"}, and attempt to revoke its access at Slack. Connecting again means approving Prowler in Slack.`}
+        description={`HorizonVigil will remove the integration, stop posting to ${workspaceName ?? "this workspace"}, and attempt to revoke its access at Slack. Connecting again means approving HorizonVigil in Slack.`}
       >
         <div className="flex w-full justify-end gap-4">
           <Button
@@ -683,12 +683,12 @@ export const SlackIntegrationManager = ({
       {unconfirmedRevocation && (
         <Alert variant="warning">
           <AlertTitle>
-            Slack disconnected — remove Prowler&apos;s access in Slack
+            Slack disconnected — remove HorizonVigil&apos;s access in Slack
           </AlertTitle>
           <AlertDescription>
-            The integration and the token Prowler had stored are gone from
-            Prowler, so there is nothing to retry here. Slack did not confirm
-            the revocation, so the Prowler app may still be installed in{" "}
+            The integration and the token HorizonVigil had stored are gone from
+            HorizonVigil, so there is nothing to retry here. Slack did not confirm
+            the revocation, so the HorizonVigil app may still be installed in{" "}
             {unconfirmedRevocation.workspace ?? "the workspace"} — remove it
             from that workspace&apos;s Slack app settings.
           </AlertDescription>
@@ -698,13 +698,13 @@ export const SlackIntegrationManager = ({
       {credentialFailure && (
         <Alert variant="error">
           <AlertTitle>
-            Slack no longer accepts Prowler&apos;s access to{" "}
+            Slack no longer accepts HorizonVigil&apos;s access to{" "}
             {workspaceName ?? "this workspace"}
           </AlertTitle>
           {/* Each mapped sentence already ends in the thing that fixes it. */}
           <AlertDescription>
             {slackErrorMessage({ code: credentialFailure })} Until then, nothing
-            Prowler sends will reach the workspace.
+            HorizonVigil sends will reach the workspace.
           </AlertDescription>
           {installUrl && (
             <div className="col-start-2 mt-3">
@@ -727,7 +727,7 @@ export const SlackIntegrationManager = ({
             Slack is not available in this environment yet
           </AlertTitle>
           <AlertDescription>
-            The Prowler Slack app is not configured here, so no workspace can be
+            The HorizonVigil Slack app is not configured here, so no workspace can be
             connected. Nothing to do on your side — this page starts working as
             soon as it is.
           </AlertDescription>
@@ -738,7 +738,7 @@ export const SlackIntegrationManager = ({
             <IntegrationCardHeader
               icon={<SlackIcon size={32} />}
               title={`Connected to ${workspaceName ?? "your Slack workspace"}`}
-              subtitle="Prowler posts to this workspace only."
+              subtitle="HorizonVigil posts to this workspace only."
               meta={
                 lastCheckedOn && (
                   <p className="text-text-neutral-tertiary font-mono text-xs">
@@ -829,21 +829,21 @@ export const SlackIntegrationManager = ({
                       droppedChannels.map((channel) => channel.name),
                     )}
                     . Every alert rule targeting a dropped channel stops
-                    targeting it, and Prowler stops delivering there.
+                    targeting it, and HorizonVigil stops delivering there.
                     Notifications already delivered stay in Slack.
                   </AlertDescription>
                 </Alert>
               )}
 
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                {/* Keyed: the card's subtitle also starts "Prowler posts to". */}
+                {/* Keyed: the card's subtitle also starts "HorizonVigil posts to". */}
                 <p
                   className="text-text-neutral-secondary text-xs"
                   data-authorized-channels
                 >
                   {authorizedChannels.length > 0 ? (
                     <>
-                      Prowler posts to{" "}
+                      HorizonVigil posts to{" "}
                       <StyledChannelList
                         names={authorizedChannels.map(
                           (channel) => channel.name,
@@ -876,14 +876,14 @@ export const SlackIntegrationManager = ({
             <IntegrationCardHeader
               icon={<SlackIcon size={32} />}
               title="No workspace connected"
-              subtitle="Approve Prowler in Slack to connect a workspace. No tokens to copy."
+              subtitle="Approve HorizonVigil in Slack to connect a workspace. No tokens to copy."
             />
           </CardHeader>
 
           <CardContent className="pt-0">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-sm text-gray-600 dark:text-gray-300">
-                Prowler asks for permission to post messages and to read the
+                HorizonVigil asks for permission to post messages and to read the
                 workspace&apos;s channel list.
               </p>
               {installUrl ? (

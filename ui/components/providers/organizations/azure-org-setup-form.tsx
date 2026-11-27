@@ -336,7 +336,7 @@ export function AzureOrgSetupForm({
         {setupPhase === ORG_SETUP_PHASE.ACCESS && !isBusy && (
           <div className="flex flex-col gap-6">
             <p className="text-text-neutral-primary text-sm leading-7 font-normal">
-              Enter the service principal Prowler authenticates with. It needs
+              Enter the service principal HorizonVigil authenticates with. It needs
               the Reader role on the tenant root Management Group.
             </p>
 

@@ -36,7 +36,7 @@ interface ThreatScoreBadgeProps {
   provider: string;
   selectedScan?: ScanEntity;
   sectionScores?: SectionScores;
-  /** Prowler Cloud tenants without a paid plan cannot download reports. */
+  /** HorizonVigil tenants without a paid plan cannot download reports. */
   subscriptionOnly?: boolean;
   /** Display scores without detail navigation or report downloads. */
   readOnly?: boolean;

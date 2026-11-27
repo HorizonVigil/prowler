@@ -9,7 +9,7 @@ interface UsageLimitMessageProps {
 
 const VIEW_PLANS_LABEL = "View plans";
 
-/** Inline link to Prowler pricing, in a new tab, for copy that explains the refusal itself. */
+/** Inline link to HorizonVigil pricing, in a new tab, for copy that explains the refusal itself. */
 export const ViewPlansLink = () => (
   <a
     href={PRICING_URL}
@@ -21,14 +21,14 @@ export const ViewPlansLink = () => (
   </a>
 );
 
-// Over-limit (trial-expired) notice: the shared copy plus Prowler pricing.
+// Over-limit (trial-expired) notice: the shared copy plus HorizonVigil pricing.
 export const UsageLimitMessage = ({ className }: UsageLimitMessageProps) => (
   <p className={cn("text-text-error-primary text-sm", className)}>
     {USAGE_LIMIT_MESSAGE} <ViewPlansLink />
   </p>
 );
 
-/** Toast action for a usage-limit refusal: Prowler pricing, in a new tab. */
+/** Toast action for a usage-limit refusal: HorizonVigil pricing, in a new tab. */
 export const usageLimitToastAction = () => (
   <ToastAction altText={VIEW_PLANS_LABEL} asChild>
     <a href={PRICING_URL} target="_blank" rel="noopener noreferrer">

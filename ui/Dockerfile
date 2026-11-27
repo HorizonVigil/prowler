@@ -48,6 +48,12 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ARG NEXT_PUBLIC_PROWLER_RELEASE_VERSION
 ENV NEXT_PUBLIC_PROWLER_RELEASE_VERSION=${NEXT_PUBLIC_PROWLER_RELEASE_VERSION}
 
+# basePath is baked at build time (Next.js). Set to serve under a path prefix (e.g. /security).
+# NEXT_PUBLIC_* is guaranteed inlined into the edge/middleware bundle (proxy.ts, auth.config.ts).
+ARG UI_BASE_PATH
+ENV UI_BASE_PATH=${UI_BASE_PATH}
+ENV NEXT_PUBLIC_BASE_PATH=${UI_BASE_PATH}
+
 # GTM / API base+docs URLs are runtime container env (prod stage), not build ARGs.
 
 RUN pnpm run build

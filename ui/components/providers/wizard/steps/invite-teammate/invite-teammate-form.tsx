@@ -69,7 +69,7 @@ export function InviteTeammateForm({
         <p className="text-text-neutral-secondary text-sm">
           Invite someone from your team who can access the{" "}
           {getProviderDisplayName(providerType)} account. They will join this
-          Prowler tenant and can connect it themselves.
+          HorizonVigil tenant and can connect it themselves.
         </p>
 
         <WizardInputField

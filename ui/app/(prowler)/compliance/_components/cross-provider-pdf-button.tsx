@@ -48,7 +48,7 @@ interface CrossProviderPdfButtonProps {
   /** Already-generated report matching these filters, if any — offered as an
    *  instant download instead of forcing a re-generate. */
   latestPdf: LatestCrossProviderPdf | null;
-  /** Prowler Cloud tenants without a paid plan cannot download reports. */
+  /** HorizonVigil tenants without a paid plan cannot download reports. */
   subscriptionOnly?: boolean;
 }
 

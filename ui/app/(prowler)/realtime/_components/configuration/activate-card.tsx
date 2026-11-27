@@ -140,7 +140,7 @@ export function ActivateCard({
               {policy ? "Activate Realtime" : "Activate"}
             </h2>
             <p className="text-text-neutral-tertiary text-xs">
-              Prowler starts watching {accountLabel} as soon as you activate it.
+              HorizonVigil starts watching {accountLabel} as soon as you activate it.
             </p>
           </div>
           <ul className="flex flex-col gap-2" aria-label="Before you activate">
@@ -193,7 +193,7 @@ export function ActivateCard({
       <ConfirmModal
         open={confirm === CONFIRM.LIVE}
         onOpenChange={(open) => !open && setConfirm(CONFIRM.NONE)}
-        title="Let Prowler change your AWS account?"
+        title="Let HorizonVigil change your AWS account?"
         description="Dry run is off: supported fixes are applied to the account as soon as a check fails. Each fix records how to undo it."
         confirmLabel="Activate with live fixes"
         pending={pending}
@@ -203,7 +203,7 @@ export function ActivateCard({
         open={confirm === CONFIRM.PAUSE}
         onOpenChange={(open) => !open && setConfirm(CONFIRM.NONE)}
         title="Pause Realtime?"
-        description="Prowler stops creating detections and responses for this account until you activate it again."
+        description="HorizonVigil stops creating detections and responses for this account until you activate it again."
         confirmLabel="Pause"
         destructive
         pending={pending}

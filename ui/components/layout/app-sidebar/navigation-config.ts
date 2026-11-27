@@ -358,7 +358,7 @@ export function getNavigationConfig({
         {
           kind: NAVIGATION_ITEM_KIND.LINK,
           href: "https://hub.prowler.com/",
-          label: "Prowler Hub",
+          label: "HorizonVigil Hub",
           icon: LayoutGrid,
           target: "_blank",
           tooltip: "Looking for all available checks? learn more.",

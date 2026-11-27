@@ -36,7 +36,7 @@ export const LIGHTHOUSE_GLOBAL_SUGGESTIONS = [
   {
     label: "Find missing alerts",
     prompt:
-      "Look at my most serious findings from the last month. Which of them produced no alert from Prowler, and what rule would have caught them?",
+      "Look at my most serious findings from the last month. Which of them produced no alert from HorizonVigil, and what rule would have caught them?",
   },
   {
     label: "Create Jira tickets",
@@ -60,7 +60,7 @@ export const LIGHTHOUSE_PAGE_DEFINITION_INPUTS = [
       {
         label: "Improve my ThreatScore",
         prompt:
-          "According to the Prowler ThreatScore, what do I need to improve first based on its trend and weakest section, and why?",
+          "According to the ThreatScore, what do I need to improve first based on its trend and weakest section, and why?",
       },
       {
         label: "Plan today's security work",
@@ -303,12 +303,12 @@ export const LIGHTHOUSE_PAGE_DEFINITION_INPUTS = [
       {
         label: "Find unmonitored cloud accounts",
         prompt:
-          "What parts of my cloud estate aren't onboarded? Provider accounts that exist but Prowler isn't scanning.",
+          "What parts of my cloud estate aren't onboarded? Provider accounts that exist but HorizonVigil isn't scanning.",
       },
       {
         label: "Design provider groups",
         prompt:
-          "Group these provider accounts by what they're actually for, based on names, tags, and what's running in them. Which of those groupings should exist as provider groups in Prowler but don't?",
+          "Group these provider accounts by what they're actually for, based on names, tags, and what's running in them. Which of those groupings should exist as provider groups in HorizonVigil but don't?",
       },
       {
         label: "Complete provider setup",
@@ -501,7 +501,7 @@ export const LIGHTHOUSE_PAGE_DEFINITION_INPUTS = [
       {
         label: "Explain invitation lifecycle",
         prompt:
-          "Explain how invitations work in Prowler: what happens when one expires, and how do I resend or revoke one safely?",
+          "Explain how invitations work in HorizonVigil: what happens when one expires, and how do I resend or revoke one safely?",
       },
     ],
   },
@@ -528,7 +528,7 @@ export const LIGHTHOUSE_PAGE_DEFINITION_INPUTS = [
       {
         label: "Route findings to teams",
         prompt:
-          "Design how findings should flow from Prowler into my existing tools so each team only sees what they own.",
+          "Design how findings should flow from HorizonVigil into my existing tools so each team only sees what they own.",
       },
       {
         label: "Harden integration credentials",

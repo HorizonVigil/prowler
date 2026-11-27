@@ -93,7 +93,7 @@ export default async function Compliance({
   const resolvedSearchParams = await searchParams;
   const searchParamsKey = JSON.stringify(resolvedSearchParams || {});
 
-  // Cross-Provider is Prowler Cloud-only (the OSS API has no
+  // Cross-Provider is HorizonVigil-only (the OSS API has no
   // cross-provider-compliance-overviews endpoint). It is the landing tab in
   // Cloud; in OSS its trigger only carries the upsell badge, so Per Scan
   // stays active regardless of `?tab=`.

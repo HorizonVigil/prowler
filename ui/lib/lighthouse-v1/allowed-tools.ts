@@ -4,7 +4,7 @@
  * All other tools are blocked by default.
  */
 const ALLOWED_TOOLS = new Set([
-  // === Prowler Hub Tools - read-only ===
+  // === HorizonVigil Hub Tools - read-only ===
   "prowler_hub_list_checks",
   "prowler_hub_semantic_search_checks",
   "prowler_hub_get_check_details",
@@ -15,10 +15,10 @@ const ALLOWED_TOOLS = new Set([
   "prowler_hub_get_compliance_details",
   "prowler_hub_list_providers",
   "prowler_hub_get_provider_services",
-  // === Prowler Docs Tools - read-only ===
+  // === HorizonVigil Docs Tools - read-only ===
   "prowler_docs_search",
   "prowler_docs_get_document",
-  // === Prowler platform Tools - read-only ===
+  // === HorizonVigil platform Tools - read-only ===
   // Findings
   "prowler_search_security_findings",
   "prowler_get_finding_details",
@@ -55,7 +55,7 @@ const ALLOWED_TOOLS = new Set([
  * Check if a tool is allowed for LLM access.
  * Returns true only if the tool is explicitly in the whitelist.
  *
- * The Prowler platform tools were renamed from the `prowler_app_` prefix to
+ * The HorizonVigil platform tools were renamed from the `prowler_app_` prefix to
  * `prowler_`. The legacy prefix is normalized here so tools served by
  * an older MCP server (or a mismatched rollout) still resolve.
  */

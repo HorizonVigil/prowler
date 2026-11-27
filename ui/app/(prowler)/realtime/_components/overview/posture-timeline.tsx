@@ -148,7 +148,7 @@ export function PostureTimeline({
     <div className="flex flex-col gap-3">
       <p className="sr-only">
         Posture over {points.length} scans. Latest scan: {latest.passed} passing
-        and {latest.failed} failing checks. Prowler Realtime took{" "}
+        and {latest.failed} failing checks. HorizonVigil Realtime took{" "}
         {actions.length} recorded actions.
       </p>
       <ChartContainer
@@ -235,7 +235,7 @@ export function PostureTimeline({
         </div>
         {recent.length === 0 ? (
           <p className="text-text-neutral-tertiary text-sm">
-            Prowler Realtime has not fixed or proposed anything in this account
+            HorizonVigil Realtime has not fixed or proposed anything in this account
             yet.
           </p>
         ) : (

@@ -19,7 +19,7 @@ export type SlackErrorCode =
 /**
  * The grant itself is dead: reconnecting is the only way out, not retrying. The
  * API answers these with `400`, not `401`, so they are not mistaken for an
- * expired Prowler session.
+ * expired HorizonVigil session.
  */
 export const SLACK_TOKEN_ERROR_CODES = [
   SLACK_ERROR_CODE.TOKEN_REVOKED,
@@ -39,21 +39,21 @@ export const SLACK_GENERIC_ERROR_MESSAGE =
   "Slack could not complete that request. Try again in a moment.";
 
 export const SLACK_RATE_LIMITED_MESSAGE =
-  "Slack is rate limiting Prowler right now. Try again in a few moments.";
+  "Slack is rate limiting HorizonVigil right now. Try again in a few moments.";
 
 /**
  * For a channel list that stopped short of the workspace: the page budget ran
  * out, or `links.next` left the API's origin.
  */
 export const SLACK_PARTIAL_CHANNEL_LIST_MESSAGE =
-  "This workspace has more public channels than Prowler reads in one go, so this list is not all of them. Channels @Prowler Cloud is already in are always listed: invite it to a missing channel, then refresh.";
+  "This workspace has more public channels than HorizonVigil reads in one go, so this list is not all of them. Channels @HorizonVigil is already in are always listed: invite it to a missing channel, then refresh.";
 
 /**
  * For a `2xx` the UI could not read. Not phrased as a failure: the install
  * happened, only the workspace cannot be named.
  */
 export const SLACK_UNREADABLE_RESULT_MESSAGE =
-  "Prowler could not read the result of the install. Open the Slack integration page to see the workspace — if none is listed there, start the install again.";
+  "HorizonVigil could not read the result of the install. Open the Slack integration page to see the workspace — if none is listed there, start the install again.";
 
 /**
  * The shape of a Slack reason code, as opposed to a sentence: the set is
@@ -65,19 +65,19 @@ const RECONNECT = "Connect the workspace again to restore access.";
 
 export const SLACK_ERROR_MESSAGES = {
   [SLACK_ERROR_CODE.MISSING_SCOPE]:
-    "Prowler is missing a permission it needs in Slack. Connect the workspace again and approve the access Prowler asks for.",
+    "HorizonVigil is missing a permission it needs in Slack. Connect the workspace again and approve the access HorizonVigil asks for.",
   [SLACK_ERROR_CODE.CHANNEL_NOT_FOUND]:
     "That channel no longer exists in the workspace. Choose another one.",
   [SLACK_ERROR_CODE.NOT_IN_CHANNEL]:
-    "Prowler is not in that channel. Invite @Prowler Cloud to it in Slack, or choose a channel it can already post to.",
+    "HorizonVigil is not in that channel. Invite @HorizonVigil to it in Slack, or choose a channel it can already post to.",
   [SLACK_ERROR_CODE.NO_PERMISSION]:
-    "Slack did not allow Prowler to post there. Choose another channel, or ask a workspace admin to allow it.",
-  [SLACK_ERROR_CODE.TOKEN_REVOKED]: `Prowler's access to Slack was revoked. ${RECONNECT}`,
-  [SLACK_ERROR_CODE.INVALID_AUTH]: `Slack no longer accepts Prowler's credential. ${RECONNECT}`,
-  [SLACK_ERROR_CODE.ACCOUNT_INACTIVE]: `The Slack account Prowler was installed with is no longer active. ${RECONNECT}`,
-  [SLACK_ERROR_CODE.TOKEN_EXPIRED]: `Prowler's Slack credential has expired. ${RECONNECT}`,
+    "Slack did not allow HorizonVigil to post there. Choose another channel, or ask a workspace admin to allow it.",
+  [SLACK_ERROR_CODE.TOKEN_REVOKED]: `HorizonVigil's access to Slack was revoked. ${RECONNECT}`,
+  [SLACK_ERROR_CODE.INVALID_AUTH]: `Slack no longer accepts HorizonVigil's credential. ${RECONNECT}`,
+  [SLACK_ERROR_CODE.ACCOUNT_INACTIVE]: `The Slack account HorizonVigil was installed with is no longer active. ${RECONNECT}`,
+  [SLACK_ERROR_CODE.TOKEN_EXPIRED]: `HorizonVigil's Slack credential has expired. ${RECONNECT}`,
   [SLACK_ERROR_CODE.WORKSPACE_CONFLICT]:
-    "Prowler is already connected to a different Slack workspace. Disconnect it before connecting another one.",
+    "HorizonVigil is already connected to a different Slack workspace. Disconnect it before connecting another one.",
   // Same wording as the callback notice's `expired` status: a spent install
   // link never recovers, so "try again in a moment" would mislead.
   [SLACK_ERROR_CODE.INVALID_OAUTH_STATE]:
@@ -100,7 +100,7 @@ const isKnownCode = (code: string | null | undefined): code is SlackErrorCode =>
   Object.prototype.hasOwnProperty.call(SLACK_ERROR_MESSAGES, code);
 
 /**
- * Copy for a refusal: Prowler's wording for a known `code`, else the API's
+ * Copy for a refusal: HorizonVigil's wording for a known `code`, else the API's
  * `detail`, else `fallback`.
  */
 export const slackErrorMessage = (
@@ -123,7 +123,7 @@ export const slackRateLimitMessage = (
   if (retryAfterSeconds === null || retryAfterSeconds <= 0) {
     return SLACK_RATE_LIMITED_MESSAGE;
   }
-  return `Slack is rate limiting Prowler right now. Try again in about ${describeWait(
+  return `Slack is rate limiting HorizonVigil right now. Try again in about ${describeWait(
     Math.ceil(retryAfterSeconds),
   )}.`;
 };

@@ -16,7 +16,7 @@ export function RealtimeNoAccount() {
             Connect an AWS account first
           </h2>
           <p className="text-text-neutral-tertiary text-sm">
-            Prowler Realtime watches an AWS account&apos;s CloudTrail as changes
+            HorizonVigil Realtime watches an AWS account&apos;s CloudTrail as changes
             happen. Add an AWS provider to set it up.
           </p>
         </div>

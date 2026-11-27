@@ -8,6 +8,15 @@ const { withSentryConfig } = require("@sentry/nextjs");
 // HTTP Security Headers
 const nextConfig = {
   poweredByHeader: false,
+  // Served under a path prefix behind the HorizonVigil load balancer (e.g. /security).
+  ...(process.env.UI_BASE_PATH
+    ? {
+        basePath: process.env.UI_BASE_PATH,
+        assetPrefix: process.env.UI_BASE_PATH,
+      }
+    : {}),
+  // Inline so the edge middleware (auth.config.ts) can prefix redirect paths.
+  env: { UI_BASE_PATH: process.env.UI_BASE_PATH || "" },
   // Server Function arguments include write-only credentials.
   logging: { serverFunctions: false },
   // Dev-only. Lets the dev server accept HMR/asset requests from a tunnel

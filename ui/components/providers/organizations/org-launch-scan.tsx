@@ -64,7 +64,7 @@ interface OrgLaunchScanProps {
   onBack: () => void;
   onFooterChange: (config: WizardFooterConfig) => void;
   /**
-   * Schedule capability override. Prowler Cloud passes MANUAL_ONLY/BLOCKED for
+   * Schedule capability override. HorizonVigil passes MANUAL_ONLY/BLOCKED for
    * billing-limited tenants; OSS falls back to an environment-based capability.
    */
   capability?: ScanScheduleCapability;
@@ -387,7 +387,7 @@ export function OrgLaunchScan({
           </div>
 
           <p className="text-text-neutral-secondary text-sm">
-            Your {noun.plural} are connected to Prowler and ready to Scan!
+            Your {noun.plural} are connected to HorizonVigil and ready to Scan!
           </p>
 
           {createdProviderIds.length === 0 && (
@@ -416,7 +416,7 @@ export function OrgLaunchScan({
           ) : isDailyLegacy ? (
             <div className="flex flex-col gap-4">
               <p className="text-text-neutral-secondary text-sm">
-                Select a Prowler scan schedule for these {noun.plural}.
+                Select a HorizonVigil scan schedule for these {noun.plural}.
               </p>
               <Select
                 value={scheduleOption}

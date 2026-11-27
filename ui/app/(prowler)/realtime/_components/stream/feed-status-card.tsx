@@ -64,7 +64,7 @@ export function FeedStatusCard({
             No event feed yet
           </span>
           <span className="text-text-neutral-tertiary text-sm">
-            Set up the feed so Prowler can read this account&apos;s CloudTrail
+            Set up the feed so HorizonVigil can read this account&apos;s CloudTrail
             events.
           </span>
         </div>

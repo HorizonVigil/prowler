@@ -19,7 +19,7 @@ interface NodeRemediationProps {
 }
 
 /**
- * Node remediation section showing related Prowler findings
+ * Node remediation section showing related HorizonVigil findings
  */
 export const NodeRemediation = ({
   findings,

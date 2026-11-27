@@ -60,9 +60,18 @@ const withSecurityHeaders = (response: NextResponse): NextResponse => {
 const redirect = (url: URL): NextResponse =>
   withSecurityHeaders(NextResponse.redirect(url));
 
+// Next basePath (e.g. /security); inlined into the edge bundle via NEXT_PUBLIC_*.
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 // NextAuth's auth() wrapper - renamed from middleware to proxy
 export default auth(async (req: NextAuthRequest) => {
-  const { pathname } = req.nextUrl;
+  const rawPathname = req.nextUrl.pathname;
+  // Strip the basePath so route matching and callbackUrl are prefix-agnostic.
+  // (NextResponse.redirect targets get the basePath re-added by Next automatically.)
+  const pathname =
+    BASE_PATH && rawPathname.startsWith(BASE_PATH)
+      ? rawPathname.slice(BASE_PATH.length) || "/"
+      : rawPathname;
 
   const user = req.auth?.user;
   const sessionError = req.auth?.error;

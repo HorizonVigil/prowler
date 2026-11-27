@@ -52,7 +52,7 @@ export const scheduleUpdatePayloadSchema = z.object({
 /**
  * Default scan-schedule capability for the current environment.
  *
- * Pure function (no side effects) so it is trivial to unit-test. Prowler OSS has
+ * Pure function (no side effects) so it is trivial to unit-test. HorizonVigil OSS has
  * no billing, so the only distinction it can make is Cloud vs non-Cloud:
  * non-Cloud → legacy daily-only, Cloud → full scheduling. The prowler-cloud
  * overlay computes its own (billing-aware) capability and passes it down via the

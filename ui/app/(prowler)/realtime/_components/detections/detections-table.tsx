@@ -138,7 +138,7 @@ export function DetectionsTable({
           description={
             filtered
               ? "Change or clear the filters to see more detections."
-              : "Detections appear here when a risky change in the account matches a rule. Prowler then checks the resource it touched."
+              : "Detections appear here when a risky change in the account matches a rule. HorizonVigil then checks the resource it touched."
           }
         />
       ) : (

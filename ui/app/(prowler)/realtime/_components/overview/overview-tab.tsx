@@ -94,7 +94,7 @@ export async function OverviewTab({ providerId, demo }: RealtimeTabProps) {
                 Posture over time
               </h3>
               <p className="text-text-neutral-tertiary text-sm">
-                Checks per scan, and what Prowler Realtime fixed or proposed in
+                Checks per scan, and what HorizonVigil Realtime fixed or proposed in
                 between.
               </p>
             </div>

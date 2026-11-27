@@ -39,7 +39,7 @@ export const ApiKeysCardClient = ({
   const openCloudUpgrade = useCloudUpgradeStore(
     (state) => state.openCloudUpgrade,
   );
-  // API key creation is a Prowler Cloud feature; Local Server gets the upsell.
+  // API key creation is a HorizonVigil feature; Local Server gets the upsell.
   const canCreateApiKeys = isCloud();
   const [selectedApiKey, setSelectedApiKey] = useState<EnrichedApiKey | null>(
     null,

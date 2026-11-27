@@ -17,7 +17,7 @@ import { DOCS_URLS } from "@/lib/external-urls";
 import { ScanConfigurationData } from "@/types/scan-configurations";
 
 // Sentinel for the "Default" option: detaches the provider so its scans fall
-// back to Prowler's built-in SDK defaults. Select values must be non-empty
+// back to HorizonVigil's built-in SDK defaults. Select values must be non-empty
 // strings, so we can't use "".
 const DEFAULT_VALUE = "__default__";
 
@@ -168,7 +168,7 @@ function ManageScanConfigForm({
       </p>
 
       {/* Always show the dropdown with Default — even with no custom configs,
-          the provider can fall back to Prowler's SDK defaults. */}
+          the provider can fall back to HorizonVigil's SDK defaults. */}
       <div className="flex flex-col gap-1">
         <Select value={selected} onValueChange={setSelected}>
           <SelectTrigger aria-label="Scan configuration">

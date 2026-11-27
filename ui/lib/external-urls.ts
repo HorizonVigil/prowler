@@ -30,7 +30,7 @@ export const DOCS_URLS = {
   AI_AGENTS: "https://docs.prowler.com/user-guide/ai-agents/",
 } as const;
 
-// Prowler Hub — the public catalog of Prowler artifacts (checks, compliance,
+// HorizonVigil Hub — the public catalog of HorizonVigil artifacts (checks, compliance,
 // attack paths). Every built-in Attack Paths query has a page keyed by its
 // query id, e.g. https://hub.prowler.com/attack-paths/aws-sts-privesc-assume-role
 export const PROWLER_HUB_URL = "https://hub.prowler.com";
@@ -44,7 +44,7 @@ export const getAttackPathHubUrl = (queryId: string): string =>
 export const PROWLER_CF_TEMPLATE_URL =
   "https://prowler-cloud-public.s3.eu-west-1.amazonaws.com/permissions/templates/aws/cloudformation/prowler-scan-role.yml";
 
-// Prowler Cloud billing/subscription management page.
+// HorizonVigil billing/subscription management page.
 export const BILLING_URL = "https://cloud.prowler.com/billing";
 export const PRICING_URL = "https://prowler.com/pricing";
 
@@ -55,26 +55,26 @@ const CF_QUICKCREATE_BASE_URL =
 
 // Deep links that open each provider's cloud console with the credential
 // creation form pre-filled with the exact permissions, scopes and name
-// Prowler needs. The full 16-provider audit (which providers support this and
+// HorizonVigil needs. The full 16-provider audit (which providers support this and
 // which do not) lives in the PROWLER-2187 PR description; keep both in sync
 // when adding or removing entries here.
 // AWS has its own CloudFormation quick-create link built in
 // `getAWSCredentialsTemplateLinks` below.
 export const PRECONFIGURED_CREDENTIAL_URLS = {
   // Opens the Cloudflare "Create Custom Token" form under the user profile
-  // pre-filled with the seven read-only scopes Prowler needs (`Account
+  // pre-filled with the seven read-only scopes HorizonVigil needs (`Account
   // Settings`, `Zone`, `Zone Settings`, `DNS`, `SSL and Certificates`,
   // `Bot Management`, `Zone WAF`) and the token name.
   // Kept in sync with the "User API Token" URL published in
   // docs/user-guide/providers/cloudflare/authentication.mdx.
   CLOUDFLARE_API_TOKEN_USER:
-    "https://dash.cloudflare.com/profile/api-tokens?permissionGroupKeys=%5B%7B%22key%22%3A%22account_settings%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22zone%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22zone_settings%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22dns%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22ssl_and_certificates%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22bot_management%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22zone_waf%22%2C%22type%22%3A%22read%22%7D%5D&accountId=%2A&zoneId=all&name=Prowler%20Security%20Scanner",
+    "https://dash.cloudflare.com/profile/api-tokens?permissionGroupKeys=%5B%7B%22key%22%3A%22account_settings%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22zone%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22zone_settings%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22dns%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22ssl_and_certificates%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22bot_management%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22zone_waf%22%2C%22type%22%3A%22read%22%7D%5D&accountId=%2A&zoneId=all&name=HorizonVigil%20Security%20Scanner",
   // Opens the GitHub fine-grained PAT creation form pre-filled with the four
-  // read-only permissions Prowler needs to scan a user's own repositories.
+  // read-only permissions HorizonVigil needs to scan a user's own repositories.
   // Kept in sync with the "user repositories" URL published in
   // docs/user-guide/providers/github/authentication.mdx.
   GITHUB_PERSONAL_ACCESS_TOKEN_USER:
-    "https://github.com/settings/personal-access-tokens/new?name=Prowler+Security+Scanner&description=Fine-grained+PAT+for+Prowler+security+scanning&expires_in=90&administration=read&contents=read&vulnerability_alerts=read&emails=read",
+    "https://github.com/settings/personal-access-tokens/new?name=HorizonVigil+Security+Scanner&description=Fine-grained+PAT+for+HorizonVigil+security+scanning&expires_in=90&administration=read&contents=read&vulnerability_alerts=read&emails=read",
 } as const;
 
 // Builds the account-owned Cloudflare API Token URL for the given account.
@@ -104,7 +104,7 @@ export const buildCloudflareAccountOwnedApiTokenUrl = (
       { key: "zone_waf", type: "read" },
     ]),
   );
-  const name = encodeURIComponent("Prowler Security Scanner");
+  const name = encodeURIComponent("HorizonVigil Security Scanner");
   return `https://dash.cloudflare.com/?to=/${encodedAccountId}/api-tokens&permissionGroupKeys=${permissionGroupKeys}&name=${name}`;
 };
 
@@ -119,8 +119,8 @@ export const buildGitHubPersonalAccessTokenOrgUrl = (
   targetName: string,
 ): string => {
   const params = new URLSearchParams({
-    name: "Prowler Security Scanner",
-    description: "Fine-grained PAT for Prowler organization security scanning",
+    name: "HorizonVigil Security Scanner",
+    description: "Fine-grained PAT for HorizonVigil organization security scanning",
     expires_in: "90",
     target_name: targetName,
     administration: "read",
@@ -143,7 +143,7 @@ const buildCloudFormationQuickCreateLink = (
 ): string => {
   const searchParams = new URLSearchParams({
     templateURL: PROWLER_CF_TEMPLATE_URL,
-    stackName: "Prowler",
+    stackName: "HorizonVigil",
     ...parameters,
   });
 

@@ -81,7 +81,7 @@ export function FeedSection({ feed, ...section }: FeedSectionProps) {
       id="feed"
       number={section.number}
       title="Event feed"
-      description="Where Prowler reads the account's CloudTrail activity from."
+      description="Where HorizonVigil reads the account's CloudTrail activity from."
       summary={feedSummary(feed)}
       state={section.state}
       required={section.required}
@@ -264,7 +264,7 @@ function FeedForm({
               {...form.register("region")}
             />
             <span className="text-text-neutral-tertiary text-xs">
-              Prowler also reads us-east-1, where global events arrive.
+              HorizonVigil also reads us-east-1, where global events arrive.
             </span>
             {errors.region && <FieldError>{errors.region.message}</FieldError>}
           </Field>

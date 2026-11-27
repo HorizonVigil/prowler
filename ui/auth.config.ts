@@ -68,6 +68,9 @@ const DEFAULT_PERMISSIONS: RolePermissionAttributes = {
 
 const TENANT_SWITCH_ERROR = "TenantSwitchError";
 
+// Next basePath (e.g. /security) so NextAuth pages keep the prefix. NEXT_PUBLIC_* is inlined into the edge bundle.
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const NON_RETRYABLE_USER_ME_STATUSES = new Set([401, 403, 404]);
 const USER_REFRESH_TIMEOUT_MS = 5_000;
 
@@ -265,8 +268,8 @@ export const authConfig = {
     maxAge: 24 * 60 * 60,
   },
   pages: {
-    signIn: "/sign-in",
-    newUser: "/sign-up",
+    signIn: `${BASE_PATH}/sign-in`,
+    newUser: `${BASE_PATH}/sign-up`,
   },
 
   providers: [
@@ -339,10 +342,11 @@ export const authConfig = {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
       const sessionError = auth?.error;
-      const isSignUpPage = nextUrl.pathname === "/sign-up";
-      const isSignInPage = nextUrl.pathname === "/sign-in";
-      const isInvitationPage =
-        nextUrl.pathname.startsWith("/invitation/accept");
+      const isSignUpPage = nextUrl.pathname === `${BASE_PATH}/sign-up`;
+      const isSignInPage = nextUrl.pathname === `${BASE_PATH}/sign-in`;
+      const isInvitationPage = nextUrl.pathname.startsWith(
+        `${BASE_PATH}/invitation/accept`,
+      );
 
       // Allow access to sign-up, sign-in, and invitation pages
       if (isSignUpPage || isSignInPage || isInvitationPage) return true;
@@ -350,7 +354,7 @@ export const authConfig = {
       // For all other routes, require authentication
       // Return NextResponse.redirect to preserve callbackUrl for post-login redirect
       if (!isLoggedIn) {
-        const signInUrl = new URL("/sign-in", nextUrl.origin);
+        const signInUrl = new URL(`${BASE_PATH}/sign-in`, nextUrl.origin);
         signInUrl.searchParams.set(
           "callbackUrl",
           nextUrl.pathname === SLACK_CALLBACK_PATH

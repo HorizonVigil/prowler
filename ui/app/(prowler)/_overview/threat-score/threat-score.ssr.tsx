@@ -40,7 +40,7 @@ export const ThreatScoreSSR = async ({ searchParams }: SSRComponentProps) => {
         item={buildComplianceContext({
           pathname: "/",
           id: "prowler-threat-score",
-          framework: "Prowler ThreatScore",
+          framework: "ThreatScore",
           score,
           scoreDelta: scoreDelta ?? undefined,
           criticalRequirementsCount:

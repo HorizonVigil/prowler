@@ -7,7 +7,7 @@ import { testProviderConnection } from "@/lib/provider-helpers";
 import { CONNECTION_CHECK_STATUS } from "@/types/providers";
 
 const CONNECTION_FAILED_MESSAGE =
-  "Prowler could not connect with these credentials. Review them and try again.";
+  "HorizonVigil could not connect with these credentials. Review them and try again.";
 
 const CONNECTION_UNREACHABLE_MESSAGE =
   "The connection test could not be completed. The account is saved, so you can try again.";

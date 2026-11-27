@@ -72,7 +72,7 @@ export const mapComplianceData = (
     // the framework's clause-level granularity visible in the accordion.
     // The accordion title and the requirement.description must surface the
     // *literal ASD clause* (`description`, the canonical standard text).
-    // The Attributes[].Description field carries Prowler's
+    // The Attributes[].Description field carries HorizonVigil's
     // provider-specific implementation note; we expose it separately as
     // `implementation_notes` so the details panel can render it under
     // "Implementation Notes" without coupling the field to a single
