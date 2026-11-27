@@ -6,16 +6,20 @@ import { cn } from "@/lib/utils";
 
 import { IconSvgProps } from "../../../types/index";
 
+// next/image with `unoptimized` does not prepend basePath, so public assets
+// under a basePath (/security) must carry it explicitly or they 404.
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const PROWLER_BRAND = {
   CLOUD: {
     name: "HorizonVigil",
-    lightLogo: "/logos/horizonvigil-on-light.svg",
-    darkLogo: "/logos/horizonvigil-on-dark.svg",
+    lightLogo: `${BASE_PATH}/logos/horizonvigil-on-light.svg`,
+    darkLogo: `${BASE_PATH}/logos/horizonvigil-on-dark.svg`,
   },
   LOCAL_SERVER: {
     name: "HorizonVigil",
-    lightLogo: "/logos/horizonvigil-on-light.svg",
-    darkLogo: "/logos/horizonvigil-on-dark.svg",
+    lightLogo: `${BASE_PATH}/logos/horizonvigil-on-light.svg`,
+    darkLogo: `${BASE_PATH}/logos/horizonvigil-on-dark.svg`,
   },
 } as const;
 
