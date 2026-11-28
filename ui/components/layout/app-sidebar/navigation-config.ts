@@ -17,7 +17,6 @@ import {
 } from "lucide-react";
 
 import { LighthouseIcon } from "@/components/icons/Icons";
-import { PLATFORM_ORIGIN } from "@/lib/external-urls";
 import { isCloud } from "@/lib/shared/env";
 import type { CloudUpgradeFeature } from "@/types/cloud-upgrade";
 import { CLOUD_UPGRADE_FEATURE } from "@/types/cloud-upgrade";
@@ -30,6 +29,21 @@ import {
   type NavigationItem,
   type NavigationSection,
 } from "./types";
+
+/**
+ * Documentation and support live in the platform at the root of this origin.
+ * These must be absolute: the sidebar renders its links through next/link,
+ * which would prefix this app's mount and resolve them inside the workspace.
+ * Computed here rather than imported, so this module — which the
+ * authenticated sidebar loads — keeps the dependencies it already had.
+ */
+const PLATFORM_ORIGIN = (() => {
+  try {
+    return new URL(process.env.AUTH_URL ?? "").origin;
+  } catch {
+    return "";
+  }
+})();
 
 interface NavigationConfigOptions {
   pathname: string;
