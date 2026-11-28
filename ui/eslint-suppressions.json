@@ -490,6 +490,11 @@
       "count": 1
     }
   },
+  "components/layout/nav-bar/navbar-client.tsx": {
+    "@next/next/no-html-link-for-pages": {
+      "count": 2
+    }
+  },
   "components/lighthouse-v1/ai-elements/chain-of-thought.tsx": {
     "no-restricted-imports": {
       "count": 2

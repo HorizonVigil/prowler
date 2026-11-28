@@ -1,15 +1,16 @@
 "use client";
 
-import { BellRing, Search, SquareCheckBig } from "lucide-react";
+import { ArrowUpRight, BellRing, Search, SquareCheckBig } from "lucide-react";
 import { ReactNode, Suspense, type ReactElement } from "react";
 
-import { ProwlerBrand } from "@/components/icons";
+import { ProwlerShort } from "@/components/icons";
 import { MobileAppSidebar } from "@/components/layout/app-sidebar";
 import { BreadcrumbNavigation, Button } from "@/components/shadcn";
 import { SidePanelTrigger } from "@/components/side-panel";
 import { ThemeSwitch } from "@/components/ThemeSwitch";
 
 import { UserNav } from "../user-nav/user-nav";
+
 import { AppLauncher } from "./app-launcher";
 import { CloudCounts } from "./cloud-counts";
 import { EnvironmentBadge } from "./environment-badge";
@@ -25,7 +26,7 @@ export function NavbarClient({ title, icon, feedsSlot }: NavbarClientProps) {
     // -ml-4/pl-4: bleed the bar across <main>'s 16px left gutter so its
     // border-b meets the sidebar's border-r. The gutter is main's padding —
     // main scrolls and would clip anything bled past its padding box.
-    <header className="border-border-neutral-secondary sticky top-0 z-10 -ml-4 border-b pl-4 backdrop-blur-sm">
+    <header className="border-border-neutral-secondary bg-bg-neutral-primary sticky top-0 z-10 -ml-4 border-b pl-4">
       {/* h-15 (60px) matches the side panel's tab header so both border-b lines align. */}
       <div className="flex h-15 items-center gap-3 pr-6">
         {/* Same order as the platform header, so moving between apps does not
@@ -34,11 +35,16 @@ export function NavbarClient({ title, icon, feedsSlot }: NavbarClientProps) {
         <div className="flex shrink-0 items-center gap-2">
           <AppLauncher />
           <MobileAppSidebar />
-          {/* The brand's images are width-full inside an auto-width grid, so
-              the width must be set on the brand itself: on the anchor they
-              fall back to the artwork's natural 720px. */}
-          <a href="/" aria-label="HorizonVigil" className="hidden shrink-0 sm:block">
-            <ProwlerBrand className="w-24" />
+          {/* Mark + wordmark, matching the platform header (no tagline lockup). */}
+          <a
+            href="/"
+            aria-label="HorizonVigil"
+            className="text-text-neutral-primary hidden shrink-0 items-center gap-2 sm:flex"
+          >
+            <ProwlerShort width={24} height={24} />
+            <span className="text-sm font-bold tracking-tight">
+              HorizonVigil
+            </span>
           </a>
           {/* The platform header carries no breadcrumb because its pages render
               their own heading; these do not, so this stays as the page title. */}
@@ -50,8 +56,18 @@ export function NavbarClient({ title, icon, feedsSlot }: NavbarClientProps) {
               paramToPreserve="scanId"
             />
           </Suspense>
-          <Button asChild variant="ghost" size="sm" className="hidden md:inline-flex">
-            <a href="/subscription">↗ Upgrade</a>
+          {/* Pill matches the platform header's Upgrade control (bordered, rounded). */}
+          <Button
+            asChild
+            variant="outline"
+            size="xs"
+            shape="circle"
+            className="hidden md:inline-flex"
+          >
+            <a href="/subscription">
+              <ArrowUpRight />
+              Upgrade
+            </a>
           </Button>
           <CloudCounts />
         </div>
@@ -64,7 +80,9 @@ export function NavbarClient({ title, icon, feedsSlot }: NavbarClientProps) {
         >
           <a href="/">
             <Search className="size-4 shrink-0" />
-            <span className="truncate">Search resources, services, and docs</span>
+            <span className="truncate">
+              Search resources, services, and docs
+            </span>
           </a>
         </Button>
 

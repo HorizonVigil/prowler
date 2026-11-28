@@ -1,17 +1,19 @@
 "use client";
 
-import { LogOut } from "lucide-react";
+import { LogOut, Settings } from "lucide-react";
 import { useSession } from "next-auth/react";
 
 import { logOut } from "@/actions/auth";
 import { Avatar, AvatarFallback } from "@/components/shadcn/avatar/avatar";
 import { Button } from "@/components/shadcn/button/button";
-import { CustomLink } from "@/components/shadcn/custom/custom-link";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/shadcn/tooltip";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/shadcn/dropdown-menu";
 
 export const UserNav = () => {
   const { data: session } = useSession();
@@ -28,41 +30,35 @@ export const UserNav = () => {
     : name.charAt(0);
 
   return (
-    <div className="flex items-center gap-2">
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Button
-            variant="outline"
-            size="icon-sm"
-            className="border-border-input-primary-fill rounded-full"
-            asChild
-          >
-            <CustomLink href="/profile" target="_self" aria-label="Account">
-              <Avatar className="h-8 w-8">
-                <AvatarFallback className="bg-transparent text-xs font-bold">
-                  {initials}
-                </AvatarFallback>
-              </Avatar>
-            </CustomLink>
-          </Button>
-        </TooltipTrigger>
-        <TooltipContent>Account Settings</TooltipContent>
-      </Tooltip>
-
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Button
-            variant="ghost"
-            size="icon-sm"
-            className="border-border-input-primary-fill rounded-full"
-            onClick={() => logOut()}
-            aria-label="Sign out"
-          >
-            <LogOut />
-          </Button>
-        </TooltipTrigger>
-        <TooltipContent>Sign Out</TooltipContent>
-      </Tooltip>
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button
+          variant="outline"
+          size="icon-sm"
+          className="border-border-input-primary-fill rounded-full"
+          aria-label="Account menu"
+        >
+          <Avatar className="h-8 w-8">
+            <AvatarFallback className="bg-transparent text-xs font-bold">
+              {initials}
+            </AvatarFallback>
+          </Avatar>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" className="w-56">
+        <DropdownMenuLabel className="truncate">{name}</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem asChild>
+          <a href="/profile">
+            <Settings />
+            Account Settings
+          </a>
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => logOut()}>
+          <LogOut />
+          Sign out
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
