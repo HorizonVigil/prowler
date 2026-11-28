@@ -270,8 +270,11 @@ export const authConfig = {
   basePath: "/api/auth",
   session: {
     strategy: "jwt",
-    // The session will be valid for 24 hours
-    maxAge: 24 * 60 * 60,
+    // This workspace is entered from the platform, which owns sign-in: a
+    // shorter window here just bounced signed-in users to a second login
+    // form. It is matched to the API's refresh-token lifetime so the two
+    // cannot disagree about when the session is over.
+    maxAge: 30 * 24 * 60 * 60,
   },
   pages: {
     signIn: `${BASE_PATH}/sign-in`,
