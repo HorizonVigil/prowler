@@ -270,11 +270,14 @@ export const authConfig = {
   basePath: "/api/auth",
   session: {
     strategy: "jwt",
-    // This workspace is entered from the platform, which owns sign-in: a
-    // shorter window here just bounced signed-in users to a second login
-    // form. It is matched to the API's refresh-token lifetime so the two
-    // cannot disagree about when the session is over.
-    maxAge: 30 * 24 * 60 * 60,
+    // Idle timeout, not a fixed one: the session ends two hours after the
+    // last activity, so someone still working is never interrupted.
+    maxAge: 2 * 60 * 60,
+    // What makes the two hours slide. The session token is only re-issued
+    // once updateAge has passed since it was minted, so leaving this at its
+    // 24-hour default would expire everyone two hours after sign-in however
+    // busy they were. Five minutes is the granularity of "last activity".
+    updateAge: 5 * 60,
   },
   pages: {
     signIn: `${BASE_PATH}/sign-in`,
