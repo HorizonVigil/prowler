@@ -31,7 +31,9 @@ export async function platformCloudCounts(
 
   const counts: CloudCounts = { aws: 0, azure: 0, gcp: 0 };
   for (const row of rows) {
-    const provider = row?.provider;
+    // unknown, not any: the comparisons below are what narrow this to a key of
+    // CloudCounts, and `any` would skip that narrowing.
+    const provider: unknown = row?.provider;
     if (provider === "aws" || provider === "azure" || provider === "gcp") {
       counts[provider] += 1;
     }
