@@ -31,7 +31,7 @@ function makeTriageSummary(
     hasVisibleNote: false,
     isMuted: false,
     canEdit: true,
-    billingHref: "https://horizonvigil.com/pricing",
+    billingHref: "/subscription",
     ...overrides,
   };
 }

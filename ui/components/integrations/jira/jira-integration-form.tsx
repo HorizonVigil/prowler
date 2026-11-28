@@ -226,7 +226,7 @@ export const JiraIntegrationForm = ({
               Need help configuring your Jira integration?
             </p>
             <CustomLink
-              href="https://docs.horizonvigil.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-jira-integration/"
+              href="/docs/tutorials/prowler-app-jira-integration/"
               target="_blank"
               size="sm"
             >

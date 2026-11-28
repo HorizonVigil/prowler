@@ -127,7 +127,7 @@ export const SocialButtons = ({
       disabledIcon: GoogleMonoIcon,
       disabledDocs: {
         message: "Social Login with Google is not enabled.",
-        href: "https://docs.horizonvigil.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-social-login/#google-oauth-configuration",
+        href: "/docs/tutorials/prowler-app-social-login/#google-oauth-configuration",
       },
     },
     {
@@ -139,7 +139,7 @@ export const SocialButtons = ({
       disabledIcon: GithubIcon,
       disabledDocs: {
         message: "Social Login with Github is not enabled.",
-        href: "https://docs.horizonvigil.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-social-login/#github-oauth-configuration",
+        href: "/docs/tutorials/prowler-app-social-login/#github-oauth-configuration",
       },
     },
   ];

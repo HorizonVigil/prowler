@@ -102,13 +102,7 @@ export const FINDING_TRIAGE_NOTE_MAX_LENGTH = 500 as const;
  * has no pricing page. Absolute for the same reason as PRICING_URL: callers
  * resolve it with `new URL()`, which rejects a bare path.
  */
-export const FINDING_TRIAGE_BILLING_HREF = `${(() => {
-  try {
-    return new URL(process.env.AUTH_URL ?? "").origin;
-  } catch {
-    return "";
-  }
-})()}/subscription`;
+export const FINDING_TRIAGE_BILLING_HREF = "/subscription" as const;
 
 export interface FindingTriageSummary {
   findingId: string;

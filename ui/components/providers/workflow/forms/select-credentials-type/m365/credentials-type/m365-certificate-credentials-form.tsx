@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Control } from "react-hook-form";
 
 import {
@@ -59,14 +58,14 @@ export const M365CertificateCredentialsForm = ({
         The certificate content must be base64 encoded from an unsigned
         certificate. For detailed instructions on how to generate and encode
         your certificate, please refer to the{" "}
-        <Link
-          href="https://docs.horizonvigil.com/user-guide/providers/microsoft365/authentication#generate-the-certificate"
+        <a
+          href="/docs/user-guide/providers/microsoft365/authentication#generate-the-certificate"
           target="_blank"
           rel="noopener noreferrer"
           className="text-button-tertiary p-0 text-sm"
         >
           certificate generation guide
-        </Link>
+        </a>
         .
       </p>
     </>

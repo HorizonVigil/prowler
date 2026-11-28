@@ -101,7 +101,7 @@ describe("CloudUpgradeModal", () => {
       screen.getByRole("link", { name: "View Plans & Pricing" }),
     ).toHaveAttribute(
       "href",
-      "https://horizonvigil.com/pricing?utm_source=prowler-local-server&utm_content=alerts",
+      "/subscription?utm_source=prowler-local-server&utm_content=alerts",
     );
   });
 
@@ -175,7 +175,7 @@ describe("CloudUpgradeModal", () => {
       screen.getByRole("link", { name: "View Plans & Pricing" }),
     ).toHaveAttribute(
       "href",
-      "https://horizonvigil.com/pricing?utm_source=prowler-local-server&utm_content=jira-dispatch",
+      "/subscription?utm_source=prowler-local-server&utm_content=jira-dispatch",
     );
   });
 
@@ -309,7 +309,7 @@ describe("CloudUpgradeModal", () => {
     });
     expect(pricingLink).toHaveAttribute(
       "href",
-      "https://horizonvigil.com/pricing?utm_source=prowler-cloud&utm_content=report-download",
+      "/subscription?utm_source=prowler-cloud&utm_content=report-download",
     );
     expect(pricingLink).toHaveAttribute("target", "_blank");
     expect(

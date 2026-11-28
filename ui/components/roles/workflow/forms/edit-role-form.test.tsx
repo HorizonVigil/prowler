@@ -264,7 +264,7 @@ describe("EditRoleForm", () => {
       screen.getByRole("link", { name: /learn more about provider groups/i }),
     ).toHaveAttribute(
       "href",
-      "https://docs.horizonvigil.com/user-guide/tutorials/prowler-app-rbac#provider-groups",
+      "/docs/user-guide/tutorials/prowler-app-rbac#provider-groups",
     );
     expect(
       screen.queryByText(

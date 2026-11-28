@@ -1,7 +1,6 @@
 "use client";
 
 import { Upload } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 
 import { Alert, AlertTitle } from "@/components/shadcn";
@@ -35,14 +34,14 @@ export const CliImportBanner = ({ className }: { className?: string }) => {
       <Upload />
       <AlertTitle>
         Import findings from HorizonVigil CLI —{" "}
-        <Link
+        <a
           href={DOCS_URLS.FINDINGS_INGESTION}
           target="_blank"
           rel="noopener noreferrer"
           className="font-normal underline underline-offset-2"
         >
           Learn more
-        </Link>
+        </a>
       </AlertTitle>
     </Alert>
   );

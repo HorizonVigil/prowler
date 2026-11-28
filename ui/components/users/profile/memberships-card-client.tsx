@@ -249,7 +249,7 @@ export const MembershipsCardClient = ({
             <CardTitle>Organizations</CardTitle>
             <p className="text-xs text-gray-500">
               Organizations this user is associated with.{" "}
-              <CustomLink href="https://docs.horizonvigil.com/user-guide/tutorials/prowler-app-multi-tenant">
+              <CustomLink href="/docs/user-guide/tutorials/prowler-app-multi-tenant">
                 Learn more
               </CustomLink>
             </p>

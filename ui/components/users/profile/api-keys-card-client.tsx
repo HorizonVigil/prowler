@@ -101,7 +101,7 @@ export const ApiKeysCardClient = ({
             </div>
             <p className="text-xs text-gray-500">
               Manage API keys for programmatic access.{" "}
-              <CustomLink href="https://docs.horizonvigil.com/user-guide/tutorials/prowler-app-api-keys">
+              <CustomLink href="/docs/user-guide/tutorials/prowler-app-api-keys">
                 Read the docs
               </CustomLink>
             </p>

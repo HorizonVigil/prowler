@@ -58,7 +58,9 @@ export function getProviderWizardDocsDestination(docsLink: string) {
       .replace(/^prowler-cloud-/, "");
 
   try {
-    const parsed = new URL(docsLink);
+    // Docs links are same-origin and root-relative, which new URL() rejects
+    // without a base; the base is a placeholder, only the path is read below.
+    const parsed = new URL(docsLink, "https://docs.invalid");
     // Labels for method-specific credentials-step deep links. Keyed by the
     // docs URL slug (which can differ from the wizard provider key — e.g.
     // the docs use `microsoft365` while the wizard uses `m365`). Providers

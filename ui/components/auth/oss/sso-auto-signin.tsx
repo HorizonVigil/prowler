@@ -5,25 +5,9 @@ import { useState } from "react";
 
 import { ssoLogin } from "@/actions/auth/sso";
 import { useMountEffect } from "@/hooks/use-mount-effect";
+import { readPlatformToken } from "@/lib/platform-storage";
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
-// Reads the HorizonVigil shell's Supabase session from shared same-origin storage.
-function readPlatformToken(): string | null {
-  try {
-    for (let i = 0; i < localStorage.length; i += 1) {
-      const key = localStorage.key(i);
-      if (key && key.startsWith("sb-") && key.endsWith("-auth-token")) {
-        const parsed = JSON.parse(localStorage.getItem(key) || "null");
-        const token = parsed?.access_token ?? parsed?.currentSession?.access_token;
-        if (typeof token === "string" && token) return token;
-      }
-    }
-  } catch {
-    // storage blocked / not JSON — fall through to the normal sign-in form
-  }
-  return null;
-}
 
 /**
  * Silent SSO: if the user already has a HorizonVigil platform session, bridge it into the
@@ -57,7 +41,7 @@ export function SsoAutoSignIn() {
   if (!bridging) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 text-sm text-slate-200">
+    <div className="text-foreground-neutral-primary fixed inset-0 z-50 flex items-center justify-center text-sm backdrop-blur-sm">
       Signing you in…
     </div>
   );

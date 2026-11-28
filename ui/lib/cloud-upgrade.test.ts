@@ -29,7 +29,7 @@ describe("cloud upgrade content", () => {
       "Keep Every Provider Checked Automatically",
       "Turn Findings into Alerts",
       "Export Findings to Amazon S3",
-      "Automate Prowler with API Keys",
+      "Automate HorizonVigil with API Keys",
       "Add Your Entire AWS Organization",
       "Add Your Entire Azure Management Group",
       "Add Your Entire GCP Organization",
@@ -38,17 +38,17 @@ describe("cloud upgrade content", () => {
       "Coordinate Finding Remediation",
       "Send Findings to Jira at Scale",
       "Use The Agent Cloud Defender",
-      "Scale Prowler Without Operating It",
+      "Scale HorizonVigil Without Operating It",
       "Catch Risky AWS Changes as They Happen",
       "Configure Every Scan Once",
       "Use One SAML Configuration Across Domains",
     ]);
   });
 
-  it("should explain that Prowler Local Server remains unchanged", () => {
+  it("should explain that the local installation remains unchanged", () => {
     // Given / When / Then
     expect(CLOUD_UPGRADE_FOOTER_NOTE).toBe(
-      "Prowler Cloud opens in a new tab. Your Prowler Local Server remains unchanged.",
+      "HorizonVigil Cloud opens in a new tab. Your local installation remains unchanged.",
     );
   });
 });
@@ -72,7 +72,7 @@ describe("cloud upgrade URLs", () => {
 
     // Then
     expect(url).toBe(
-      "https://horizonvigil.com/pricing?utm_source=prowler-local-server&utm_content=cross-provider-compliance",
+      "/subscription?utm_source=prowler-local-server&utm_content=cross-provider-compliance",
     );
   });
 
@@ -131,9 +131,11 @@ describe("paid plan upgrade content", () => {
       "/billing?feature=s3_integration",
     );
     expect(
-      new URL(getPaidPlanUpgradeCompareUrl(feature)).searchParams.get(
-        "utm_content",
-      ),
+      // Same-origin compare URL, so it needs a base to parse.
+      new URL(
+        getPaidPlanUpgradeCompareUrl(feature),
+        "https://base.invalid",
+      ).searchParams.get("utm_content"),
     ).toBe("s3-integration");
   });
 });

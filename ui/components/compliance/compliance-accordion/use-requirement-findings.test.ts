@@ -27,7 +27,7 @@ function makeFindingsResponse() {
           hasVisibleNote: false,
           isMuted: false,
           canEdit: true,
-          billingHref: "https://horizonvigil.com/pricing",
+          billingHref: "/subscription",
         },
         relationships: {
           scan: { data: { id: "scan-1" } },

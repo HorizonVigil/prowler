@@ -19,7 +19,7 @@ interface CloudUpgradeContent {
 
 export const CLOUD_UPGRADE_SECONDARY_CTA = "View Plans & Pricing";
 export const CLOUD_UPGRADE_FOOTER_NOTE =
-  "HorizonVigil opens in a new tab. Your HorizonVigil remains unchanged.";
+  "HorizonVigil Cloud opens in a new tab. Your local installation remains unchanged.";
 
 const CLOUD_SIGN_UP_URL = "https://cloud.horizonvigil.com/sign-up";
 const LOCAL_SERVER_UTM_SOURCE = "prowler-local-server";
@@ -225,16 +225,23 @@ export const CLOUD_UPGRADE_CONTENT = {
   },
 } as const satisfies Record<CloudUpgradeFeature, CloudUpgradeContent>;
 
-const buildCloudUpgradeUrl = (
-  baseUrl: string,
-  feature: CloudUpgradeFeature,
-) => {
-  const url = new URL(baseUrl);
-  url.searchParams.set("utm_source", LOCAL_SERVER_UTM_SOURCE);
-  url.searchParams.set("utm_content", CLOUD_UPGRADE_UTM_CONTENT[feature]);
+// Same-origin targets such as PRICING_URL are root-relative, which new URL()
+// rejects without a base and would otherwise absolutize into the wrong host.
+const withUtmParams = (baseUrl: string, params: Record<string, string>) => {
+  const isRelative = baseUrl.startsWith("/");
+  const url = new URL(baseUrl, "https://base.invalid");
+  for (const [key, value] of Object.entries(params)) {
+    url.searchParams.set(key, value);
+  }
 
-  return url.toString();
+  return isRelative ? `${url.pathname}${url.search}` : url.toString();
 };
+
+const buildCloudUpgradeUrl = (baseUrl: string, feature: CloudUpgradeFeature) =>
+  withUtmParams(baseUrl, {
+    utm_source: LOCAL_SERVER_UTM_SOURCE,
+    utm_content: CLOUD_UPGRADE_UTM_CONTENT[feature],
+  });
 
 export const getCloudUpgradePrimaryUrl = (feature: CloudUpgradeFeature) =>
   buildCloudUpgradeUrl(CLOUD_SIGN_UP_URL, feature);
@@ -310,12 +317,8 @@ export const getPaidPlanUpgradeBillingHref = (
   feature: PaidPlanUpgradeFeature,
 ) => `/billing?${new URLSearchParams({ feature })}`;
 
-export const getPaidPlanUpgradeCompareUrl = (
-  feature: PaidPlanUpgradeFeature,
-) => {
-  const url = new URL(PRICING_URL);
-  url.searchParams.set("utm_source", CLOUD_UTM_SOURCE);
-  url.searchParams.set("utm_content", PAID_PLAN_UPGRADE_UTM_CONTENT[feature]);
-
-  return url.toString();
-};
+export const getPaidPlanUpgradeCompareUrl = (feature: PaidPlanUpgradeFeature) =>
+  withUtmParams(PRICING_URL, {
+    utm_source: CLOUD_UTM_SOURCE,
+    utm_content: PAID_PLAN_UPGRADE_UTM_CONTENT[feature],
+  });

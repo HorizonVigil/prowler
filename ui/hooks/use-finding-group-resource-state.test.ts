@@ -269,7 +269,7 @@ describe("useFindingGroupResourceState", () => {
         hasVisibleNote: false,
         isMuted: true,
         canEdit: true,
-        billingHref: "https://horizonvigil.com/pricing",
+        billingHref: "/subscription",
       },
     };
 
@@ -335,7 +335,7 @@ describe("useFindingGroupResourceState", () => {
         hasVisibleNote: false,
         isMuted: false,
         canEdit: true,
-        billingHref: "https://horizonvigil.com/pricing",
+        billingHref: "/subscription",
       },
     };
     const { result } = renderHook(() =>

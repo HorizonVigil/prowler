@@ -23,7 +23,7 @@ export const JiraIntegrationCard = () => {
                   Create and manage security issues in Jira.
                 </p>
                 <CustomLink
-                  href="https://docs.horizonvigil.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-jira-integration/"
+                  href="/docs/tutorials/prowler-app-jira-integration/"
                   aria-label="Learn more about Jira integration"
                   size="xs"
                 >

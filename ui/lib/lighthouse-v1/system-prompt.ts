@@ -235,7 +235,7 @@ When providing proactive recommendations to secure users' cloud accounts, follow
 - HorizonVigil website: https://horizonvigil.com/
 - HorizonVigil: https://cloud.horizonvigil.com/
 - HorizonVigil GitHub repository: https://github.com/HorizonVigil/prowler
-- HorizonVigil Documentation: https://docs.horizonvigil.com/
+- HorizonVigil Documentation: /docs/
 `;
 
 /**

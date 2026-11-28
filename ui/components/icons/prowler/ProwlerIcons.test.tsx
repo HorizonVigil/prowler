@@ -22,9 +22,11 @@ describe("ProwlerBrand", () => {
       image.getAttribute("src"),
     );
 
+    // on-dark first: the light-surface lockup is drawn in dark ink, so the
+    // asset names describe their ink, not the surface they sit on.
     expect(sources).toEqual([
-      "/logos/horizonvigil-on-light.svg",
       "/logos/horizonvigil-on-dark.svg",
+      "/logos/horizonvigil-on-light.svg",
     ]);
   });
 
@@ -41,9 +43,11 @@ describe("ProwlerBrand", () => {
       image.getAttribute("src"),
     );
 
+    // on-dark first: the light-surface lockup is drawn in dark ink, so the
+    // asset names describe their ink, not the surface they sit on.
     expect(sources).toEqual([
-      "/logos/horizonvigil-on-light.svg",
       "/logos/horizonvigil-on-dark.svg",
+      "/logos/horizonvigil-on-light.svg",
     ]);
   });
 });

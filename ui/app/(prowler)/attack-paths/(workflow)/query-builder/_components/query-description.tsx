@@ -12,6 +12,10 @@ interface QueryDescriptionProps {
 }
 
 const isSafeUrl = (url: string): boolean => {
+  // Same-origin platform links are root-relative, which new URL() rejects
+  // without a base; "//host" is protocol-relative and must not pass as one.
+  if (url.startsWith("/")) return !url.startsWith("//");
+
   try {
     const parsedUrl = new URL(url);
     return parsedUrl.protocol === "https:" || parsedUrl.protocol === "http:";

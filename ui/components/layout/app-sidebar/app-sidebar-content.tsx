@@ -48,7 +48,10 @@ export function AppSidebarContent({ onSelect }: AppSidebarContentProps) {
           className="focus-visible:ring-button-primary/50 flex h-8 items-center rounded-md focus-visible:ring-2 focus-visible:outline-none"
           onClick={onSelect}
         >
-          <ProwlerBrand />
+          {/* The lockup's images are w-full inside an auto-width grid, so the
+              width belongs on the brand: with none it falls back to the
+              artwork's natural 720px and overflows the rail. */}
+          <ProwlerBrand className="w-36" />
         </Link>
       </div>
 

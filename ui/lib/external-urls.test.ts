@@ -294,7 +294,7 @@ describe("buildGitHubPersonalAccessTokenOrgUrl", () => {
 describe("getProviderHelpText", () => {
   const AWS_SHORTLINK = "https://goto.horizonvigil.com/provider-aws";
   const AWS_CREDENTIALS_STEP_DOCS =
-    "https://docs.horizonvigil.com/user-guide/providers/aws/getting-started-aws#step-3-set-up-aws-authentication";
+    "/docs/user-guide/providers/aws/getting-started-aws#step-3-set-up-aws-authentication";
 
   it("points the connect step to the credentials section of the getting-started page", () => {
     // The connect step holds the credentials form: with no method picked the
@@ -312,7 +312,7 @@ describe("getProviderHelpText", () => {
     );
 
     expect(link).toBe(
-      "https://docs.horizonvigil.com/user-guide/providers/aws/getting-started-aws#assume-role-recommended",
+      "/docs/user-guide/providers/aws/getting-started-aws#assume-role-recommended",
     );
   });
 
@@ -324,7 +324,7 @@ describe("getProviderHelpText", () => {
     );
 
     expect(link).toBe(
-      "https://docs.horizonvigil.com/user-guide/providers/aws/getting-started-aws#credentials-static-access-keys",
+      "/docs/user-guide/providers/aws/getting-started-aws#credentials-static-access-keys",
     );
   });
 
@@ -339,7 +339,7 @@ describe("getProviderHelpText", () => {
     );
 
     expect(link).toBe(
-      "https://docs.horizonvigil.com/user-guide/providers/gcp/getting-started-gcp#step-3-set-up-gcp-authentication",
+      "/docs/user-guide/providers/gcp/getting-started-gcp#step-3-set-up-gcp-authentication",
     );
   });
 
@@ -358,67 +358,67 @@ describe("getProviderHelpText", () => {
     const cases: Array<[string, string]> = [
       [
         "aws",
-        "https://docs.horizonvigil.com/user-guide/providers/aws/getting-started-aws#step-3-set-up-aws-authentication",
+        "/docs/user-guide/providers/aws/getting-started-aws#step-3-set-up-aws-authentication",
       ],
       [
         "azure",
-        "https://docs.horizonvigil.com/user-guide/providers/azure/getting-started-azure#step-3-add-credentials-to-prowler-cloud",
+        "/docs/user-guide/providers/azure/getting-started-azure#step-3-add-credentials-to-prowler-cloud",
       ],
       [
         "m365",
-        "https://docs.horizonvigil.com/user-guide/providers/microsoft365/getting-started-m365#step-3-choose-and-provide-authentication",
+        "/docs/user-guide/providers/microsoft365/getting-started-m365#step-3-choose-and-provide-authentication",
       ],
       [
         "gcp",
-        "https://docs.horizonvigil.com/user-guide/providers/gcp/getting-started-gcp#step-3-set-up-gcp-authentication",
+        "/docs/user-guide/providers/gcp/getting-started-gcp#step-3-set-up-gcp-authentication",
       ],
       [
         "kubernetes",
-        "https://docs.horizonvigil.com/user-guide/providers/kubernetes/getting-started-k8s#step-2-configure-kubernetes-authentication",
+        "/docs/user-guide/providers/kubernetes/getting-started-k8s#step-2-configure-kubernetes-authentication",
       ],
       [
         "github",
-        "https://docs.horizonvigil.com/user-guide/providers/github/getting-started-github#step-3-choose-authentication-method",
+        "/docs/user-guide/providers/github/getting-started-github#step-3-choose-authentication-method",
       ],
       [
         "iac",
-        "https://docs.horizonvigil.com/user-guide/providers/iac/getting-started-iac#step-2-enter-authentication-details",
+        "/docs/user-guide/providers/iac/getting-started-iac#step-2-enter-authentication-details",
       ],
       [
         "image",
-        "https://docs.horizonvigil.com/user-guide/providers/image/getting-started-image#step-2-enter-authentication-and-scan-filters",
+        "/docs/user-guide/providers/image/getting-started-image#step-2-enter-authentication-and-scan-filters",
       ],
       [
         "oraclecloud",
-        "https://docs.horizonvigil.com/user-guide/providers/oci/getting-started-oci#step-3-add-oci-api-key-credentials",
+        "/docs/user-guide/providers/oci/getting-started-oci#step-3-add-oci-api-key-credentials",
       ],
       [
         "mongodbatlas",
-        "https://docs.horizonvigil.com/user-guide/providers/mongodbatlas/getting-started-mongodbatlas#step-2-provide-api-credentials",
+        "/docs/user-guide/providers/mongodbatlas/getting-started-mongodbatlas#step-2-provide-api-credentials",
       ],
       [
         "alibabacloud",
-        "https://docs.horizonvigil.com/user-guide/providers/alibabacloud/getting-started-alibabacloud#step-3-choose-and-provide-authentication",
+        "/docs/user-guide/providers/alibabacloud/getting-started-alibabacloud#step-3-choose-and-provide-authentication",
       ],
       [
         "cloudflare",
-        "https://docs.horizonvigil.com/user-guide/providers/cloudflare/getting-started-cloudflare#step-3-choose-and-provide-authentication",
+        "/docs/user-guide/providers/cloudflare/getting-started-cloudflare#step-3-choose-and-provide-authentication",
       ],
       [
         "openstack",
-        "https://docs.horizonvigil.com/user-guide/providers/openstack/getting-started-openstack#step-2-provide-credentials",
+        "/docs/user-guide/providers/openstack/getting-started-openstack#step-2-provide-credentials",
       ],
       [
         "googleworkspace",
-        "https://docs.horizonvigil.com/user-guide/providers/googleworkspace/getting-started-googleworkspace#step-3-provide-credentials",
+        "/docs/user-guide/providers/googleworkspace/getting-started-googleworkspace#step-3-provide-credentials",
       ],
       [
         "vercel",
-        "https://docs.horizonvigil.com/user-guide/providers/vercel/getting-started-vercel#step-2-provide-credentials",
+        "/docs/user-guide/providers/vercel/getting-started-vercel#step-2-provide-credentials",
       ],
       [
         "okta",
-        "https://docs.horizonvigil.com/user-guide/providers/okta/getting-started-okta#step-2-provide-credentials",
+        "/docs/user-guide/providers/okta/getting-started-okta#step-2-provide-credentials",
       ],
     ];
 
@@ -438,42 +438,42 @@ describe("getProviderHelpText", () => {
       [
         "aws",
         "role",
-        "https://docs.horizonvigil.com/user-guide/providers/aws/getting-started-aws#assume-role-recommended",
+        "/docs/user-guide/providers/aws/getting-started-aws#assume-role-recommended",
       ],
       [
         "aws",
         "credentials",
-        "https://docs.horizonvigil.com/user-guide/providers/aws/getting-started-aws#credentials-static-access-keys",
+        "/docs/user-guide/providers/aws/getting-started-aws#credentials-static-access-keys",
       ],
       [
         "m365",
         "app_certificate",
-        "https://docs.horizonvigil.com/user-guide/providers/microsoft365/getting-started-m365#application-certificate-authentication-recommended",
+        "/docs/user-guide/providers/microsoft365/getting-started-m365#application-certificate-authentication-recommended",
       ],
       [
         "m365",
         "app_client_secret",
-        "https://docs.horizonvigil.com/user-guide/providers/microsoft365/getting-started-m365#application-client-secret-authentication",
+        "/docs/user-guide/providers/microsoft365/getting-started-m365#application-client-secret-authentication",
       ],
       [
         "alibabacloud",
         "role",
-        "https://docs.horizonvigil.com/user-guide/providers/alibabacloud/getting-started-alibabacloud#ram-role-assumption-recommended",
+        "/docs/user-guide/providers/alibabacloud/getting-started-alibabacloud#ram-role-assumption-recommended",
       ],
       [
         "alibabacloud",
         "credentials",
-        "https://docs.horizonvigil.com/user-guide/providers/alibabacloud/getting-started-alibabacloud#credentials-static-access-keys",
+        "/docs/user-guide/providers/alibabacloud/getting-started-alibabacloud#credentials-static-access-keys",
       ],
       [
         "cloudflare",
         "api_token",
-        "https://docs.horizonvigil.com/user-guide/providers/cloudflare/getting-started-cloudflare#user-api-token-authentication-recommended",
+        "/docs/user-guide/providers/cloudflare/getting-started-cloudflare#user-api-token-authentication-recommended",
       ],
       [
         "cloudflare",
         "api_key",
-        "https://docs.horizonvigil.com/user-guide/providers/cloudflare/getting-started-cloudflare#api-key-and-email-authentication-legacy",
+        "/docs/user-guide/providers/cloudflare/getting-started-cloudflare#api-key-and-email-authentication-legacy",
       ],
     ];
 

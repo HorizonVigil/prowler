@@ -168,7 +168,7 @@ describe("useProviderWizardController", () => {
     // Update mode opens the connect step on its first method (IAM role here,
     // no `via` stored), so the docs link lands on that method's section.
     expect(result.current.docsLink).toBe(
-      "https://docs.horizonvigil.com/user-guide/providers/aws/getting-started-aws#assume-role-recommended",
+      "/docs/user-guide/providers/aws/getting-started-aws#assume-role-recommended",
     );
 
     const state = useProviderWizardStore.getState();
@@ -197,7 +197,7 @@ describe("useProviderWizardController", () => {
     // Then
     expect(result.current.connectionMethod).toBe("app_client_secret");
     expect(result.current.docsLink).toBe(
-      "https://docs.horizonvigil.com/user-guide/providers/microsoft365/getting-started-m365#application-client-secret-authentication",
+      "/docs/user-guide/providers/microsoft365/getting-started-m365#application-client-secret-authentication",
     );
   });
 
@@ -285,7 +285,7 @@ describe("useProviderWizardController", () => {
       ORGANIZATION_TYPE.AWS,
     );
     expect(result.current.docsLink).toBe(
-      "https://docs.horizonvigil.com/user-guide/tutorials/prowler-cloud-aws-organizations",
+      "/docs/user-guide/tutorials/prowler-cloud-aws-organizations",
     );
 
     // When

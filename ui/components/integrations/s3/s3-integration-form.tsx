@@ -499,7 +499,7 @@ export const S3IntegrationForm = ({
               Need help configuring your Amazon S3 integration?
             </p>
             <CustomLink
-              href="https://docs.horizonvigil.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-s3-integration/"
+              href="/docs/tutorials/prowler-app-s3-integration/"
               target="_blank"
               size="sm"
             >

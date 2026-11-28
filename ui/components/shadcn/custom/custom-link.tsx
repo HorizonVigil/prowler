@@ -13,8 +13,18 @@ interface CustomLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   size?: string;
 }
 
+// The platform's own routes live outside this app's basePath, so they must be
+// plain anchors: next/link would prefix them and point at /security/docs.
+function isPlatformHref(href: string) {
+  return href === "/docs" || href.startsWith("/docs/");
+}
+
 function isExternalHref(href: string) {
-  return /^https?:\/\//.test(href) || href.startsWith("mailto:");
+  return (
+    /^https?:\/\//.test(href) ||
+    href.startsWith("mailto:") ||
+    isPlatformHref(href)
+  );
 }
 
 function hasDynamicHrefPlaceholder(href: string) {

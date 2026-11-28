@@ -618,7 +618,7 @@ describe("authorizing destination channels", () => {
     // Then — the whole anchored URL: the anchor is the point of the link, and
     // it is derived from a docs heading that a rewording would silently move.
     expect(harness.channelInviteHintDocsUrl()).toBe(
-      "https://docs.horizonvigil.com/user-guide/tutorials/prowler-app-slack-integration#why-a-private-channel-is-missing-from-the-channel-list",
+      "/docs/user-guide/tutorials/prowler-app-slack-integration#why-a-private-channel-is-missing-from-the-channel-list",
     );
   }, 30000);
 

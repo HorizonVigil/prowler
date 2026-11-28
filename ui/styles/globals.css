@@ -77,12 +77,30 @@
   --font-mono: var(--font-mono);
 }
 
+/* HorizonVigil brand scale, copied from the platform shell (its src/index.css)
+ * so this app's buttons, focus and active states are the same hue as every
+ * other module. Status colours (pass/warning/fail) are deliberately NOT part
+ * of this scale: they carry meaning, not branding. */
+:root {
+  --brand-50: #f2f1fe;
+  --brand-100: #e7e4fd;
+  --brand-200: #d0ccfb;
+  --brand-300: #b1a9f8;
+  --brand-400: #8f83f3;
+  --brand-500: #7566ee;
+  --brand-600: #5f4fe6;
+  --brand-700: #4f3fd0;
+  --brand-800: #4135a8;
+  --brand-900: #372e84;
+  --brand-950: #231d4f;
+}
+
 /* ===== LIGHT THEME (ROOT) ===== */
 :root {
   /* Button Colors */
-  --bg-button-primary: var(--color-emerald-300);
-  --bg-button-primary-hover: var(--color-teal-200);
-  --bg-button-primary-press: var(--color-emerald-400);
+  --bg-button-primary: var(--brand-600);
+  --bg-button-primary-hover: var(--brand-700);
+  --bg-button-primary-press: var(--brand-800);
   --bg-button-secondary: var(--color-slate-950);
   --bg-button-secondary-press: var(--color-slate-800);
   --bg-button-tertiary: var(--color-blue-600);
@@ -165,8 +183,8 @@
   --border-sidebar-hover: rgba(15, 23, 42, 0.06);
   --border-sidebar-guide: rgba(15, 23, 42, 0.12);
   --border-sidebar-toggle: rgba(15, 23, 42, 0.08);
-  --sidebar-active-bar: var(--color-emerald-400);
-  --sidebar-active-icon: var(--color-emerald-600);
+  --sidebar-active-bar: var(--brand-500);
+  --sidebar-active-icon: var(--brand-600);
   --shadow-sidebar-active: 0 8px 24px rgba(15, 23, 42, 0.06);
   --gradient-sidebar-halo: radial-gradient(
     circle,
@@ -188,7 +206,7 @@
     rgba(46, 229, 155, 0.12),
     rgba(98, 223, 240, 0.12)
   );
-  --text-lighthouse: var(--color-emerald-600);
+  --text-lighthouse: var(--brand-600);
   --border-lighthouse: rgba(5, 150, 105, 0.45);
 
   /* Cloud feature badge */
@@ -197,7 +215,7 @@
     rgb(46, 229, 155) 3.5%,
     rgb(98, 223, 240) 98.8%
   );
-  --bg-feature-new: var(--color-emerald-500);
+  --bg-feature-new: var(--brand-500);
   --text-feature-new: var(--color-white);
 }
 
@@ -207,11 +225,11 @@
  */
 .dark {
   /* Button Colors */
-  --bg-button-primary: var(--color-emerald-300);
-  --bg-button-primary-hover: var(--color-teal-200);
-  --bg-button-primary-press: var(--color-emerald-400);
+  --bg-button-primary: var(--brand-600);
+  --bg-button-primary-hover: var(--brand-700);
+  --bg-button-primary-press: var(--brand-800);
   --bg-button-secondary: var(--color-white);
-  --bg-button-secondary-press: var(--color-emerald-100);
+  --bg-button-secondary-press: var(--brand-100);
   --bg-button-tertiary: var(--color-blue-300);
   --bg-button-tertiary-hover: var(--color-blue-400);
   --bg-button-tertiary-active: var(--color-blue-600);
@@ -288,8 +306,8 @@
   --border-sidebar-hover: rgba(255, 255, 255, 0.07);
   --border-sidebar-guide: rgba(255, 255, 255, 0.1);
   --border-sidebar-toggle: rgba(255, 255, 255, 0.08);
-  --sidebar-active-bar: var(--color-emerald-300);
-  --sidebar-active-icon: var(--color-emerald-300);
+  --sidebar-active-bar: var(--brand-400);
+  --sidebar-active-icon: var(--brand-400);
   --shadow-sidebar-active: 0 10px 28px rgba(0, 0, 0, 0.22);
   --gradient-sidebar-halo: radial-gradient(
     circle,

@@ -35,7 +35,7 @@ export const S3IntegrationCard = () => {
                   Export security findings to Amazon S3 buckets.
                 </p>
                 <CustomLink
-                  href="https://docs.horizonvigil.com/projects/prowler-open-source/en/latest/tutorials/prowler-app-s3-integration/"
+                  href="/docs/tutorials/prowler-app-s3-integration/"
                   aria-label="Learn more about S3 integration"
                   size="xs"
                 >
