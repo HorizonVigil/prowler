@@ -10,6 +10,7 @@ import { ThemeSwitch } from "@/components/ThemeSwitch";
 
 import { UserNav } from "../user-nav/user-nav";
 import { AppLauncher } from "./app-launcher";
+import { EnvironmentBadge } from "./environment-badge";
 
 interface NavbarClientProps {
   title: string;
@@ -42,6 +43,13 @@ export function NavbarClient({ title, icon, feedsSlot }: NavbarClientProps) {
           </Suspense>
         </div>
         <div className="flex flex-1 items-center justify-end gap-3">
+          {/* Clouds are onboarded once in HorizonVigil and flow into this
+              workspace, so this points at the platform rather than offering a
+              second place to connect the same account. */}
+          <Button asChild variant="ghost" size="sm">
+            <a href="/cloud-accounts">Add cloud</a>
+          </Button>
+          <EnvironmentBadge />
           <SidePanelTrigger />
           <ThemeSwitch />
           {feedsSlot}
