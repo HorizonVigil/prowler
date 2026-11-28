@@ -67,6 +67,7 @@ describe("getNavigationConfig", () => {
       "Documentation",
       "API Reference",
       "Community Support",
+      "Prowler Hub",
     ]);
   });
 
@@ -215,6 +216,7 @@ describe("getNavigationConfig", () => {
       "Documentation",
       "API Reference",
       "Support Desk",
+      "Prowler Hub",
     ]);
   });
 

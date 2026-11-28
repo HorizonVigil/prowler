@@ -4,6 +4,7 @@ import {
   Crosshair,
   FileText,
   GitBranch,
+  LayoutGrid,
   MessageCircleQuestion,
   Package,
   Radar,
@@ -29,21 +30,6 @@ import {
   type NavigationItem,
   type NavigationSection,
 } from "./types";
-
-/**
- * Documentation and support live in the platform at the root of this origin.
- * These must be absolute: the sidebar renders its links through next/link,
- * which would prefix this app's mount and resolve them inside the workspace.
- * Computed here rather than imported, so this module — which the
- * authenticated sidebar loads — keeps the dependencies it already had.
- */
-const PLATFORM_ORIGIN = (() => {
-  try {
-    return new URL(process.env.AUTH_URL ?? "").origin;
-  } catch {
-    return "";
-  }
-})();
 
 interface NavigationConfigOptions {
   pathname: string;
@@ -342,11 +328,9 @@ export function getNavigationConfig({
     {
       label: "HELP",
       items: [
-        // The platform serves documentation and support on this origin; the
-        // marketing domain has no such pages, so linking there errors.
         {
           kind: NAVIGATION_ITEM_KIND.LINK,
-          href: `${PLATFORM_ORIGIN}/docs`,
+          href: "https://docs.horizonvigil.com/",
           label: "Documentation",
           icon: FileText,
           target: "_blank",
@@ -364,10 +348,20 @@ export function getNavigationConfig({
           : []),
         {
           kind: NAVIGATION_ITEM_KIND.LINK,
-          href: `${PLATFORM_ORIGIN}/support`,
+          href: isCloudEnvironment
+            ? "https://customer.support.horizonvigil.com/servicedesk/customer/portal/9/create/102"
+            : "https://github.com/HorizonVigil/prowler/issues",
           label: isCloudEnvironment ? "Support Desk" : "Community Support",
           icon: MessageCircleQuestion,
           target: "_blank",
+        },
+        {
+          kind: NAVIGATION_ITEM_KIND.LINK,
+          href: "https://hub.horizonvigil.com/",
+          label: "HorizonVigil Hub",
+          icon: LayoutGrid,
+          target: "_blank",
+          tooltip: "Looking for all available checks? learn more.",
         },
       ],
     },
