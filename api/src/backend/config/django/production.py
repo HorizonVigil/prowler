@@ -55,6 +55,8 @@ DATABASES = {
         "PORT": env.str("NEO4J_PORT"),
         "USER": env.str("NEO4J_USER"),
         "PASSWORD": env.str("NEO4J_PASSWORD"),
+        # TLS (neo4j+s://). Required for managed Neo4j / Aura Business Critical.
+        "ENCRYPTED": env.bool("NEO4J_ENCRYPTED", default=False),
     },
     "neptune": {
         "WRITER_ENDPOINT": env.str("NEPTUNE_WRITER_ENDPOINT", default=""),

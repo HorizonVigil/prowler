@@ -142,8 +142,10 @@ def get_uri() -> str:
         cfg = settings.DATABASES["neptune"]
         return f"bolt+s://{cfg['WRITER_ENDPOINT']}:{cfg['PORT']}"
 
+    from api.attack_paths.neo4j_uri import build_neo4j_uri
+
     cfg = settings.DATABASES["neo4j"]
-    return f"bolt://{cfg['HOST']}:{cfg['PORT']}"
+    return build_neo4j_uri(cfg["HOST"], cfg["PORT"])
 
 
 def get_ingest_uri() -> str:

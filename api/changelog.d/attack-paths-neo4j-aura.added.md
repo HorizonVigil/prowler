@@ -1,0 +1,1 @@
+Attack Paths can now target managed AuraDB Business Critical: set `NEO4J_ENCRYPTED=true` for the TLS `neo4j+s://` scheme and `NEO4J_PROVISIONER=aura_api` (with `AURA_API_*` credentials) to create and drop per-scan and per-tenant databases through the Neo4j Aura management API instead of Cypher DDL

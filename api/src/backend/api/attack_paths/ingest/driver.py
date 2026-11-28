@@ -52,7 +52,9 @@ def get_uri() -> str:
             "temp database. Workers require Neo4j env even when the sink is Neptune."
         )
 
-    return f"bolt://{host}:{port}"
+    from api.attack_paths.neo4j_uri import build_neo4j_uri
+
+    return build_neo4j_uri(host, port)
 
 
 def init_driver() -> neo4j.Driver:
@@ -154,19 +156,37 @@ def get_session(
 
 
 def create_database(database: str) -> None:
-    """Create a database on the Neo4j cluster. Used for temp scan DBs."""
+    """Create a database on the Neo4j cluster. Used for temp scan DBs.
+
+    Managed Aura forbids `CREATE DATABASE` over Cypher, so when the Aura API
+    provisioner is enabled the create is delegated to the management API.
+    """
+    from api.attack_paths import aura_api
+
+    if aura_api.enabled():
+        aura_api.get_provisioner().create_database(database)
+        return
     with get_session() as session:
         session.run("CREATE DATABASE $database IF NOT EXISTS", {"database": database})
 
 
 def drop_database(database: str) -> None:
     """Drop a database on the Neo4j cluster. Used for temp scan DBs."""
+    from api.attack_paths import aura_api
+
+    if aura_api.enabled():
+        aura_api.get_provisioner().drop_database(database)
+        return
     with get_session() as session:
         session.run(f"DROP DATABASE `{database}` IF EXISTS DESTROY DATA")
 
 
 def list_databases() -> list[str]:
     """List every database name on the Neo4j temp-database cluster."""
+    from api.attack_paths import aura_api
+
+    if aura_api.enabled():
+        return aura_api.get_provisioner().list_databases()
     # A cluster returns one row per hosting server, so dedupe on name
     with get_session() as session:
         result = session.run("SHOW DATABASES YIELD name RETURN DISTINCT name")

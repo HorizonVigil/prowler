@@ -347,6 +347,30 @@ if ATTACK_PATHS_TMP_DB_REAP_SAFETY_MARGIN_HOURS <= 0:
 # Valid values: "neo4j" (default, OSS and local dev), "neptune" (hosted).
 ATTACK_PATHS_SINK_DATABASE = env.str("ATTACK_PATHS_SINK_DATABASE", default="neo4j")
 
+# How attack-paths databases (per-scan temp DBs and per-tenant DBs) are
+# provisioned. "cypher" (default) issues `CREATE DATABASE` / `DROP DATABASE`
+# over bolt, which requires a multi-database Neo4j (Enterprise / DozerDB /
+# self-hosted cluster). "aura_api" provisions databases through the Neo4j Aura
+# management API (v2beta1) instead, for AuraDB Business Critical, which forbids
+# database DDL over Cypher. Valid values: "cypher", "aura_api".
+NEO4J_PROVISIONER = env.str("NEO4J_PROVISIONER", default="cypher")
+
+# Neo4j Aura management API credentials, used only when NEO4J_PROVISIONER is
+# "aura_api". The client id/secret come from an Aura API key (console →
+# Account → API keys); org/project/instance ids identify the target instance.
+AURA_API = {
+    "CLIENT_ID": env.str("AURA_API_CLIENT_ID", default=""),
+    "CLIENT_SECRET": env.str("AURA_API_CLIENT_SECRET", default=""),
+    "ORG_ID": env.str("AURA_API_ORG_ID", default=""),
+    "PROJECT_ID": env.str("AURA_API_PROJECT_ID", default=""),
+    "INSTANCE_ID": env.str("AURA_API_INSTANCE_ID", default=""),
+    "BASE_URL": env.str("AURA_API_BASE_URL", default="https://api.neo4j.io/v2beta1"),
+    "TOKEN_URL": env.str(
+        "AURA_API_TOKEN_URL", default="https://api.neo4j.io/oauth/token"
+    ),
+    "TIMEOUT": env.int("AURA_API_TIMEOUT", default=45),
+}
+
 # Lighthouse AI
 # Comma-separated hostnames (or IP literals) that bypass the SSRF validation
 # applied to OpenAI-compatible provider base URLs, so self-hosted deployments
