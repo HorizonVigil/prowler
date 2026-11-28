@@ -10,16 +10,20 @@ import { IconSvgProps } from "../../../types/index";
 // under a basePath (/security) must carry it explicitly or they 404.
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
+// The asset names describe the ink they are drawn in, not the surface they sit
+// on: "on-light" is drawn in light ink (#EAF3F1) so it reads on a dark surface,
+// and "on-dark" in dark ink (#14211F) for a light one. Pair them accordingly —
+// matching them by name leaves the wordmark invisible in both themes.
 const PROWLER_BRAND = {
   CLOUD: {
     name: "HorizonVigil",
-    lightLogo: `${BASE_PATH}/logos/horizonvigil-on-light.svg`,
-    darkLogo: `${BASE_PATH}/logos/horizonvigil-on-dark.svg`,
+    lightLogo: `${BASE_PATH}/logos/horizonvigil-on-dark.svg`,
+    darkLogo: `${BASE_PATH}/logos/horizonvigil-on-light.svg`,
   },
   LOCAL_SERVER: {
     name: "HorizonVigil",
-    lightLogo: `${BASE_PATH}/logos/horizonvigil-on-light.svg`,
-    darkLogo: `${BASE_PATH}/logos/horizonvigil-on-dark.svg`,
+    lightLogo: `${BASE_PATH}/logos/horizonvigil-on-dark.svg`,
+    darkLogo: `${BASE_PATH}/logos/horizonvigil-on-light.svg`,
   },
 } as const;
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { BellRing, LayoutGrid } from "lucide-react";
+import { BellRing } from "lucide-react";
 import { ReactNode, Suspense, type ReactElement } from "react";
 
 import { MobileAppSidebar } from "@/components/layout/app-sidebar";
@@ -9,6 +9,7 @@ import { SidePanelTrigger } from "@/components/side-panel";
 import { ThemeSwitch } from "@/components/ThemeSwitch";
 
 import { UserNav } from "../user-nav/user-nav";
+import { AppLauncher } from "./app-launcher";
 
 interface NavbarClientProps {
   title: string;
@@ -25,14 +26,9 @@ export function NavbarClient({ title, icon, feedsSlot }: NavbarClientProps) {
       {/* h-15 (60px) matches the side panel's tab header so both border-b lines align. */}
       <div className="flex h-15 items-center pr-6">
         <div className="flex items-center gap-2">
-          {/* Leftmost: back to the HorizonVigil launcher. A plain anchor, not
-              next/link — this app is mounted under a basePath and the shell
-              that owns the launcher is served from the root of this origin. */}
-          <Button asChild variant="ghost" size="icon-sm" aria-label="HorizonVigil apps">
-            <a href="/" title="HorizonVigil apps">
-              <LayoutGrid className="size-5" />
-            </a>
-          </Button>
+          {/* Leftmost: switch to the other HorizonVigil apps without leaving
+              for the shell first. */}
+          <AppLauncher />
           <MobileAppSidebar />
           {/* Suspense contains the useSearchParams() CSR bailout in BreadcrumbNavigation
               so statically prerendered pages don't fail the build. */}
