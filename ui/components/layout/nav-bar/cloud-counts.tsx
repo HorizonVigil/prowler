@@ -4,7 +4,8 @@ import { useState } from "react";
 
 import { platformCloudCounts } from "@/actions/platform/cloud-counts";
 import { useMountEffect } from "@/hooks/use-mount-effect";
-import { readPlatformToken, type CloudCounts } from "@/lib/platform-session";
+import type { CloudCounts } from "@/lib/platform-session";
+import { readPlatformToken } from "@/lib/platform-storage";
 
 const LABELS: ReadonlyArray<readonly [keyof CloudCounts, string]> = [
   ["aws", "AWS"],
@@ -37,7 +38,10 @@ export function CloudCounts() {
         <span key={key} className="flex items-center gap-2">
           {index > 0 && <span aria-hidden="true">·</span>}
           <span>
-            {label} <span className="text-foreground-neutral-primary font-semibold">{counts[key]}</span>
+            {label}{" "}
+            <span className="text-foreground-neutral-primary font-semibold">
+              {counts[key]}
+            </span>
           </span>
         </span>
       ))}
