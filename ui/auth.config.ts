@@ -262,6 +262,11 @@ const refreshAccessToken = async (token: AuthToken): Promise<AuthToken> => {
 };
 
 export const authConfig = {
+  // Auth.js reads the action (session, signin, callback...) from the path that
+  // follows this base. Under a basePath mount the handler actually serves
+  // <basePath>/api/auth/*, so leaving the default /api/auth makes every
+  // request parse as an unknown action and answer "Bad request.".
+  basePath: `${BASE_PATH}/api/auth`,
   session: {
     strategy: "jwt",
     // The session will be valid for 24 hours
