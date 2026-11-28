@@ -3,7 +3,6 @@
 import { ArrowUpRight, BellRing, Search, SquareCheckBig } from "lucide-react";
 import { ReactNode, Suspense, type ReactElement } from "react";
 
-import { ProwlerShort } from "@/components/icons";
 import { MobileAppSidebar } from "@/components/layout/app-sidebar";
 import { BreadcrumbNavigation, Button } from "@/components/shadcn";
 import { SidePanelTrigger } from "@/components/side-panel";
@@ -41,7 +40,20 @@ export function NavbarClient({ title, icon, feedsSlot }: NavbarClientProps) {
             aria-label="HorizonVigil"
             className="text-text-neutral-primary hidden shrink-0 items-center gap-2 sm:flex"
           >
-            <ProwlerShort width={24} height={24} />
+            {/* HorizonVigil brand symbol (final v4), same mark as the platform header. */}
+            <svg
+              viewBox="0 0 256 256"
+              width={24}
+              height={24}
+              aria-hidden="true"
+              className="shrink-0"
+            >
+              <g fill="#0B9F97">
+                <path d="M28 58 78 28v38l50 52 50-52V28l50 30v60l-40 28H68l-40-28V58Z" />
+                <path d="M28 150 68 178h24v50H28v-78ZM228 150l-40 28h-24v50h64v-78ZM68 150h120l-28 28H96l-28-28Z" />
+                <path d="m96 174 32 38 32-38H96Z" />
+              </g>
+            </svg>
             <span className="text-sm font-bold tracking-tight">
               HorizonVigil
             </span>

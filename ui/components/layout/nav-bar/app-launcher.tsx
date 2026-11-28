@@ -7,7 +7,6 @@ import {
   Cloud,
   FileText,
   LayoutDashboard,
-  LayoutGrid,
   LifeBuoy,
   ScrollText,
   Settings,
@@ -66,7 +65,25 @@ export function AppLauncher() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon-sm" aria-label="HorizonVigil Cloud">
-          <LayoutGrid className="size-5" />
+          {/* 3x3-dot waffle, matching the platform header's app launcher. */}
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={1.8}
+            className="size-5"
+            aria-hidden="true"
+          >
+            <circle cx="5" cy="5" r="1.6" />
+            <circle cx="12" cy="5" r="1.6" />
+            <circle cx="19" cy="5" r="1.6" />
+            <circle cx="5" cy="12" r="1.6" />
+            <circle cx="12" cy="12" r="1.6" />
+            <circle cx="19" cy="12" r="1.6" />
+            <circle cx="5" cy="19" r="1.6" />
+            <circle cx="12" cy="19" r="1.6" />
+            <circle cx="19" cy="19" r="1.6" />
+          </svg>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
