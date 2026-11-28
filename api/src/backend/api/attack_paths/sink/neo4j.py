@@ -75,7 +75,9 @@ class Neo4jSink(SinkDatabase):
             raise RuntimeError(
                 "NEO4J_HOST / NEO4J_PORT must be set when ATTACK_PATHS_SINK_DATABASE=neo4j"
             )
-        return f"bolt://{host}:{port}"
+        from api.attack_paths.neo4j_uri import build_neo4j_uri
+
+        return build_neo4j_uri(host, port)
 
     def init(self) -> neo4j.Driver:
         if self._driver is not None:
@@ -195,12 +197,22 @@ class Neo4jSink(SinkDatabase):
         return bool(self._PERSISTED_ELEMENT_ID_RE.match(element_id))
 
     def create_database(self, database: str) -> None:
+        from api.attack_paths import aura_api
+
+        if aura_api.enabled():
+            aura_api.get_provisioner().create_database(database)
+            return
         with self.get_session() as session:
             session.run(
                 "CREATE DATABASE $database IF NOT EXISTS", {"database": database}
             )
 
     def drop_database(self, database: str) -> None:
+        from api.attack_paths import aura_api
+
+        if aura_api.enabled():
+            aura_api.get_provisioner().drop_database(database)
+            return
         with self.get_session() as session:
             session.run(f"DROP DATABASE `{database}` IF EXISTS DESTROY DATA")
 
