@@ -46,7 +46,10 @@ export const PROWLER_CF_TEMPLATE_URL =
 
 // HorizonVigil billing/subscription management page.
 export const BILLING_URL = "https://cloud.horizonvigil.com/billing";
-export const PRICING_URL = "https://horizonvigil.com/pricing";
+// Plans live in the platform, on this origin — not on the marketing site,
+// which serves no pricing page. A root-relative path so the shell routes it;
+// a next/link would prefix this app's mount and miss it.
+export const PRICING_URL = "/subscription";
 
 // Base URL for the CloudFormation "quick create stack" console flow.
 // Hardcoded to us-east-1 because the public template is hosted for that flow.

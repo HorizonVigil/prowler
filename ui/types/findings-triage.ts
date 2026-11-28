@@ -97,8 +97,9 @@ export const FINDING_TRIAGE_ORIGIN = {
 } as const;
 
 export const FINDING_TRIAGE_NOTE_MAX_LENGTH = 500 as const;
-export const FINDING_TRIAGE_BILLING_HREF =
-  "https://horizonvigil.com/pricing" as const;
+// Plans live in the platform on this origin; the marketing site has no
+// pricing page.
+export const FINDING_TRIAGE_BILLING_HREF = "/subscription" as const;
 
 export interface FindingTriageSummary {
   findingId: string;

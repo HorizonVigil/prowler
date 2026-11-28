@@ -4,7 +4,6 @@ import {
   Crosshair,
   FileText,
   GitBranch,
-  LayoutGrid,
   MessageCircleQuestion,
   Package,
   Radar,
@@ -328,9 +327,11 @@ export function getNavigationConfig({
     {
       label: "HELP",
       items: [
+        // The platform serves documentation and support on this origin; the
+        // marketing domain has no such pages, so linking there errors.
         {
           kind: NAVIGATION_ITEM_KIND.LINK,
-          href: "https://docs.horizonvigil.com/",
+          href: "/docs",
           label: "Documentation",
           icon: FileText,
           target: "_blank",
@@ -348,20 +349,10 @@ export function getNavigationConfig({
           : []),
         {
           kind: NAVIGATION_ITEM_KIND.LINK,
-          href: isCloudEnvironment
-            ? "https://customer.support.horizonvigil.com/servicedesk/customer/portal/9/create/102"
-            : "https://github.com/HorizonVigil/prowler/issues",
+          href: "/support",
           label: isCloudEnvironment ? "Support Desk" : "Community Support",
           icon: MessageCircleQuestion,
           target: "_blank",
-        },
-        {
-          kind: NAVIGATION_ITEM_KIND.LINK,
-          href: "https://hub.horizonvigil.com/",
-          label: "HorizonVigil Hub",
-          icon: LayoutGrid,
-          target: "_blank",
-          tooltip: "Looking for all available checks? learn more.",
         },
       ],
     },

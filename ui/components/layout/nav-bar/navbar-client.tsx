@@ -34,10 +34,11 @@ export function NavbarClient({ title, icon, feedsSlot }: NavbarClientProps) {
         <div className="flex shrink-0 items-center gap-2">
           <AppLauncher />
           <MobileAppSidebar />
-          {/* The brand's images are width-full, so the width has to come from
-              here: sized by the parent it collapses to nothing. */}
-          <a href="/" aria-label="HorizonVigil" className="hidden w-24 shrink-0 sm:block">
-            <ProwlerBrand />
+          {/* The brand's images are width-full inside an auto-width grid, so
+              the width must be set on the brand itself: on the anchor they
+              fall back to the artwork's natural 720px. */}
+          <a href="/" aria-label="HorizonVigil" className="hidden shrink-0 sm:block">
+            <ProwlerBrand className="w-24" />
           </a>
           {/* The platform header carries no breadcrumb because its pages render
               their own heading; these do not, so this stays as the page title. */}
