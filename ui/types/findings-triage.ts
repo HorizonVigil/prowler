@@ -97,9 +97,18 @@ export const FINDING_TRIAGE_ORIGIN = {
 } as const;
 
 export const FINDING_TRIAGE_NOTE_MAX_LENGTH = 500 as const;
-// Plans live in the platform on this origin; the marketing site has no
-// pricing page.
-export const FINDING_TRIAGE_BILLING_HREF = "/subscription" as const;
+/**
+ * Plans live in the platform at the root of this origin; the marketing site
+ * has no pricing page. Absolute for the same reason as PRICING_URL: callers
+ * resolve it with `new URL()`, which rejects a bare path.
+ */
+export const FINDING_TRIAGE_BILLING_HREF = `${(() => {
+  try {
+    return new URL(process.env.AUTH_URL ?? "").origin;
+  } catch {
+    return "";
+  }
+})()}/subscription`;
 
 export interface FindingTriageSummary {
   findingId: string;

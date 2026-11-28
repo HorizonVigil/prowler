@@ -46,10 +46,24 @@ export const PROWLER_CF_TEMPLATE_URL =
 
 // HorizonVigil billing/subscription management page.
 export const BILLING_URL = "https://cloud.horizonvigil.com/billing";
-// Plans live in the platform, on this origin — not on the marketing site,
-// which serves no pricing page. A root-relative path so the shell routes it;
-// a next/link would prefix this app's mount and miss it.
-export const PRICING_URL = "/subscription";
+/**
+ * Plans live in the platform at the root of this origin, not on the marketing
+ * site, which serves no pricing page.
+ *
+ * This has to stay absolute: callers resolve it with `new URL()`, which
+ * rejects a bare path, and a relative value here failed every render with
+ * ERR_INVALID_URL. The origin is taken from the app's own URL so it follows
+ * the environment instead of naming a host.
+ */
+export const PLATFORM_ORIGIN = (() => {
+  try {
+    return new URL(process.env.AUTH_URL ?? "").origin;
+  } catch {
+    return "";
+  }
+})();
+
+export const PRICING_URL = `${PLATFORM_ORIGIN}/subscription`;
 
 // Base URL for the CloudFormation "quick create stack" console flow.
 // Hardcoded to us-east-1 because the public template is hosted for that flow.

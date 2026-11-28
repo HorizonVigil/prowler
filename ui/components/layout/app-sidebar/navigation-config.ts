@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 
 import { LighthouseIcon } from "@/components/icons/Icons";
+import { PLATFORM_ORIGIN } from "@/lib/external-urls";
 import { isCloud } from "@/lib/shared/env";
 import type { CloudUpgradeFeature } from "@/types/cloud-upgrade";
 import { CLOUD_UPGRADE_FEATURE } from "@/types/cloud-upgrade";
@@ -331,7 +332,7 @@ export function getNavigationConfig({
         // marketing domain has no such pages, so linking there errors.
         {
           kind: NAVIGATION_ITEM_KIND.LINK,
-          href: "/docs",
+          href: `${PLATFORM_ORIGIN}/docs`,
           label: "Documentation",
           icon: FileText,
           target: "_blank",
@@ -349,7 +350,7 @@ export function getNavigationConfig({
           : []),
         {
           kind: NAVIGATION_ITEM_KIND.LINK,
-          href: "/support",
+          href: `${PLATFORM_ORIGIN}/support`,
           label: isCloudEnvironment ? "Support Desk" : "Community Support",
           icon: MessageCircleQuestion,
           target: "_blank",
