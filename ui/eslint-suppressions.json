@@ -256,11 +256,6 @@
       "count": 1
     }
   },
-  "components/compliance/threatscore-logo.tsx": {
-    "react-hooks/set-state-in-effect": {
-      "count": 1
-    }
-  },
   "components/feeds/feeds-client.tsx": {
     "no-restricted-syntax": {
       "count": 13
