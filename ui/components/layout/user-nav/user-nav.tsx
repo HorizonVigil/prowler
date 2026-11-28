@@ -39,7 +39,8 @@ export const UserNav = () => {
           aria-label="Account menu"
         >
           <Avatar className="h-8 w-8">
-            <AvatarFallback className="bg-transparent text-xs font-bold">
+            {/* Solid white disc + dark initials, matching the platform header. */}
+            <AvatarFallback className="bg-white text-xs font-bold text-black uppercase">
               {initials}
             </AvatarFallback>
           </Avatar>
