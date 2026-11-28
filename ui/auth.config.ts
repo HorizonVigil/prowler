@@ -262,11 +262,12 @@ const refreshAccessToken = async (token: AuthToken): Promise<AuthToken> => {
 };
 
 export const authConfig = {
-  // Auth.js reads the action (session, signin, callback...) from the path that
-  // follows this base. Under a basePath mount the handler actually serves
-  // <basePath>/api/auth/*, so leaving the default /api/auth makes every
-  // request parse as an unknown action and answer "Bad request.".
-  basePath: `${BASE_PATH}/api/auth`,
+  // Next strips the mount prefix before the route handler runs, so Auth.js
+  // sees /api/auth/* however the app is mounted. Pin that here: left to infer
+  // it from AUTH_URL, a URL carrying the mount path makes Auth.js look for the
+  // action after /security and answer "Bad request." to every request. The
+  // browser still fetches <mount>/api/auth/*, which SessionProvider is given.
+  basePath: "/api/auth",
   session: {
     strategy: "jwt",
     // The session will be valid for 24 hours
