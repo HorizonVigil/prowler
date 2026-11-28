@@ -42,6 +42,48 @@ async function cloudSecurityToken(email: string, password: string) {
   return access ? { accessToken: access as string, refreshToken: refresh as string } : null;
 }
 
+/**
+ * Mints a single-use invitation into the organization's shared workspace, as
+ * the service account that owns it. Returns null when the service account is
+ * not configured or the call fails, so the caller refuses rather than falling
+ * back to creating a private workspace.
+ */
+async function inviteToSharedTenant(email: string): Promise<string | null> {
+  const serviceEmail = process.env.PROWLER_SERVICE_EMAIL;
+  const servicePassword = process.env.PROWLER_SERVICE_PASSWORD;
+  if (!serviceEmail || !servicePassword) return null;
+
+  const service = await cloudSecurityToken(serviceEmail, servicePassword);
+  if (!service) return null;
+  const auth = { ...JSONAPI, Authorization: `Bearer ${service.accessToken}` };
+
+  // An invitation must name the roles the member joins with. Resolve them at
+  // run time: role ids are per tenant, so a built-in one would not survive a
+  // rebuild of the workspace.
+  const rolesResponse = await fetch(`${apiBaseUrl}/roles`, { headers: auth }).catch(() => null);
+  if (!rolesResponse || !rolesResponse.ok) return null;
+  const roles = (await rolesResponse.json().catch(() => null))?.data ?? [];
+  const role = roles.find((r: { attributes?: { name?: string } }) => r.attributes?.name === "admin") ?? roles[0];
+  if (!role?.id) return null;
+
+  const r = await fetch(`${apiBaseUrl}/tenants/invitations`, {
+    method: "POST",
+    headers: auth,
+    body: JSON.stringify({
+      data: {
+        type: "invitations",
+        attributes: { email },
+        relationships: { roles: { data: [{ type: "roles", id: role.id }] } },
+      },
+    }),
+  }).catch(() => null);
+  if (!r || !r.ok) return null;
+
+  const body = await r.json().catch(() => null);
+  const token = body?.data?.attributes?.token;
+  return typeof token === "string" && token ? token : null;
+}
+
 export async function ssoLogin(
   supabaseToken: string,
 ): Promise<{ ok: true } | { ok: false; reason: string }> {
@@ -66,7 +108,14 @@ export async function ssoLogin(
   if (!tokens) {
     const name =
       user?.user_metadata?.full_name || user?.user_metadata?.name || email.split("@")[0];
-    await fetch(`${apiBaseUrl}/users`, {
+    // Registering without an invitation would mint this user a private tenant
+    // of their own, so they would arrive to an empty workspace and never see
+    // the organization's providers or findings. An invitation from the shared
+    // tenant is what makes one platform organization one workspace.
+    const invitation = await inviteToSharedTenant(email);
+    if (!invitation) return { ok: false, reason: "invite_failed" };
+    const query = `?invitation_token=${encodeURIComponent(invitation)}`;
+    await fetch(`${apiBaseUrl}/users${query}`, {
       method: "POST",
       headers: JSONAPI,
       body: JSON.stringify({
